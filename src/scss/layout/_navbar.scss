@@ -1,0 +1,54 @@
+header {
+	.navbar {
+		background: none;
+
+		&__list {
+			&__item {
+				margin: 0 10px 10px;
+				display: inline-block;
+				vertical-align: middle;
+
+				&__link {
+					color: #fff;
+					display: block;
+					font-size: 20px;
+					font-weight: bold;
+					text-align: center;
+					position: relative;
+					font-style: italic;
+					padding: 24px 16px 40px;
+					text-transform: uppercase;
+					
+					&:hover {
+						color: #000;
+
+						&:after {
+							display: block;
+						}
+					}
+				}
+
+				&__dropdown {
+					top: 86px;
+					width: 100%;
+					display: none;
+					padding: 20px 40px;
+					position: absolute;
+					background-color: #fff;
+
+					&__item {
+						&__link {
+							color: #666;
+						}
+					}
+				}
+
+				&:hover {
+					.navbar__list__item__dropdown {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

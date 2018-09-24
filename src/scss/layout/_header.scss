@@ -1,0 +1,116 @@
+.header {
+	height: 90px;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #ffffff 0%, #f2f2f2 5%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f2f2f2 5%,#ffffff 28%,#f11e08 28%,#6ba8e5 28%,#90bff0 28%,#90bff0 28%,#90bae4 28%,#f11e08 28%,#ffffff 28%,#90bff0 28%,#6ba8e5 28%,#90bae4 28%,#f11e08 28%,#f11e08 28%,#f11e08 28%,#f11e08 83%,#f11e08 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #ffffff 0%,#f2f2f2 5%,#ffffff 28%,#f11e08 28%,#6ba8e5 28%,#90bff0 28%,#90bff0 28%,#90bae4 28%,#f11e08 28%,#ffffff 28%,#90bff0 28%,#6ba8e5 28%,#90bae4 28%,#f11e08 28%,#f11e08 28%,#f11e08 28%,#f11e08 83%,#f11e08 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f11e08',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	-webkit-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+
+	.hover {
+		height: 500px;
+		background-color: #fff;
+	}
+
+	&__area__logo__link {
+		padding: 25px 0 0;
+	}
+
+	&__account-info {
+		&__account-box {
+			padding: 25px 0;
+			position: relative;
+			vertical-align: top;
+			display: inline-block;
+
+			&__list {
+				right: 0;
+				top: 78px;
+				z-index: 1;
+				width: 250px;
+				display: none;
+				position: absolute;
+				padding: 0 0 0 20px;
+				background-color: #fff;
+				
+				&__item {
+					border-bottom: 1px solid #ccc;
+					
+					&__link {
+						color: #666;
+						display: block;
+						padding: 20px 0 20px 20px;
+					}
+
+					&:hover {
+						.header__account-info__account-box__list__item__link {
+							color: #fff;
+							background: #f11e08;
+						}
+					}
+
+					&:last-child {
+						margin: 0;
+						padding: 0;
+						border: none;
+					}
+				}
+			}
+
+			&:hover {
+				background-color: #fff;
+				
+				.header__account-info__account-box__wrap-items__txt {
+					color: #F11E08;
+					strong {
+						color: #F11E08;
+					}
+				}
+
+				.header__account-info__account-box__wrap-items__ico {
+					use {
+						fill {
+							color: #F11E08;
+						}
+					}
+				}
+
+				.header__account-info__account-box__list {
+					display: block;
+				}
+			}
+
+			&__wrap-items {
+				display: block;
+				margin-right: 10px;
+
+				&__ico {
+					margin-right: 5px;
+					vertical-align: top;
+					display: inline-block;
+				}
+
+				&__txt {
+					color: #fff;
+					font-size: 14px;
+					line-height: 13px;
+					display: inline-block;
+					text-transform: uppercase;
+					
+					&__bold {
+						color: #fff;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	&__minicart {
+		padding: 20px 0 0;
+		position: relative;
+		display: inline-block;
+	}
+} 

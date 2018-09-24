@@ -1,0 +1,21 @@
+.header {
+  &__search-form {
+    padding-top: 32px;
+    margin-right: 15px;
+    
+    .input {
+      min-width: 220px;
+    }
+    
+    .input,
+    .textarea {
+      border-radius: 0;
+    }
+  
+    .control {
+      .button {
+        border-radius: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+body.ajuda {
+	.ajuda__content {
+		padding-bottom: 120px;
+
+		&__title {
+			width: 100%;
+			height: 34px;
+			color: #000;
+			font-size: 33px;
+			font-weight: 700;
+			font-style: italic;
+			text-align: center;
+			padding: 100px 0 150px;
+			font-family: Eurostile;
+			letter-spacing: 0.82px;
+			text-transform: uppercase;
+
+			&:after,
+			&:before {
+				content: '';
+				width: 40px;
+				height: 2px;
+				margin: 0 35px;
+				display: inline-block;
+				vertical-align: middle;
+				background-color: #ff0000;
+			}
+		}
+
+		&__text {
+			background: url(/arquivos/top-bg-ajuda.png) no-repeat scroll 0 0 transparent;
+		
+			h3 {
+				font-size: 28px;
+				color: #010100;
+				font-weight: 700;
+				font-style: italic;
+				padding: 65px 0 55px;
+				letter-spacing: 0.7px;
+				font-family: Eurostile;
+				text-transform: uppercase;
+			}
+
+			h4 {
+				width: 100%;
+				display: block;
+				font-size: 18px;
+				font-weight: bold;
+				margin-bottom: 10px;
+			}
+
+			ul {
+				li {
+					color: #222;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 30px;
+					margin-bottom: 35px;
+					font-family: "Open Sans";
+
+					&:before {
+						float: left;
+						content: '-';
+						margin-right: 5px;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+}
+
+body.team-midway {
+	.team__content {
+		padding-bottom: 80px;
+
+		&__title {
+			width: 100%;
+			color: #000;
+			font-size: 115px;
+			margin-top: 75px;
+			font-weight: 700;
+			font-style: italic;
+			text-align: center;
+			margin-bottom: 75px;
+			font-family: Eurostile;
+			text-transform: uppercase;
+
+			b {
+				color: #f22100;
+			}
+		}
+
+		&__list {
+			text-align: center;
+
+			&__item {
+				margin-right: 40px;
+				text-align: center;
+				margin-bottom: 60px;
+				display: inline-block;
+				vertical-align: middle;
+
+				&__link {
+					display: block;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				&:hover {
+					.team__content__list__item__fig {
+						-webkit-filter: none;
+						filter: none;
+						filter: none; /* IE */
+					}
+				}
+
+				&__fig {
+					-webkit-filter: grayscale(100%);
+					filter: grayscale(100%);
+					filter: gray; /* IE */
+				}
+
+
+				&__tlt {
+					font-size: 14px;
+					color: #f22100;
+					font-weight: 700;
+					font-style: italic;
+					margin-bottom: 6px;
+					font-family: Eurostile;
+					letter-spacing: 0.78px;
+					text-transform: uppercase;
+					border-bottom: 1px solid #ebebeb;
+				}
+
+				&__speccialist {
+					color: #000;
+					font-size: 11px;
+					font-weight: 400;
+					letter-spacing: 0.61px;
+					font-family: "Open Sans";
+				}
+			}
+		}
+	}
+}
+
+body.fale-conosco {
+	.faleconosco__content {
+		padding: 25px 40px;
+		background-color: #f1f1f1;
+		-webkit-box-shadow: inset 0px 11px 30px -3px rgba(186,186,186,1);
+		-moz-box-shadow: inset 0px 11px 30px -3px rgba(186,186,186,1);
+		box-shadow: inset 0px 11px 30px -3px rgba(186,186,186,1);
+
+		&__form {
+			&__field {
+				width: 49%;
+				border: none;
+				margin-bottom: 10px;
+				display: inline-block;
+
+				&.mensagem {
+					width: 100%;
+					max-width: 814px;
+					margin-top: 40px;
+				}
+
+				&__title {
+					color: #222;
+					display: block;
+					font-size: 12px;
+					font-weight: 400;
+					margin-bottom: 5px;
+					line-height: 18.01px;
+					letter-spacing: 0.14px;
+					font-family: "Open Sans";
+				}
+
+				&__input {
+					width: 90%;
+					padding: 20px;
+					border: 1px solid #b7b7b7;
+				}
+
+				&__textarea {
+					width: 100%;
+					resize: none;
+					padding: 20px;
+					height: 200px;
+					margin-bottom: 30px;
+					border: 1px solid #b7b7b7;
+				}
+
+				&__btn {
+					width: 227px;
+					height: 51px;
+					border: none;
+					color: #fff;
+					display: block;
+					margin: 0 auto;
+					font-size: 16px;
+					font-weight: 700;
+					line-height: 20px;
+					font-style: italic;
+					letter-spacing: 0.47px;
+					font-family: Eurostile;
+					text-transform: uppercase;
+					background-color: #f22100;
+				}
+			}
+		}
+
+		&__sidebar {
+			&__box {
+				margin-bottom: 70px;
+
+				&__tlt {
+					color: #000;
+					font-size: 14px;
+					font-weight: 700;
+					font-style: italic;
+					margin-bottom: 22px;
+					letter-spacing: 0.7px;
+					font-family: Eurostile;
+					text-transform: uppercase;
+				}
+
+				&__space-between {
+					color: #000;
+					display: block;
+					margin-bottom: 30px;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

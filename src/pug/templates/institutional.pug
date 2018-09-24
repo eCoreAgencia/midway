@@ -1,0 +1,34 @@
+extends ../layouts/default.pug
+
+block vars
+	- var pageTitle = 'Categoria'
+	- var bodyClass = 'ajuda'
+
+block content
+	.container
+		section.ajuda__content
+			h2.ajuda__content__title Dúvidas Frequentes
+				+vtex-controller('<vtex:contentPlaceHolder id="Titulo Ajuda" />')
+			article.ajuda__content__text
+				+vtex-controller('<vtex:contentPlaceHolder id="Conteúdo Ajuda" />')
+				h3 Produtos
+				ul
+					li <h4>Todos os produtos disponíveis na loja virtual, também são encontrados nas lojas físicas?</h4>Alguns produtos e marcas vendidas na loja virtual são exclusivos. Elas são identificadas pelo selo “Exclusivo Loja Virtual”, na foto principal do produto, e não são encontradas em nossas lojas físicas.
+					li <h4>Onde encontro as especificações do produto?</h4>Ao acessar a página de um produto, logo abaixo de sua foto é apresentada as especificações do produto. Caso a informação que você procura não esteja nas especificações, entre em contato conosco CLICANDO AQUI.
+					li <h4>O preço na Loja Virtual é o mesmo preço das lojas físicas?</h4>Lojas físicas são franquias da marca Imaginarium e podem apresentar pequenas variações no preço dos produtos, conforme a região, não ultrapassando 10% do valor.
+				h3 Como Comprar
+				ul
+					li <h4>Como faço para comprar os produtos da loja virtual?</h4>Para fazer sua compra é preciso que tenha um cadastro em nosso site, caso ainda não tenha: CLIQUE AQUI. Nosso site lhe proporciona um ambiente virtual seguro e protegido. Feito o cadastro, agora é só você navegar pela loja virtual, selecionar os produtos do seu desejo e finalizar a compra. Você pode consultar nosso passo-a-passo CLICANDO AQUI.
+					li <h4>Esqueci minha senha. O que devo fazer?</h4>Não se preocupe! Nós podemos gerar uma nova senha de acesso. CLIQUE AQUI e informe o e-mail cadastrado em nossa loja virtual. Após a solicitação, em instantes você receberá em seu e-mail uma nova senha de acesso.
+					li <h4>Desejo mudar meu endereço de entrega. Onde faço essa alteração?</h4>Para alterar seus dados, efetue seu login no site CLICANDO AQUI. Para alterar o endereço de entrega de um pedido já finalizado é necessário verificar com a equipe de atendimento a possibilidade de alteração.Entrar em contato
+					li <h4>Posso comprar na loja virtual e retirar em uma loja física?</h4>Não, os pedidos da loja virtual possuem um estoque próprio e são despachados direto para o cliente. Se você preferir ir até uma de nossas lojas, CLIQUE AQUI para consultar o endereço e telefone da loja mais próxima.
+				h3 Pagamento
+				ul
+					li <h4>Quais as formas de pagamento da loja virtual?</h4>Você pode pagar seu pedido através de Boleto Bancário, ou através dos cartões de crédito Visa, Master e Diners, em até 6x sem juros*.</h4>(*Parcelas mínimas de R$25,00)
+					li <h4>Recebi um boleto com vencimento para 5 dias. Devo esperar o vencimento para pagar?</h4>Você pode pagar o boleto de seu pedido, assim que você finaliza a sua compra. O quanto antes você pagar, mais rápido será a liberação para o envio do mesmo.
+					li <h4>Efetuei o pagamento do meu pedido via boleto. Como faço para enviar o comprovante?</h4>Se você realizou o pagamento através do boleto, não é necessário enviar comprovante. A instituição bancária fará a liberação automática em até 2 dias úteis, após o pagamento.
+				h3 Pedidos
+				ul
+					li <h4>Como faço para acompanhar o status de entrega do meu pedido?</h4>Para acompanhar a entrega de seu pedido, CLIQUE AQUI para acessar os seus pedidos.<br />Em casos excepcionais o código da rastreio poderá demorar até 5 dias para estar disponivel
+					li <h4>Recebi meu pedido, mas não gostei do produto que escolhi. O que devo fazer para devolver ou trocar?</h4>Para solicitar uma devolução ou troca, você deve entrar em contato com o nosso SAC, informar o motivo da devolução, número do pedido e descrição do item que deseja devolver. Em seguida, basta aguardar o nosso retorno para proceder à devolução.
+					li <h4>Como faço um pedido para presente?</h4>Para fazer um pedido para enviar como presente é simples! Basta selecionar os produtos que deseja enviar como presente e selecionar a opção “Adicionar Embalagem para Presente” na página de seu Carrinho. É importante ter todos os dados de quem irá receber o presente, como nome completo, nome da rua, CEP, número da casa ou apartamento, para que seu pedido seja entregue corretamente. Lembrando que a embalagem para presente é enviada junto de seus produtos, eles não vão embalados.
