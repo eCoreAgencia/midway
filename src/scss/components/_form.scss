@@ -1,0 +1,24 @@
+.default__form {
+
+    &__input {
+        height: 43px;
+        border: none;
+        padding: 10px;
+        vertical-align: top;
+        display: inline-block;
+    }
+
+    .btn {
+        width: 195px;
+        height: 43px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: bold;
+        font-style: italic;
+        font-family: Eurostile;
+        background-color: #222;
+        text-transform: uppercase;
+    }
+}

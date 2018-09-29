@@ -246,3 +246,127 @@ body.fale-conosco {
 		}
 	}
 }
+
+body.persona {
+
+	.ajuda__content__title {
+		padding: 60px 0 70px;
+	}
+
+	.persona__top {
+		margin-bottom: 0;
+		max-height: 603px;
+
+		&__fig {
+			text-align: center;
+			background: url(/arquivos/bg-team-persona.png) no-repeat scroll center bottom transparent;
+		}
+
+		&__info {
+			padding: 60px 30px 30px;
+
+			&__content {
+				margin-bottom: 40px;
+			}
+
+			&__link {
+				width: 134px;
+				color: #fff;
+				padding: 10px;
+				display: block;
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: bold;
+				text-align: center;
+				font-style: italic;
+				margin-bottom: 40px;
+				font-family: Eurostile;
+				letter-spacing: 0.25px;
+				background-color: #000;
+				text-transform: uppercase;
+			}
+
+			&__name {
+				color: #222;
+				font-size: 65px;
+				font-weight: 700;
+				line-height: 60px;
+				margin-bottom: 5px;
+				padding-bottom: 5px;
+				display: inline-flex;
+				font-family: Eurostile;
+				letter-spacing: 0.82px;
+				text-transform: uppercase;
+				border-bottom: 3px solid #f22100;
+
+				b {
+					clear: both;
+					display: block;
+					color: #f22100;
+					font-style: italic;
+				}
+			}
+
+			&__speccialist {
+				color: #000;
+				display: block;
+				font-weight: bold;
+				margin-bottom: 40px;
+			}
+		}
+
+		&__persona-info {
+			background: url(/arquivos/bg-middle.png) repeat-x scroll center 0 #f22100;
+
+			&__list {
+				text-align: center;
+
+				&__item {
+					padding: 10px 40px;
+					display: inline-block;
+					vertical-align: middle;
+					border-right: 1px solid #fff;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					&__type {
+						color: #fff;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 23.96px;
+						letter-spacing: 0.17px;
+						font-family: "Open Sans";
+					}
+
+					&__value {
+						color: #fff;
+						display: block;
+						font-size: 18px;
+						font-weight: 700;
+						font-weight: bold;
+						font-style: italic;
+						font-family: Eurostile;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+		
+		.footer__main__menu__list--social__list__item__link span {
+			color: #000;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 18px;
+			letter-spacing: 0.3px;
+			font-family: "Open Sans";
+		}
+
+		.footer__main__menu__list--social__list__item__ico {
+			margin-right: 5px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}

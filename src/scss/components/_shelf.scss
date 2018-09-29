@@ -1,235 +1,155 @@
 .shelf {
-  padding: 0 10px;
-  ul {
-
-    display: grid;
-    grid-template-columns: repeat(4, 276px);
-    grid-column-gap: 65px;
-    grid-row-gap: 30px;
-    &.slick-slider {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    
-		width: 100%;
-    
-  }
-
-  li {
-    padding: 10px;
-    &.slick-slide {
-      max-width: 276px;
-      width: 100%;
-      margin-left: 28px;
-      margin-right: 28px;
-
-      &:first-child{
-        margin-left: 0;
-      }
-
-      &:last-child{
-        margin-right: 0;
-      }
-    }
-  }
-
-  &__carousel--category {
-    max-width: calc(100% - 324px);
-    overflow: hidden;
-    width: 100%;
-
-  }
-
-	.prateleira {
-		& > h2 {
-			display: none;
-		}
+	margin: 40px 0;
+	position: relative;
+	
+	.slick-slider {
+		padding: 0 53px;
 	}
 
-  &__button {
-    border: none;
-    background-color: transparent;
-    .shelf__carousel--full & {
-      height: 60px;
-      top: 50%;
-      margin-top: -30px;
-      position: absolute;
-      z-index: 10;
-      outline: none;
-      svg {
-        width: 30px;
-      }
+	li {
+		width: 262px;
+		position: relative;
+		margin-right: 32px;
+		margin-bottom: 30px;
+		display: inline-block;
+		background-color: #fff;
+		-webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+		box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
 
-      &.slick-prev {
-        left: -30px;
-      }
+		.flag {
+			top: 0;
+			left: 0;
+			padding: 7px;
+			color: #fff;
+			font-size: 11px;
+			font-weight: bold;
+			position: absolute;
+			font-style: italic;
+			font-family: Eurostile;
+			letter-spacing: 0.17px;
+			text-transform: uppercase;
+			background-color: #ff3717;
+		}
 
-      &.slick-next {
-        right: -30px;
-      }
+		.all-shelf {
+			&__header {
+				text-align: center;
+			}
 
-    }
+			&__product {
+				&__name {
+					padding: 0 10px;
+				}
 
-    .shelf__brand & {
-      height: 60px;
-      top: 50%;
-      margin-top: -30px;
-      position: absolute;
-      z-index: 10;
-      outline: none;
-      svg {
-        width: 30px;
-      }
+				&__link {
+					color: #222;
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 24px;
+					font-style: italic;
+					font-family: Eurostile;
+					letter-spacing: 0.24px;
+					text-transform: uppercase;
+				}
 
-      &.slick-prev {
-        left: -30px;
-      }
+				&__pic {
+					margin: 0 auto 20px;
+				}
 
-      &.slick-next {
-        right: -30px;
-      }
-    }
-  }
+				&__price {
+					padding: 0 10px;
 
-  &__brand {
-    .box-banner {
-      text-align: center;
-      max-width: 175px;
-      margin: 0 20px;
-    }
+					&__oldprice {
+						display: block;
+						font-size: 14px;
+						font-weight: 400;
+						color: #808080;
+						font-style: italic;
+						letter-spacing: 0.17px;
+						font-family: "Open Sans";
+						text-transform: uppercase;
+					}
 
-    a {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
+					&__newprice {
+						color: #222;
+						display: block;
+						font-size: 30px;
+						font-weight: 700;
+						font-style: italic;
+						letter-spacing: 0.36px;
+						font-family: Eurostile;
+						text-transform: uppercase;
+					}
 
-    img {
-      margin: 0 auto;
-    }
-  }
+					&__installment {
+						display: block;
+						font-size: 14px;
+						color: #808080;
+						font-weight: 400;
+						font-style: italic;
+						font-family: "Open Sans";
+					}
+				}
 
-  &--flip {
-    ul {
-      grid-template-columns: repeat(3, 350px);
-      grid-column-gap: 55px;
-      grid-row-gap: 55px;
-    }
-    li {
-     padding: 0;
-    }
-  }
+				&__info__actions {
+					margin-top: 20px;
 
+					&__btn {
+						height: 58px;
+						color: #fff;
+						display: block;
+						font-size: 14px;
+						font-weight: bold;
+						line-height: 64px;
+						text-align: center;
+						font-style: italic;
+						font-family: Eurostile;
+						letter-spacing: 0.35px;
+						text-transform: uppercase;
+						background-color: #f22100;
+					}
+				}
+			}
+		}
+	}
+	
+	.slick-prev,
+	.slick-next {
+		top: 40%;
+		z-index: 1;
+		border: none;
+		position: absolute;
+	}
 
-}
+	.slick-prev {
+		left: 0;
+	}
 
-.buy-by-category {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
+	.slick-next {
+		right: 0;
+	}
 
-  & + .buy-by-category {
-    margin-top: 20px;
-  }
+	.slick-dots {
+		margin: 0 auto;
+		text-align: center;
 
-  .slick-arrow {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: $c-white;
-    border: none;
-    box-shadow: 0px 1px 10px 1px #cccccc;
-    padding: 8px 5px;
-  }
+		li {
+			padding: 0;
+			width: 24px;
+			height: 2px;
+			cursor: pointer;
+			margin-bottom: 0;
+			margin-right: 10px;
+			background-color: #b7b7b7;
+			
+			&:hover,
+			&.slick-active {
+				background-color: #f22100;
+			}
 
-  .category__card {
-
-    max-width: 275px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    overflow: hidden;
-    background-color: #eeeeee;
-    &-header {
-      position: relative;
-      height: 275px;
-    }
-
-    &-info {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 10px;
-      font-family: $f-secondary;
-    }
-
-    &-media {
-      width: 275px;
-      height: 275px;
-      background-repeat: no-repeat;
-      img {
-        display: none;
-      }
-    }
-  }
-  .category__menu {
-    background-color: #eeeeee;
-    padding: 10px;
-    text-align: center;
-
-    li {
-      margin: 10px 0;
-    }
-
-    a {
-      border: 1px solid $c-primary;
-      color: $c-primary;
-      background-color: $c-white;
-      border-radius: 10px;
-      &:hover {
-        background-color: $c-primary;
-        text-decoration: none;
-        color: $c-white;
-      }
-    }
-  }  .category__name {
-    display: block;
-    color: $c-white;
-    font-weight: 700;
-    font-size: 18px;
-  }
-
-  .category__link {
-    color: #bebebe;
-  }
-
-  .slick-arrow svg {
-    width: 8px;
-  }
-
-  .shelf .slick-slider {
-    display: block;
-  }
-
-  .shelf .slick-arrow {
-    position: absolute;
-    z-index: 20;
-    top: 50%;
-    margin-top: -15px;
-  }
-
-  .shelf .slick-next {
-    right: 0;
-  }
-
-  .menu-list .slick-prev {
-    transform: rotate(90deg);
-  }
-
-  .menu-list .slick-next {
-    transform: rotate(90deg);
-  }
-
-
+			button {
+				display: none;
+			}
+		}
+	}
 }

@@ -1,42 +1,104 @@
 .home {
-	.section__title {
-		&__ico {
-			margin-right: 10px;
-			display: inline-block;
-			vertical-align: middle;
-		}
+	.section {
+		&__page {
+			overflow: hidden;
 
-		&__txt {
-			color: #000;
-			font-weight: 800;
-			font-size: 2.3rem;
-			display: inline-block;
-			text-transform: uppercase;
-			font-family: "United Sans Reg - Heavy";
-		}
-	}
-
-	.slick-prev {
-		transform: rotate(180deg);
-	}
-
-	.comprecategoria {
-		&__box {
-			padding: 15px 0;
-			background: url(/arquivos/textura-areas.png) repeat scroll 0 0 transparent;
-
-			&__list {
+			&__title {
+				width: 100%;
+				height: 34px;
+				color: #000;
+				font-size: 33px;
+				font-weight: 700;
+				font-style: italic;
 				text-align: center;
+				padding: 40px 0 70px;
+				font-family: Eurostile;
+				letter-spacing: 0.82px;
+				text-transform: uppercase;
 
-				&__item {
-					margin-right: 15px;
+				&:after,
+				&:before {
+					content: '';
+					width: 40px;
+					height: 2px;
+					margin: 0 35px;
 					display: inline-block;
 					vertical-align: middle;
-
-					&:last-child {
-						margin-right: 0;
-					}
+					background-color: #ff0000;
 				}
+			}
+		}
+
+		&__newsletter {
+			padding: 20px 0;
+			overflow: hidden;
+			background: #ffffff;
+			background: -webkit-linear-gradient(-45deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+			background: -webkit-linear-gradient(315deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+			background: -o-linear-gradient(315deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+			background: linear-gradient(110deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f11e08',GradientType=1 );
+			-webkit-box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.75);
+			box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.75);
+
+			&__tlt {
+				color: #222;
+				font-size: 47px;
+				font-weight: 700;
+				font-style: italic;
+				font-family: Eurostile;
+				letter-spacing: 0.36px;
+				text-transform: uppercase;
+			}
+
+			&__smallph {
+				font-size: 15px;
+				font-weight: 400;
+				font-style: italic;
+				font-family: "Open Sans";
+				text-transform: uppercase;
+
+				&:before {
+					content: '';
+					display: inline-block;
+					background: -webkit-linear-gradient(-45deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+					background: -webkit-linear-gradient(315deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+					background: -o-linear-gradient(315deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+					background: linear-gradient(135deg, #ffffff 0%, #f2f2f2 50%, #ffffff 28%, #f11e08 28%, #6ba8e5 28%, #90bff0 28%, #90bff0 28%, #90bae4 28%, #f11e08 28%, #ffffff 28%, #90bff0 28%, #6ba8e5 28%, #90bae4 28%, #f11e08 28%, #f11e08 28%, #f11e08 28%, #f11e08 83%, #f11e08 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f11e08',GradientType=1 );
+					-webkit-box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.75);
+					box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.75);
+				}
+			}
+
+			.default__form {
+				margin: 35px auto;
+			}
+		}
+
+		&__why {
+			.box-banner {
+				display: inline-block;
+			}
+		}
+
+		&__more-banners {
+			.box-banner {
+				float: left;
+
+				a {
+					display: flex;
+				}
+			}
+		}
+	}
+
+	.banner--top {
+		.box-banner {
+			float: left;
+
+			a {
+				display: flex;
 			}
 		}
 	}

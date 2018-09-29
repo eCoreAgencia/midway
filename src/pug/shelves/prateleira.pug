@@ -14,36 +14,34 @@ if (global.process.env.NODE_ENV === 'production')
 
 else
   - var title = 'Nome do produto'
-  - var href = '/produto.html'
+  - var href = '/product.html'
   - var dataProductId = Math.floor(Math.random() * 9999999)
   - var listPrice = 'R$ 299,99'
   - var bestPrice = 'R$ 199,99'
-  - var flags = '<p class="flag destaque">novo</p>'
-  - var getImageTag = '<img src="http://via.placeholder.com/279x365" width="279" height="365" />'
-  - var getImageTag2 = '<img src="http://via.placeholder.com/279x365" width="279" height="365" />'
+  - var flags = '<p class="flag destaque">Lançamento</p>'
+  - var getImageTag = '<img class="all-shelf__product__pic"" src="http://via.placeholder.com/146x203" width="146" height="203" />'
+  - var getImageTag2 = '<img class="all-shelf__product__pic" src="http://via.placeholder.com/146x203" width="146" height="203" />'
   - var categoryName = '+ Iluminação'
   - var categoryHref = '/category.html'
 
-.product.product--shelf
+.product.all-shelf
   span.product__id(data-product-id= dataProductId)
-  .product__header
-    .product__media
-      a.product__link(href= href)
+  .all-shelf__header
+    .all-shelf__header__media
+      a.all-shelf__header__product(href= href)
         != getImageTag
-    .product__actions
-      a.button.product__link(title= title, href= href) Compre Agora
-  .product__reviews
-  .product__info
-    h3.product__name
-      a.product__link(title= title, href= href)= title
-    .product__price
+  .all-shelf__product
+    h3.all-shelf__product__name
+      a.all-shelf__product__link(title= title, href= href)= title
+    .all-shelf__product__price
       if ( global.process.env.NODE_ENV === 'production' )
         != '\n#if ($product.IsInStock)'
-        != '\n  <div class="price">'
-        != '\n    <span class="price__list">' + listPrice + '</span>'
+        != '\n  <div class="all-shelf__product__price">'
+        != '\n    <span class="all-shelf__product__price__oldprice">' + listPrice + '</span>'
+        != '\n    <span class="all-shelf__product__price__newprice">' + bestPrice + '</span>'
         != '\n    #if ($product.NumbersOfInstallment > 1)'
-        != '\n      <span class="price__instament">ou até'
-        != '\n        ${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
+        != '\n      <span class="all-shelf__product__price__installment">ou até'
+        != '\n        ${product.NumbersOfInstallment}<b>X<b/> de <b>${product.InstallmentValue}</b> sem juros'
         != '\n      </span>'
         != '\n    #end'
         != '\n  </div>'
@@ -52,5 +50,9 @@ else
         != '\n#end\n'
       else
         .price
-          span.price__list R$ 432,75
-          span.price__instament ou até 10x de R$ 43,28
+          span.all-shelf__product__price__oldprice R$ 432,75
+          span.all-shelf__product__price__newprice R$ 199,99
+          span.all-shelf__product__price__installment ou até <b>10x</b> de <b>R$ 19,99</b> sem juros
+    .flag.destaque Lançamento
+    .all-shelf__product__info__actions
+      a.all-shelf__product__info__actions__btn(title= title, href= href) Compre Agora

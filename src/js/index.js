@@ -8,6 +8,7 @@ import './components/menu';
 import './components/makeMenu';
 import './components/searchForm';
 import './components/shelf';
+import './components/modal';
 import './components/filter';
 //import './components/buyBuyCategory';
 import './components/product';
@@ -18,6 +19,7 @@ import './components/buy-by-category/main'
 
 import './pages/global';
 import './pages/home';
+import './pages/persona';
 import './pages/empty-search';
 
 
