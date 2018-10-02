@@ -37,6 +37,13 @@
       padding: 20px 0;
       overflow: hidden;
       position: relative;
+      text-align: center;
+      @include atMedium {
+          text-align: left;
+      }
+      .is-flex {
+          justify-content: center;
+      }
 
       &__tlt {
         color: #222;

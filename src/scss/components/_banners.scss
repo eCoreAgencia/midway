@@ -107,9 +107,12 @@
   &--middle {
     .banner__inner {
       display: grid;
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "img1 img2" "img3 img4";
+      grid-template-columns: 1fr;
+      @include atMedium{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "img1 img2" "img3 img4";
+      }
     }
     .box-banner{
         img {
