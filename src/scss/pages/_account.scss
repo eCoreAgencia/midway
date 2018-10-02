@@ -1,4 +1,72 @@
+body.account {
+  .main-account{
+    width: 100%;
+  }
 
+  .bread-crumb {
+    ul {
+      margin-left: 0;
+
+      li {
+        list-style-type: none;
+  
+        a {
+          color: #222;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 24px;
+          font-style: italic;
+          font-family: Eurostile;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .content {
+    padding-top: 0;
+  }
+
+  .section {
+    &__breadcrumb {
+      margin-top: 0;
+    }
+  }
+
+  .sidebar {
+    padding: 0;
+    margin-top: 30px;
+
+    svg {
+      margin-right: 10px;
+    }
+
+    &__list {
+      &__item {
+        border-bottom: 2px solid #fff;
+
+        &:last-child {
+          border: none;
+          margin-bottom: 0;
+        }
+
+        &__link {
+          color: #000;
+          display: block;
+          padding: 10px 15px;
+          text-transform: uppercase;
+          background-color: #f1f1f1;
+
+          &:hover {
+            color: #fff;
+            text-decoration: none;
+            background-color: #000;
+          }
+        }
+      }
+    }
+  }
+}
     .section__account {
       &__tlt {
         font-size: 50px;
@@ -249,11 +317,10 @@
      }
 
      &__box {
-      width: 358px;
-      height: 400px;
+      width: 100%;
       margin: 10px;
       padding: 40px;
-      background-color: #fbf7f1;
+      border: 1px solid#cbc9ca;
      }
 
      h4 {
@@ -267,14 +334,20 @@
      .address-update,
      #edit-data-link,
      .account__box__orders__link {
-      display: block;
-      margin: 10px 0;
-      color: #372527;
-      font-size: 14px;
-      font-weight: 700;
-      font-family: Roboto;
-      text-decoration: underline;
-      background-color: #fbf7f1;
+        width: 187px;
+        height: 28px;
+        color: #fff;
+        margin: 10px 0;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 28px;
+        text-align: center;
+        font-style: italic;
+        text-decoration: none;
+        font-family: Eurostile;
+        text-transform: uppercase;
+        background-color: #f22100;
      }
 
      .modal {

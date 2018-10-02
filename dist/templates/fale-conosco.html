@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!--+vtex-controller('<vtex:template id="eCore-Favicons" />')//include ../subtemplates/Favicons
+    --><vtex:metaTags /><vtex:template id="eCore-head" />
+  </head>
+  <body class="ajuda fale-conosco"><vtex:template id="eCore-header" />
+    <main>
+      <div class="container">
+        <section class="ajuda__content">
+          <h2 class="ajuda__content__title">Fale Conosco<vtex:contentPlaceHolder id="Titulo Ajuda" />
+          </h2>
+          <section class="faleconosco__content columns"><form action="javascript:formContato()" method="POST" class="faleconosco__content__form column is-9" data-module="contato">
+<fieldset class="faleconosco__content__form__field name">
+<label class="faleconosco__content__form__field__title">Nome</label>
+<input type="text" name="contatoClientName" id="co_firstName" class="name faleconosco__content__form__field__input" placeholder="Nome" data-validation="required" data-msg-required="seu nome" />
+</fieldset>
+<fieldset class="faleconosco__content__form__field email">
+<label class="faleconosco__content__form__field__title">E-mail</label>
+<input type="text" name="contatoClientEmail" id="co_email" class="email faleconosco__content__form__field__input" placeholder="E-mail" data-validation="required email" data-msg-required="seu e-mail" data-msg-email="O e-mail que você inseriu está incorreto" />
+</fieldset>
+<fieldset class="faleconosco__content__form__field telefone">
+<label class="faleconosco__content__form__field__title">Telefone</label>
+<input type="text" name="contatoClientTelefone" id="co_telefone" class="telefone faleconosco__content__form__field__input" placeholder="Telefone" data-validation="required telefone" data-msg-required="seu telefone" data-msg-email="Insira seu número de telefone" />
+</fieldset>
+<fieldset class="faleconosco__content__form__field cidade">
+<label class="faleconosco__content__form__field__title">Cidade</label>
+<input type="text" name="contatoClientCidade" id="co_cidade" class="cidade faleconosco__content__form__field__input" placeholder="Cidade" data-validation="required cidade" data-msg-required="sua cidade" data-msg-email="Insira sua cidade" />
+</fieldset>
+<fieldset class="faleconosco__content__form__field assunto">
+<label class="faleconosco__content__form__field__title">Assunto</label>
+<input type="text" name="contatoClientAssunto" id="co_assunto" class="cidade faleconosco__content__form__field__input" placeholder="Assunto" data-validation="required assunto" data-msg-required="seu assunto" data-msg-email="Insira seu assunto" />
+</fieldset>
+<fieldset class="faleconosco__content__form__field departamento">
+<label class="faleconosco__content__form__field__title">Departamento</label>
+<input type="text" name="contatoClientDepartamento" id="co_departamento" class="cidade faleconosco__content__form__field__input" placeholder="Departamento" data-validation="required departamento" data-msg-required="seu departamento" data-msg-email="Insira seu departamento" />
+</fieldset>
+<fieldset class="faleconosco__content__form__field mensagem">
+<textarea name="contatoClientMensagem" id="co_mensagem" class="mensagem faleconosco__content__form__field__textarea" placeholder="Mensagem" data-validation="required mensagem" data-msg-required="seumensagem" data-msg-email="Insira a sua mensagem"></textarea>
+</fieldset>
+<button type="submit" class="faleconosco__content__form__field__btn submit">Enviar</button>    
+</form>
+            <section class="faleconosco__content__sidebar column is-3">
+              <div class="faleconosco__content__sidebar__box">
+                <h3 class="faleconosco__content__sidebar__box__tlt">Atendimento</h3><a class="faleconosco__content__sidebar__box__space-between" href="callto:(62)3099-0600" target="_blank">(62)3099-0600</a><a class="faleconosco__content__sidebar__box__space-between" href="mailto:sac@midwaylabs.com.br" target="_blank">sac@midwaylabs.com.br</a>
+                <p class="faleconosco__content__sidebar__box__space-between"><strong>Segunda á sabado</strong> das 07h ás 23h</p>
+              </div>
+              <div class="faleconosco__content__sidebar__box footer">
+                <h3 class="faleconosco__content__sidebar__box__tlt">Redes Sociais</h3>
+                <ul class="footer__main__menu__list--social__list"></ul>
+                <li class="footer__main__menu__list--social__list__item"><a class="footer__main__menu__list--social__list__item__link"><svg class="footer__main__menu__list--social__list__item__ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="22" viewBox="0 0 14 22"><g><g transform="translate(-1405 -5140)"><image width="14" height="22" transform="translate(1405 5140)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAWCAYAAADwza0nAAABoElEQVQ4T6WUTShEURTHZ2JhNhQpJDZ2NhZKWUhKYjMLIYQoYsiKWfjasCGifEVC+QwrG5KyUsqCla0kokRSysfC79S5r+d6M5SpX+e+c87/njP33Pf8vsi/TEKdUAMprrRH1iF/BJ0kr7lil6w/IQkSYdlLmEvgVEVN2FX40Oc87AmMewmvCGRACRxYHYlv30uYg/MMDqFYRSPYBm0zRn1LdsU2AjNQDytQCEea/Ip9h3sI28JGnItQCdvQDPPQrhs6ndtCk1hHhhxKrVpPYRHBaUiFBN3SJLbyPKs+afNZGZCKk9ChwSfsHcgczyEbNiAdAhCneRMiHIJebWvd+RPeiy3cFZAvwkHogyDs/iJ80coBEU6B/Cdx3sIDtMAFZMECyF2NBzkH2TwowlINprmqhVjLocgGcy6/zLAcjs04YrUFuSFyWOYCmHH0aGdvWDldnz1Hk2jmaN4S04FT3Baa1mxhF4oxV8s/Kv5bKC3K4KtgE/5csYzkPTDvXzfr0WithgkOww1cg1w1QW5XfzRhAcEdSHYlycepGr59Db4A1WpfOxCZcnEAAAAASUVORK5CYII="/></g></g></svg></a></li>
+                <li class="footer__main__menu__list--social__list__item"><a class="footer__main__menu__list--social__list__item__link"><svg class="footer__main__menu__list--social__list__item__ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22"><g><g transform="translate(-1432 -5140)"><image width="22" height="22" transform="translate(1432 5140)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAACAElEQVRIS7WVTUhWURCGVUjUNNFAyggxFTK1VSjZKihyZeKmECx0Ua7En6iV1D5CwkUFGRhBttFFgSJFC3XRwoXkD2KKKBqCiqBCqKjPK3Pg8/L9dBAvPMyZc2bee+/cM+fGxx29HuI+huuB+VjuCAHv4a0LjLfBGewAlJm/jN0Atx5JeJ+F03DeAsawFbDoEkdxrkIPPIWZWI8YWL+I/wLqYQFyJHwPuuErVHoKBsO7mHgAzRLW4xdBGmx6CqcTXw2D8Mdy97ArEladVNNznqIKVz374BU8sfzf2GInPIVzOYKwPmiTlekU9ge8hn5IgrvwC+Ysfwh7wwnrY+WHEW5g7o3Na5dsw1nzQ58yNFU3KY0mrBtNW4bq2GtjvcF3SIU7oG3qJfyR6Fq4D18CyVfwx41iX+E1EjIgUpNMsFYIyfAvRDxmKU5MOFop9PraVpOgsnjV+BLRrrVrGH+27JvYb5ACt0Ef0ktYwY/gnWWpK7XdMs1vx7YEROUeqXG0BrlGsBqkClyDdDBWx4W7hpksd/v4L052hEDf6cOTUsI6PPIgEXZ8VcLE7zK3KeE6+ACfQA1xnEtnSCO0uc0/i5MLnfAMVj3VdeQ+h1ZYhywnfAHnJxSYoNp16z/EdeRq25VY7BL2FkyGtmsCE9o++pmGO+mi3WeeRf1MX8Jhex8AYnt51xDc76wAAAAASUVORK5CYII="/></g></g></svg></a></li>
+                <li class="footer__main__menu__list--social__list__item"><a class="footer__main__menu__list--social__list__item__link"><svg class="footer__main__menu__list--social__list__item__ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="18" viewBox="0 0 22 18"><g><g transform="translate(-1464 -5142)"><image width="22" height="18" transform="translate(1464 5142)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAYAAABfJS4tAAACGElEQVQ4T52UXWjPURjHzcvF0G6wWoibjUlZTM0FhRSzopBYkV1sV2tp48bceEnKhVDIhWVJmRKruUFMy0vNS63h3rZwo8TFUvP5/J2zTr/+/7/x1Of3nJfnfM/5PeelZNofewPD0BjqxVwNncegHkphAK7ATaiAG1BewqcOngelTvzpIqoN9PUm/T8ozwn1F/iVMNe6ws5+Kgk+nqnHrmUUPoTKPvwd+AVr4RqsSjTOKHwXdsJWuAiVcA+a4UsS7K/uh0PQlbTH4pGwoAn8fIVfhVktz4Ynoe6Ac2FlQ/j3sBimg4Ozdp6GNjgA3YoNwmoog+8h+jD+BOTylTHH5LMuGg/CcvhoUB9sg0UwkoxwZf76LqiFGfAM9hYQvk37HlgDrxU+CZ6GLfCwwCCbjc2XgjjEVLnacvhqsGkwHa58exHhYl2z6BwHU2lKc6vQPsFC8PC/+w/xTYx5BLfA9E0Kb6D81F+AKvj2j+KPid8IufymwpY9Wu0wBl7Xt1MU94J4ZM3xijgme3SiuP1n4QKM/mUCL9EC8Gl4WUjY9s3wANwQrRriVc7O0U/DergErWmnK54HS4N38/wdD7rm7zmR6UnNY9UDPjr3YUd2RoV/gs9fau6uV9TcpeZD1ALeTO06NGVFrSvcAUfBPEXrpmC+PJO2+0a4SUtCwGe8j45xeS1u3sww8278Osj3RijgGb8MVwsJxvbfgEZedSw5IAgAAAAASUVORK5CYII="/></g></g></svg></a></li>
+                <li class="footer__main__menu__list--social__list__item"><a class="footer__main__menu__list--social__list__item__link"><svg class="footer__main__menu__list--social__list__item__ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="19" viewBox="0 0 25 19"><g><g transform="translate(-1494 -5141)"><image width="25" height="19" transform="translate(1494 5141)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAATCAYAAABlcqYFAAABtElEQVRIS62VSyhFURSG3aJMUGbKHYjkkWsgpYwkEkoMKBNFXhkoyUBJSRkoGZIyZqaYkBgaMPAuE3mTIYZe33/bO8eJc/eRXV/77LP+tf5z992PSNJXy+SxBfIgBd49MdfHCMI3uIQVuFOiXqqp+JIp7lrQRdeDaEEmZbBnMiboj+HDV8GO7UclMtBsTBlRvZJ2oALqYD1Rdoh4DO2Bpk4m+soXSAso0EGsFkbgNoTRFdqoNVFidkDyJrFqE++iX3Q02kdXak0eGGQFJGpRtHniMu2GiwRmJ8SLXE1WETdCJQxDsyneRz8fYPQnE+2fV+iHGUiFbTM++8HsTyZaMUemWC69lruMTqH4v0zSKfRspmuaXkYy7QVtBX8L9UvWyG6AAhg006OC46AN/FsLZbJMlVZPJU1TJ+wGGCj0zeSGF9GAhA1iNSY+Sm+PjAQe8R0fs0v4iUFGQIamqAmGQBvMtZ0jzJHJIZRAOdiD0rVIkE4nyDU8yqQKtox6wHyp/y7RWCQ7uheimwWtxnZ7dGsJzjkWCCMbQzzpvR/yeaHLSz9TX+y/U1yK25vxHrGWffz/+wSy7WR0P7we5wAAAABJRU5ErkJggg=="/></g></g></svg></a></li>
+              </div>
+            </section>
+          </section>
+        </section>
+      </div>
+    </main><vtex:template id="eCore-footer" /><vtex:template id="eCore-bottom" />
+  </body>
+</html>

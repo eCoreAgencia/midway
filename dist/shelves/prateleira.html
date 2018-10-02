@@ -1,26 +1,27 @@
 
-<div class="product product--shelf"><span class="product__id" data-product-id="$product.Id"></span>
-  <div class="product__header">
-    <div class="product__media"><a class="product__link" href="$product.Uri">$product.GetImageTag(2)</a></div>
-    <div class="product__actions"><a class="button product__link" title="$product.HtmlEscapedName" href="$product.Uri">Compre Agora</a></div>
+<div class="product all-shelf"><span class="product__id" data-product-id="$product.Id"></span>
+  <div class="all-shelf__header">
+    <div class="all-shelf__header__media"><a class="all-shelf__header__product" href="$product.Uri">$product.GetImageTag(2)</a></div>
   </div>
-  <div class="product__reviews"></div>
-  <div class="product__info">
-    <h3 class="product__name"><a class="product__link" title="$product.HtmlEscapedName" href="$product.Uri">$product.HtmlEscapedName</a></h3>
-    <div class="product__price">
+  <div class="all-shelf__product">
+    <h3 class="all-shelf__product__name"><a class="all-shelf__product__link" title="$product.HtmlEscapedName" href="$product.Uri">$product.HtmlEscapedName</a></h3>
+    <div class="all-shelf__product__price">
 #if ($product.IsInStock)
-  <div class="price">
-    <span class="price__list">$product.ListPrice</span>
+  <div class="all-shelf__product__price">
+    <span class="all-shelf__product__price__oldprice">$product.ListPrice</span>
+    <span class="all-shelf__product__price__newprice">$product.BestPrice</span>
     #if ($product.NumbersOfInstallment > 1)
-      <span class="price__instament">ou até
-        ${product.NumbersOfInstallment}X de ${product.InstallmentValue}
+      <span class="all-shelf__product__price__installment">ou até
+        ${product.NumbersOfInstallment}<b>X</b> de <b>${product.InstallmentValue}</b> sem juros
       </span>
     #end
   </div>
 #else
-  <span class="product__unavailable>Indisponível</span>"
+  <span class="product__unavailable">Indisponível</span>
 #end
 
     </div>
+    <div class="flag destaque">Lançamento</div>
+    <div class="all-shelf__product__info__actions"><a class="all-shelf__product__info__actions__btn" title="$product.HtmlEscapedName" href="$product.Uri">Compre Agora</a></div>
   </div>
 </div>

@@ -247,6 +247,95 @@ body.fale-conosco {
 	}
 }
 
+body.quem-somos {
+	.section__page {
+		overflow: hidden;
+
+		.about-midway {
+			text-align: center;
+	
+			&__list {
+				margin: 50px 0;
+				
+				&__item {
+					display: inline-block;
+					vertical-align: middle;
+					border-bottom: 3px solid #fff;
+	
+					&__link {
+						color: #222;
+						line-height: 0;
+						font-size: 14px;
+						font-weight: 700;
+						font-style: italic;
+						font-family: Eurostile;
+						letter-spacing: 0.35px;
+						text-transform: uppercase;
+						border-bottom: 3px solid #b7b7b7;
+	
+						&:hover {
+							text-decoration: none;
+							border-bottom: 3px solid #fff;
+						}
+					}
+	
+					&:hover,
+					&.active {
+						border-bottom: 3px solid #f22100;
+					}
+				}
+			}
+		}
+
+		&.since-box {
+			&__tlt {
+				float: left;
+				width: 100%;
+				color: #222;
+				max-width: 20%;
+				font-size: 49px;
+				font-weight: 700;
+				text-align: right;
+				font-style: italic;
+				font-family: Eurostile;
+				letter-spacing: 0.82px;
+				text-transform: uppercase;
+				border-bottom: 3px solid #f22100;
+			}
+
+			&__content-right {
+				width: 100%;
+				float: right;
+				max-width: 80%;
+				padding: 20px 15% 20px 20px;
+				background-color: #f2f2f2;
+
+				&__paragraph {
+					color: #222;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 30px;
+					font-family: "Open Sans";
+
+					&--white-txt {
+						color: #fff;
+						text-align: right;
+						padding: 100px 25%;
+					}
+				}
+			}
+
+
+			&__content--last {
+				float: left;
+				width: 100%;
+				height: 292px;
+				background: url(/arquivos/since-bg.png) no-repeat scroll left 0 transparent;
+			}
+		}
+	}
+}
+
 body.persona {
 
 	.ajuda__content__title {
@@ -369,4 +458,18 @@ body.persona {
 			vertical-align: middle;
 		}
 	}
+}
+
+body.login {
+    div#vtexIdUI-global-loader {
+        opacity: 1 !important;
+        background: none !important;
+        background-color: #000 !important;
+    }
+
+    .vtexIdUI .modal-body,
+    .vtexIdUI .modal-header,
+    .vtexIdUI.ng-scope.vtexIdUI-show-app {
+        background-color: #000 !important;
+    }
 }

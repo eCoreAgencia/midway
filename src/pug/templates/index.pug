@@ -54,12 +54,12 @@ block content
           .columns
             .column.is-5
               h3.section__newsletter__tlt Siga o Plano
-              span.section__newsletter__smallph GANHE <b>DESCONTOS EXCLUSIVOS</b> E SEJA O PRIMEIRO A RECEBER NOSSAS NOVIDADES!
+              <span class="section__newsletter__smallph"> GANHE <b>DESCONTOS EXCLUSIVOS</b> E SEJA O PRIMEIRO A RECEBER NOSSAS NOVIDADES!</span>
             .column.is-7
               form.default__form
-                input.default__form__input#newsName(type="text", name="name",placeholder="Digite seu nome")
-                input.default__form__input#newsEmail(type="text", name="email",placeholder="Digite seu email")
-                input.btn.submit(type="button", name="btn", value="Inscreva-se")
+                input.default__form__input#newsName(type="text", name="name",placeholder="Digite seu nome")/
+                input.default__form__input#newsEmail(type="text", name="email",placeholder="Digite seu email")/
+                input.btn.submit(type="button", name="btn", value="Inscreva-se")/
     .banner.banner--middle
       .banner__inner
         +vtex-controller('<vtex:contentPlaceHolder id="Banners Middle" />')
