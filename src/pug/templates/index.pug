@@ -20,22 +20,22 @@ block content
               img(src="/arquivos/banner-top-right-two.jpg")/
   section.section__page.section__why
     .container
-      h2.section__page__title Meus Objetivos
+      h2.section__page__title Meu Objetivo
       .banner.banner--after
         .banner__inner
           +vtex-controller('<vtex:contentPlaceHolder id="Banners After" />')
             .box-banner
               a(href="")
-                img(src="/arquivos/micro-banner-one.jpg")/
+                img(src="/arquivos/micro-banner-one.png")/
             .box-banner
               a(href="")
-                img(src="/arquivos/micro-banner-two.jpg")/
+                img(src="/arquivos/micro-banner-two.png")/
             .box-banner
               a(href="")
-                img(src="/arquivos/micro-banner-three.jpg")/
+                img(src="/arquivos/micro-banner-three.png")/
             .box-banner
               a(href="")
-                img(src="/arquivos/micro-banner-four.jpg")/
+                img(src="/arquivos/micro-banner-four.png")/
 
   section.section__page.section__shelf
     .container
@@ -50,16 +50,19 @@ block content
 
   section.section__page.section__more-banners
     section.section__newsletter
+        .section-newsletter--color-gray
         .container.is-flex
           .columns
             .column.is-5
               h3.section__newsletter__tlt Siga o Plano
-              <span class="section__newsletter__smallph"> GANHE <b>DESCONTOS EXCLUSIVOS</b> E SEJA O PRIMEIRO A RECEBER NOSSAS NOVIDADES!</span>
+              span.section__newsletter__smallph
+                p GANHE <b>DESCONTOS EXCLUSIVOS</b> E SEJA O PRIMEIRO A RECEBER NOSSAS NOVIDADES!
             .column.is-7
               form.default__form
                 input.default__form__input#newsName(type="text", name="name",placeholder="Digite seu nome")/
                 input.default__form__input#newsEmail(type="text", name="email",placeholder="Digite seu email")/
                 input.btn.submit(type="button", name="btn", value="Inscreva-se")/
+        .section-newsletter--color-red
     .banner.banner--middle
       .banner__inner
         +vtex-controller('<vtex:contentPlaceHolder id="Banners Middle" />')

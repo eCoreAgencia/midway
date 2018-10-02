@@ -1,16 +1,14 @@
 .shelf {
 	margin: 40px 0;
 	position: relative;
-	
+
 	.slick-slider {
 		padding: 0 53px;
 	}
 
 	li {
-		width: 262px;
 		position: relative;
-		margin-right: 32px;
-		margin-bottom: 30px;
+		margin: 1.2rem;
 		display: inline-block;
 		background-color: #fff;
 		-webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
@@ -112,7 +110,7 @@
 			}
 		}
 	}
-	
+
 	.slick-prev,
 	.slick-next {
 		top: 40%;
@@ -141,7 +139,7 @@
 			margin-bottom: 0;
 			margin-right: 10px;
 			background-color: #b7b7b7;
-			
+
 			&:hover,
 			&.slick-active {
 				background-color: #f22100;

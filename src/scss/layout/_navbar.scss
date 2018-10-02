@@ -1,54 +1,75 @@
 header {
-	.navbar {
-		background: none;
+  .navbar {
+    height: 100%;
+    background: none;
+    flex-basis: 80%;
+    transform: skew(25deg);
+    display: flex;
+    align-items: center;
+    &__list {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      &__item {
+        flex: 1;
+        height: 100%;
+        transform: skew(-25deg);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        &:hover{
+            background: #fff;
+            a {
+                color: #222222;
+            }
+        }
+        a{
+            transform: skew(25deg);
+            text-decoration: none;
+        }
 
-		&__list {
-			&__item {
-				margin: 0 10px 10px;
-				display: inline-block;
-				vertical-align: middle;
+        &__link {
+          color: #fff;
+          display: block;
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          position: relative;
+          font-style: italic;
+          text-transform: uppercase;
 
-				&__link {
-					color: #fff;
-					display: block;
-					font-size: 20px;
-					font-weight: bold;
-					text-align: center;
-					position: relative;
-					font-style: italic;
-					padding: 24px 16px 40px;
-					text-transform: uppercase;
+          &:hover {
+            color: #000;
 
-					&:hover {
-						color: #000;
+            &:after {
+              display: block;
+            }
+          }
+        }
 
-						&:after {
-							display: block;
-						}
-					}
-				}
+        &__dropdown {
+          top: 86px;
+          width: 100%;
+          display: none;
+          padding: 20px 40px;
+          position: absolute;
+          background-color: #fff;
 
-				&__dropdown {
-					top: 86px;
-					width: 100%;
-					display: none;
-					padding: 20px 40px;
-					position: absolute;
-					background-color: #fff;
+          &__item {
+            &__link {
+              color: #666;
+            }
+          }
+        }
 
-					&__item {
-						&__link {
-							color: #666;
-						}
-					}
-				}
-
-				&:hover {
-					.navbar__list__item__dropdown {
-						display: block;
-					}
-				}
-			}
-		}
-	}
+        &:hover {
+          .navbar__list__item__dropdown {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
