@@ -33,10 +33,10 @@
 				position: absolute;
 				padding: 0 0 0 20px;
 				background-color: #fff;
-				
+
 				&__item {
 					border-bottom: 1px solid #ccc;
-					
+
 					&__link {
 						color: #666;
 						display: block;
@@ -60,7 +60,7 @@
 
 			&:hover {
 				background-color: #fff;
-				
+
 				.header__account-info__account-box__wrap-items__txt {
 					color: #F11E08;
 					strong {
@@ -97,7 +97,7 @@
 					line-height: 13px;
 					display: inline-block;
 					text-transform: uppercase;
-					
+
 					&__bold {
 						color: #fff;
 						display: block;
@@ -112,4 +112,4 @@
 		position: relative;
 		display: inline-block;
 	}
-} 
+}
