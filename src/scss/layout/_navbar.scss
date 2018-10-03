@@ -2,11 +2,27 @@ header {
   .navbar {
     height: 100%;
     background: none;
-    flex-basis: 80%;
+    flex: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     @include atMedium {
+      align-items: center;
       transform: skew(25deg);
+      flex-basis: 80%;
+      flex-direction: row;
+    }
+    &::before {
+      content: "Voltar";
+      order: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      height: 3rem;
+      display: flex;
+
+      @include atMedium {
+        display: none;
+      }
     }
     &__list {
       width: 100%;
@@ -16,8 +32,8 @@ header {
       height: auto;
       flex-direction: column;
       @include atMedium {
-          flex-direction: row;
-          height: 100%;
+        flex-direction: row;
+        height: 100%;
       }
       &__item {
         flex: 1;
@@ -35,8 +51,10 @@ header {
           }
         }
         a {
-          transform: skew(25deg);
           text-decoration: none;
+          @include atMedium {
+            transform: skew(25deg);
+          }
         }
 
         &__link {
@@ -48,6 +66,7 @@ header {
           position: relative;
           font-style: italic;
           text-transform: uppercase;
+          transform: skew(0deg);
 
           &:hover {
             color: #000;

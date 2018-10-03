@@ -3,6 +3,7 @@ import './modules/vtexRequest'
 
 
 import './components/minicart';
+import './components/mobile-menu';
 import './components/loader';
 import './components/menu';
 import './components/makeMenu';
