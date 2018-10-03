@@ -6,6 +6,12 @@
         padding: 10px;
         vertical-align: top;
         display: inline-block;
+        width: 85%;
+        margin-bottom: 10px;
+        @include atMedium{
+            width: auto;
+            margin-bottom: 0;
+        }
     }
 
     .btn {

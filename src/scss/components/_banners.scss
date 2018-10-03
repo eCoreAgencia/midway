@@ -92,9 +92,12 @@
   }
   &--after {
     .banner__inner {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "img1 img2" "img3 img4";
       @include atMedium {
+        display: flex;
         flex-direction: row;
       }
     }
@@ -108,17 +111,31 @@
     .banner__inner {
       display: grid;
       grid-template-columns: 1fr;
-      @include atMedium{
+      @include atMedium {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "img1 img2" "img3 img4";
       }
     }
-    .box-banner{
-        img {
-            width: 100%;
-            height: 100%;
-        }
+    .box-banner {
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
+  }
+  &--team {
+      display: none;
+      @include atMedium {
+        display: block;
+      }
+      .banner__inner {
+          display: flex;
+      }
+  }
+  &--team-mobile {
+      @include atMedium {
+          display: none;
+      }
   }
 }

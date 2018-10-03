@@ -1,5 +1,7 @@
 body {
   font-family: $f-base;
+  overflow: hidden;
+  width: 100vw;
 }
 
 a {
@@ -20,7 +22,6 @@ a.button {
   }
 }
 
-
 img {
   max-width: 100%;
   height: auto;
@@ -32,7 +33,6 @@ html [type="button"],
 [type="submit"] {
   -webkit-appearance: button;
 }
-
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
@@ -56,7 +56,6 @@ html [type="button"],
 @import "../../node_modules/bulma/sass/grid/_all.sass";
 @import "../../node_modules/bulma/sass/layout/_all.sass";
 
-
 $family-sans-serif: $f-base;
 
 .container {
@@ -64,11 +63,9 @@ $family-sans-serif: $f-base;
   margin: 0 auto;
   width: 100%;
   max-width: #{$g-max-width + ($g-spacing * 2)};
-  
 
   @media screen and (min-width: $g-max-width) {
   }
-  
 }
 
 * {

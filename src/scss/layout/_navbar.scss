@@ -3,31 +3,40 @@ header {
     height: 100%;
     background: none;
     flex-basis: 80%;
-    transform: skew(25deg);
     display: flex;
     align-items: center;
+    @include atMedium {
+      transform: skew(25deg);
+    }
     &__list {
       width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 100%;
+      height: auto;
+      flex-direction: column;
+      @include atMedium {
+          flex-direction: row;
+          height: 100%;
+      }
       &__item {
         flex: 1;
         height: 100%;
-        transform: skew(-25deg);
         align-items: center;
         display: flex;
         justify-content: center;
-        &:hover{
-            background: #fff;
-            a {
-                color: #222222;
-            }
+        @include atMedium {
+          transform: skew(-25deg);
         }
-        a{
-            transform: skew(25deg);
-            text-decoration: none;
+        &:hover {
+          background: #fff;
+          a {
+            color: #222222;
+          }
+        }
+        a {
+          transform: skew(25deg);
+          text-decoration: none;
         }
 
         &__link {

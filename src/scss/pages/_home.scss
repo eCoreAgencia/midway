@@ -38,45 +38,68 @@
       overflow: hidden;
       position: relative;
       text-align: center;
+      background: #f2f2f2;
+
       @include atMedium {
-          text-align: left;
+        text-align: left;
+        background: transparent;
       }
       .is-flex {
-          justify-content: center;
+        justify-content: center;
+      }
+      .column {
+        padding: 0;
       }
 
       &__tlt {
         color: #222;
-        font-size: 47px;
         font-weight: 700;
+        font-size: 40px;
         font-style: italic;
         font-family: Eurostile;
         letter-spacing: 0.36px;
         text-transform: uppercase;
+        @include atMedium {
+          font-size: 47px;
+        }
       }
 
       &__smallph {
-        font-size: 15px;
+        font-size: 11px;
         font-weight: 400;
         font-style: italic;
         font-family: "Open Sans";
         text-transform: uppercase;
         display: flex;
+        padding: 0 20px;
+        text-align: left;
+        @include atMedium {
+          font-size: 15px;
+          padding: 0;
+        }
 
         &:before {
           content: "";
           width: 10px;
-          height: 37px;
+          height: 30px;
           background: #ff0000;
           transform: skew(-15deg);
           display: block;
-          margin-top: 5px;
-          margin-right: 10px;
+          margin-top: 2px;
+          margin-right: 8px;
+          @include atMedium {
+            height: 37px;
+            margin-top: 5px;
+            margin-right: 10px;
+          }
         }
       }
 
       .default__form {
-        margin: 35px auto;
+          margin: 10px auto;
+        @include atMedium {
+          margin: 35px auto;
+        }
       }
     }
 

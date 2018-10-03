@@ -1,153 +1,176 @@
 .shelf {
-	margin: 40px 0;
-	position: relative;
+  margin: 10px 0;
+  position: relative;
+  @include atMedium {
+    margin: 40px 0;
+  }
 
-	.slick-slider {
-		padding: 0 53px;
-	}
+  li {
+    position: relative;
+    margin: 0.2rem;
+    display: inline-block;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+    @include atMedium {
+      margin: 1.2rem;
+    }
+    .flag {
+      top: 0;
+      left: 0;
+      padding: 7px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: bold;
+      position: absolute;
+      font-style: italic;
+      font-family: Eurostile;
+      letter-spacing: 0.17px;
+      text-transform: uppercase;
+      background-color: #ff3717;
+    }
 
-	li {
-		position: relative;
-		margin: 1.2rem;
-		display: inline-block;
-		background-color: #fff;
-		-webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
-		box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+    .all-shelf {
+      &__header {
+        text-align: center;
+      }
 
-		.flag {
-			top: 0;
-			left: 0;
-			padding: 7px;
-			color: #fff;
-			font-size: 11px;
-			font-weight: bold;
-			position: absolute;
-			font-style: italic;
-			font-family: Eurostile;
-			letter-spacing: 0.17px;
-			text-transform: uppercase;
-			background-color: #ff3717;
-		}
+      &__product {
+        &__name {
+          padding: 0 10px;
+        }
 
-		.all-shelf {
-			&__header {
-				text-align: center;
-			}
+        &__link {
+          color: #222;
+          font-size: 20px;
+          font-size: 16px;
+          font-weight: 700;
+          font-style: italic;
+          font-family: Eurostile;
+          letter-spacing: 0.24px;
+          text-transform: uppercase;
+          @include atMedium {
+            line-height: 24px;
+            line-height: 22px;
+          }
+        }
 
-			&__product {
-				&__name {
-					padding: 0 10px;
-				}
+        &__pic {
+          margin: auto;
+          @include atMedium {
+            margin: auto;
+          }
+        }
 
-				&__link {
-					color: #222;
-					font-size: 20px;
-					font-weight: 700;
-					line-height: 24px;
-					font-style: italic;
-					font-family: Eurostile;
-					letter-spacing: 0.24px;
-					text-transform: uppercase;
-				}
+        &__price {
+          padding: 0 10px;
 
-				&__pic {
-					margin: 0 auto 20px;
-				}
+          &__oldprice {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: #808080;
+            font-style: italic;
+            letter-spacing: 0.17px;
+            font-family: "Open Sans";
+            text-transform: uppercase;
+          }
 
-				&__price {
-					padding: 0 10px;
+          &__newprice {
+            color: #222;
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            font-style: italic;
+            letter-spacing: 0.36px;
+            font-family: Eurostile;
+            text-transform: uppercase;
+            @include atMedium {
+              font-size: 30px;
+            }
+          }
 
-					&__oldprice {
-						display: block;
-						font-size: 14px;
-						font-weight: 400;
-						color: #808080;
-						font-style: italic;
-						letter-spacing: 0.17px;
-						font-family: "Open Sans";
-						text-transform: uppercase;
-					}
+          &__installment {
+            display: block;
+            font-size: 12px;
+            color: #808080;
+            font-weight: 400;
+            font-style: italic;
+            font-family: "Open Sans";
+            @include atMedium {
+              font-size: 14px;
+            }
+          }
+        }
 
-					&__newprice {
-						color: #222;
-						display: block;
-						font-size: 30px;
-						font-weight: 700;
-						font-style: italic;
-						letter-spacing: 0.36px;
-						font-family: Eurostile;
-						text-transform: uppercase;
-					}
+        &__info__actions {
+          margin-top: 10px;
+          @include atMedium {
+            margin-top: 20px;
+          }
 
-					&__installment {
-						display: block;
-						font-size: 14px;
-						color: #808080;
-						font-weight: 400;
-						font-style: italic;
-						font-family: "Open Sans";
-					}
-				}
+          &__btn {
+            height: 48px;
+            color: #fff;
+            display: flex;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 64px;
+            text-align: center;
+            font-style: italic;
+            font-family: Eurostile;
+            letter-spacing: 0.35px;
+            text-transform: uppercase;
+            background-color: #f22100;
+            align-items: center;
+            justify-content: center;
+            @include atMedium {
+              height: 58px;
+            }
+          }
+        }
+      }
+    }
+  }
 
-				&__info__actions {
-					margin-top: 20px;
+  .slick-prev,
+  .slick-next {
+    top: 40%;
+    z-index: 1;
+    border: none;
+    position: absolute;
+    background: transparent !important;
+  }
 
-					&__btn {
-						height: 58px;
-						color: #fff;
-						display: block;
-						font-size: 14px;
-						font-weight: bold;
-						line-height: 64px;
-						text-align: center;
-						font-style: italic;
-						font-family: Eurostile;
-						letter-spacing: 0.35px;
-						text-transform: uppercase;
-						background-color: #f22100;
-					}
-				}
-			}
-		}
-	}
+  .slick-prev {
+    left: 0;
+  }
 
-	.slick-prev,
-	.slick-next {
-		top: 40%;
-		z-index: 1;
-		border: none;
-		position: absolute;
-	}
+  .slick-next {
+    right: 0;
+  }
 
-	.slick-prev {
-		left: 0;
-	}
+  .slick-dots {
+    margin: 0 auto;
+    text-align: center;
 
-	.slick-next {
-		right: 0;
-	}
+    li {
+      padding: 0;
+      width: 24px;
+      height: 2px;
+      cursor: pointer;
+      margin-bottom: 0;
+      margin-right: 10px;
+      background-color: #b7b7b7;
 
-	.slick-dots {
-		margin: 0 auto;
-		text-align: center;
+      &:hover,
+      &.slick-active {
+        background-color: #f22100;
+      }
 
-		li {
-			padding: 0;
-			width: 24px;
-			height: 2px;
-			cursor: pointer;
-			margin-bottom: 0;
-			margin-right: 10px;
-			background-color: #b7b7b7;
-
-			&:hover,
-			&.slick-active {
-				background-color: #f22100;
-			}
-
-			button {
-				display: none;
-			}
-		}
-	}
+      button {
+        display: none;
+      }
+    }
+  }
 }
