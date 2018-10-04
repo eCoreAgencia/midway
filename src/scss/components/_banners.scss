@@ -125,17 +125,21 @@
     }
   }
   &--team {
-      display: none;
-      @include atMedium {
-        display: block;
-      }
-      .banner__inner {
-          display: flex;
-      }
+    display: none;
+    @include atMedium {
+      display: block;
+    }
+    .banner__inner {
+      display: flex;
+    }
   }
   &--team-mobile {
-      @include atMedium {
-          display: none;
-      }
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+    @include atMedium {
+      display: none;
+    }
   }
 }

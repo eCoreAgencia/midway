@@ -1,6 +1,7 @@
 .footer {
   padding: 0;
   background-color: transparent;
+  font-family: eurostileregular;
 
   &__main {
     background-color: transparent;
@@ -24,10 +25,13 @@
     }
 
     &__title {
+      font-family: eurostilebold;
+      @include font-size(14px);
+      text-transform: uppercase;
+      /* Text style for "Atendiment" */
+      letter-spacing: 0.7px;
       background: #f01914;
       color: #fff;
-      font-size: 20px;
-      font-weight: 700;
       font-style: italic;
       text-transform: uppercase;
       padding: 14px;
@@ -87,6 +91,9 @@
         @include atMedium {
           display: block !important;
         }
+        // &--is-active {
+        //   animation: goDown 1s 1 0s linear;
+        // }
         &__item {
           background: #eaeaea;
           padding: 10px;
@@ -98,12 +105,11 @@
           }
           &__link {
             color: #f01914;
+            font-family: "Open Sans";
+            @include font-size(12px);
+            font-weight: 400;
             @include atMedium {
               color: #fff;
-              font-size: 15px;
-              font-weight: 400;
-              line-height: 30px;
-              font-family: Roboto;
             }
 
             &:hover {
@@ -157,17 +163,19 @@
     padding: 20px 0;
 
     &:first-of-type {
-        padding-top: 10px;
+      padding-top: 10px;
       @include atMedium {
         padding-top: 40px;
       }
     }
 
     &__tlt {
-      font-size: 24px;
-      font-weight: bold;
-      margin-right: 10px;
+      font-family: eurostilebold;
+      @include font-size(14px);
       font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-right: 10px;
       display: inline-block;
       vertical-align: text-bottom;
     }
@@ -219,5 +227,17 @@
         width: auto;
       }
     }
+  }
+}
+
+@keyframes goDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }

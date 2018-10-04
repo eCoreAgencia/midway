@@ -3,18 +3,29 @@
     display: flex;
     align-items: center;
     background: #f22100;
-    transform: skew(-25deg);
     flex-basis: 24%;
     justify-content: center;
     position: relative;
     flex: 1;
+    order: 4;
+    transform: skew(0deg);
+    height: 3rem;
+    box-shadow: 0px -2px 9px 0px;
+    @include atMedium {
+      transform: skew(-25deg);
+      order: 3;
+      height: auto;
+      box-shadow: none;
+    }
     &::before {
-      content: "";
-      width: 20px;
-      height: 100%;
-      position: absolute;
-      left: -2px;
-      background: #F11E08;
+      @include atMedium {
+        content: "";
+        width: 20px;
+        height: 100%;
+        position: absolute;
+        left: -2px;
+        background: #f11e08;
+      }
     }
 
     .input,
@@ -25,9 +36,20 @@
     .control {
       display: flex;
       align-items: center;
-      flex-basis: 80%;
+      flex: 1;
+      @include atMedium {
+        flex-basis: 80%;
+      }
     }
-    .icon-search {
+    .input {
+      width: 100vw;
+      height: 100%;
+      @include atMedium {
+        width: auto;
+      }
+    }
+    .icon-search,
+    .cancel-ico {
       padding: 0 7px;
       font-size: 22px;
       position: relative;
@@ -36,18 +58,49 @@
       font-weight: bold;
       z-index: 8;
     }
+    .cancel-ico {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 18px;
+        fill: gray;
+      }
+      @include atMedium {
+        display: none;
+      }
+    }
+    .icon-search {
+      display: none;
+      @include atMedium {
+        display: block;
+      }
+    }
   }
   .field:not(:last-child) {
     margin: 0;
+    @include atMedium {
+      margin: 0 0 0 15px;
+    }
   }
   .field {
-    transform: skew(25deg);
     flex: 1;
     display: flex;
     justify-content: center;
+    @include atMedium {
+      transform: skew(25deg);
+    }
   }
   .search-form {
-      flex: 1;
-      display: flex;
+    flex: 1;
+    display: flex;
+    height: 100%;
+    @include atMedium {
+      height: auto;
+    }
+    // transform: skew(0deg);
+    // > div {
+    //     transform: skew(0deg);
+    // }
   }
 }

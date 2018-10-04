@@ -4,13 +4,13 @@ import './modules/vtexRequest'
 
 import './components/minicart';
 import './components/mobile-menu';
-import './components/loader';
-import './components/menu';
-import './components/makeMenu';
+// import './components/loader';
+// import './components/menu';
+// import './components/makeMenu';
 import './components/searchForm';
 import './components/shelf';
 import './components/modal';
-import './components/filter';
+// import './components/filter';
 //import './components/buyBuyCategory';
 import './components/product';
 
@@ -20,6 +20,7 @@ import './components/buy-by-category/main'
 
 import './pages/global';
 import './pages/home';
+import './pages/sub-templates';
 import './pages/persona';
 import './pages/empty-search';
 

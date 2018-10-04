@@ -5,6 +5,7 @@ header {
     flex: 1;
     display: flex;
     flex-direction: column;
+    font-family: eurostile;
     @include atMedium {
       align-items: center;
       transform: skew(25deg);
@@ -60,8 +61,10 @@ header {
         &__link {
           color: #fff;
           display: block;
-          font-size: 20px;
-          font-weight: bold;
+          font-family: eurostilebold;
+          line-height: 72px;
+          @include font-size(14px);
+          letter-spacing: 0.35px;
           text-align: center;
           position: relative;
           font-style: italic;

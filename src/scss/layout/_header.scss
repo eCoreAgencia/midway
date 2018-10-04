@@ -14,6 +14,7 @@
   &__main {
     .is-flex {
       flex-wrap: wrap;
+      justify-content: space-between;
       @include atMedium {
         flex-wrap: nowrap;
       }
@@ -23,6 +24,10 @@
   &__area__logo__link {
     background: #f9f9f9;
     transform: skew(-25deg);
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     svg {
       padding: 0 20px;
       transform: skew(25deg);
@@ -31,17 +36,37 @@
 
   &__account-info {
     display: flex;
-    transform: skew(-25deg);
     background: #f11e08;
     align-items: center;
     flex-basis: 12%;
     justify-content: space-around;
+    order: 2;
+    i {
+      font-size: 20px;
+      font-weight: bold;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: 48px;
+      justify-content: center;
+      @include atMedium {
+        display: none;
+      }
+    }
+    @include atMedium {
+      order: 4;
+      transform: skew(-25deg);
+    }
 
     &__account-box {
       position: relative;
       height: 100%;
       display: flex;
       align-items: center;
+      display: none;
+      @include atMedium {
+        display: flex;
+      }
 
       &__list {
         z-index: 1;
@@ -109,8 +134,10 @@
           line-height: 13px;
           display: inline-block;
           text-transform: uppercase;
+          font-family: eurostileregular;
 
           &__bold {
+            font-family: eurostilebold;
             color: #fff;
             display: block;
           }
@@ -125,8 +152,18 @@
     display: flex;
     align-items: center;
     > div {
-      transform: skew(25deg);
       padding: 0 10px;
+      @include atMedium {
+        transform: skew(25deg);
+      }
+    }
+    svg {
+      use {
+        fill: black;
+        @include atMedium {
+          fill: #fff;
+        }
+      }
     }
     &:hover {
       background: #fff;
@@ -150,8 +187,9 @@
     z-index: 9;
     transform: skew(0deg);
     left: -100%;
+    order: 2;
     &--is-visible {
-        left: 0;
+      left: 0;
     }
     @include atMedium {
       position: initial;
@@ -176,6 +214,7 @@
     z-index: 10;
     left: 18px;
     margin: 4% 0;
+    order: 0;
 
     &::before {
       content: "";
