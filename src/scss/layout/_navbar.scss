@@ -70,6 +70,7 @@ header {
           font-style: italic;
           text-transform: uppercase;
           transform: skew(0deg);
+          font-weight: 700;
 
           &:hover {
             color: #000;
@@ -87,6 +88,7 @@ header {
           padding: 20px 40px;
           position: absolute;
           background-color: #fff;
+          transform: skew(25deg);
 
           &__item {
             &__link {
