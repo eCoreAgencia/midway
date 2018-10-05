@@ -87,6 +87,7 @@ header {
           padding: 20px 40px;
           position: absolute;
           background-color: #fff;
+          transform: skew(25deg);
 
           &__item {
             &__link {
