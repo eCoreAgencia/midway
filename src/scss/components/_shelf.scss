@@ -24,7 +24,7 @@
       font-weight: bold;
       position: absolute;
       font-style: italic;
-      font-family: eurostileregular;
+      font-family: $f-base;
       letter-spacing: 0.17px;
       text-transform: uppercase;
       background-color: #ff3717;
@@ -46,7 +46,7 @@
           font-size: 16px;
           font-weight: 700;
           font-style: italic;
-          font-family: eurostileregular;
+          font-family: $f-base;
           letter-spacing: 0.24px;
           text-transform: uppercase;
           @include atMedium {
@@ -83,7 +83,7 @@
             font-weight: 700;
             font-style: italic;
             letter-spacing: 0.36px;
-            font-family: eurostileregular;
+            font-family: $f-base;
             text-transform: uppercase;
             @include atMedium {
               font-size: 30px;
@@ -118,7 +118,7 @@
             line-height: 64px;
             text-align: center;
             font-style: italic;
-            font-family: eurostileregular;
+            font-family: $f-base;
             letter-spacing: 0.35px;
             text-transform: uppercase;
             background-color: #f22100;

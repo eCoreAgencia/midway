@@ -1,7 +1,7 @@
 .footer {
   padding: 0;
   background-color: transparent;
-  font-family: eurostileregular;
+  font-family: $f-base;
 
   &__main {
     background-color: transparent;
@@ -25,7 +25,7 @@
     }
 
     &__title {
-      font-family: eurostilebold;
+      font-family: $f-base;
       @include font-size(14px);
       text-transform: uppercase;
       /* Text style for "Atendiment" */
@@ -39,6 +39,7 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
+      font-weight: 700;
       &.no-border {
         border-bottom: 0;
         width: auto;
@@ -170,7 +171,7 @@
     }
 
     &__tlt {
-      font-family: eurostilebold;
+      font-family: $f-base;
       @include font-size(14px);
       font-style: italic;
       text-transform: uppercase;
@@ -178,6 +179,7 @@
       margin-right: 10px;
       display: inline-block;
       vertical-align: text-bottom;
+      font-weight: 700;
     }
 
     &__ico {

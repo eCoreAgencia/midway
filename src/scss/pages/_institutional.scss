@@ -11,7 +11,7 @@ body.ajuda {
 			font-style: italic;
 			text-align: center;
 			padding: 100px 0 150px;
-			font-family: eurostileregular;
+			font-family: $f-base;
 			letter-spacing: 0.82px;
 			text-transform: uppercase;
 
@@ -37,7 +37,7 @@ body.ajuda {
 				font-style: italic;
 				padding: 65px 0 55px;
 				letter-spacing: 0.7px;
-				font-family: eurostileregular;
+				font-family: $f-base;
 				text-transform: uppercase;
 			}
 
@@ -83,7 +83,7 @@ body.team-midway {
 			font-style: italic;
 			text-align: center;
 			margin-bottom: 75px;
-			font-family: eurostileregular;
+			font-family: $f-base;
 			text-transform: uppercase;
 
 			b {
@@ -130,7 +130,7 @@ body.team-midway {
 					font-weight: 700;
 					font-style: italic;
 					margin-bottom: 6px;
-					font-family: eurostileregular;
+					font-family: $f-base;
 					letter-spacing: 0.78px;
 					text-transform: uppercase;
 					border-bottom: 1px solid #ebebeb;
@@ -207,7 +207,7 @@ body.fale-conosco {
 					line-height: 20px;
 					font-style: italic;
 					letter-spacing: 0.47px;
-					font-family: eurostileregular;
+					font-family: $f-base;
 					text-transform: uppercase;
 					background-color: #f22100;
 				}
@@ -225,7 +225,7 @@ body.fale-conosco {
 					font-style: italic;
 					margin-bottom: 22px;
 					letter-spacing: 0.7px;
-					font-family: eurostileregular;
+					font-family: $f-base;
 					text-transform: uppercase;
 				}
 
@@ -268,7 +268,7 @@ body.quem-somos {
 						font-size: 14px;
 						font-weight: 700;
 						font-style: italic;
-						font-family: eurostileregular;
+						font-family: $f-base;
 						letter-spacing: 0.35px;
 						text-transform: uppercase;
 						border-bottom: 3px solid #b7b7b7;
@@ -297,7 +297,7 @@ body.quem-somos {
 				font-weight: 700;
 				text-align: right;
 				font-style: italic;
-				font-family: eurostileregular;
+				font-family: $f-base;
 				letter-spacing: 0.82px;
 				text-transform: uppercase;
 				border-bottom: 3px solid #f22100;
@@ -369,7 +369,7 @@ body.persona {
 				text-align: center;
 				font-style: italic;
 				margin-bottom: 40px;
-				font-family: eurostileregular;
+				font-family: $f-base;
 				letter-spacing: 0.25px;
 				background-color: #000;
 				text-transform: uppercase;
@@ -383,7 +383,7 @@ body.persona {
 				margin-bottom: 5px;
 				padding-bottom: 5px;
 				display: inline-flex;
-				font-family: eurostileregular;
+				font-family: $f-base;
 				letter-spacing: 0.82px;
 				text-transform: uppercase;
 				border-bottom: 3px solid #f22100;
@@ -436,7 +436,7 @@ body.persona {
 						font-weight: 700;
 						font-weight: bold;
 						font-style: italic;
-						font-family: eurostileregular;
+						font-family: $f-base;
 						text-transform: uppercase;
 					}
 				}

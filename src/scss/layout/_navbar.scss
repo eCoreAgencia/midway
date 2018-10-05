@@ -48,7 +48,7 @@ header {
         &:hover {
           background: #fff;
           a {
-            color: #222222;
+            color: $c-gray-dark;
           }
         }
         a {
@@ -61,7 +61,7 @@ header {
         &__link {
           color: #fff;
           display: block;
-          font-family: eurostilebold;
+          font-family: $f-base;
           line-height: 72px;
           @include font-size(14px);
           letter-spacing: 0.35px;
