@@ -8,9 +8,10 @@ header {
     font-family: eurostile;
     @include atMedium {
       align-items: center;
-      transform: skew(25deg);
+      //   transform: skew(25deg);
       flex-basis: 80%;
       flex-direction: row;
+      position: initial;
     }
     &::before {
       content: "Voltar";
@@ -20,6 +21,8 @@ header {
       font-size: 20px;
       height: 3rem;
       display: flex;
+      align-items: center;
+      justify-content: center;
 
       @include atMedium {
         display: none;
@@ -42,11 +45,7 @@ header {
         align-items: center;
         display: flex;
         justify-content: center;
-        @include atMedium {
-          transform: skew(-25deg);
-        }
         &:hover {
-          background: #fff;
           a {
             color: $c-gray-dark;
           }
@@ -54,7 +53,9 @@ header {
         a {
           text-decoration: none;
           @include atMedium {
-            transform: skew(25deg);
+            // transform: skew(-25deg);
+            height: 100%;
+            width: 100%;
           }
         }
 
@@ -69,12 +70,12 @@ header {
           position: relative;
           font-style: italic;
           text-transform: uppercase;
-          transform: skew(0deg);
           font-weight: 700;
-
+          background: $c-red;
+          transform: skew(-15deg);
           &:hover {
             color: #000;
-
+            background: $c-white;
             &:after {
               display: block;
             }
@@ -82,13 +83,14 @@ header {
         }
 
         &__dropdown {
-          top: 86px;
+          top: 100%;
+          right: 0;
+          left: 0;
           width: 100%;
           display: none;
           padding: 20px 40px;
           position: absolute;
           background-color: #fff;
-          transform: skew(25deg);
 
           &__item {
             &__link {

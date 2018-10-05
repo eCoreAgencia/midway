@@ -56,9 +56,9 @@
     &--diff {
       @include atMedium {
         padding: 0 20px;
-        transform: skew(-25deg);
+        // transform: skew(-25deg);
         svg {
-          transform: skew(25deg);
+        //   transform: skew(25deg);
         }
         &:hover {
           background: $c-white;

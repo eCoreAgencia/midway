@@ -7,7 +7,7 @@
     position: relative;
     flex: 1;
     order: 4;
-    transform: skew(0deg);
+    // transform: skew(0deg);
     height: 3rem;
     box-shadow: 0px -2px 9px 0px;
     &--is-active {
@@ -15,7 +15,7 @@
     }
     @include atMedium {
       display: flex;
-      transform: skew(-25deg);
+    //   transform: skew(-25deg);
       order: 3;
       height: auto;
       box-shadow: none;
@@ -91,7 +91,7 @@
     display: flex;
     justify-content: center;
     @include atMedium {
-      transform: skew(25deg);
+    //   transform: skew(25deg);
     }
   }
   .search-form {
