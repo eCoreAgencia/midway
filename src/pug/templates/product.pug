@@ -1,194 +1,293 @@
 extends ../layouts/default.pug
 
 block vars
-    - var pageTitle = ' Produto'
-    - var bodyClass = 'product'
+	- var pageTitle = ' Produto'
+	- var bodyClass = 'product'
 
 block content
-    .container
-        section.section__page.section__breadcrumb
-            +vtex-controller('<vtex.cmc:breadCrumb />')
-                .bread-crumb
-                    ul
-                        li
-                            a(href='https://midwaylabs.vtexcommercestable.com.br/', rel='v:url', property='v:title') midwaylabs
-                        li
-                            a(href='https://midwaylabs.vtexcommercestable.com.br/ferramentas-eletricas', rel='v:url', property='v:title') Ferramentas Elétricas
-                        li
-                            a(href='https://midwaylabs.vtexcommercestable.com.br/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
-                        li.last
-                            a(href='https://midwaylabs.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
-        section.section__page.section__product-header
-            .product__main
-                .product__benefits
-                    ul.benefits
-                        li.benefits__item
-                            span.benefits__icon
-                                i.icon-muscle
-                            span.benefits__text
-                                | Ganho de
-                                strong massa muscular
-                        li.benefits__item
-                            span.benefits__icon
-                                i.icon-table
-                            span.benefits__text
-                                | Auxilia no
-                                strong emagrecimento
-                        li.benefits__item
-                            span.benefits__icon
-                                i.icon-clock
-                            span.benefits__text
-                                | Ajuda na
-                                strong recuperação
-                                | de massa muscular         
-                .product__media
-                    img(src="/arquivos/ALBUMINA_SACHET_2018_500G_MORANGO.png")
-                .product__info
-                    .product__name
-                        +vtex-controller('<vtex.cmc:productName />')
-                            h1
-                                .fn.productName.Mandril-1-2--com-Chave-Black-Decker albumina protein
-                                    input#___rc-p-id(type='hidden', value='125')
-                                    input#___rc-p-dv-id(type='hidden', value='22,9')
-                                    input#___rc-p-sku-ids(type='hidden', value='150')
-                                    input#___rc-p-kit-ids(type='hidden', value='')
-                    span.product__weight
-                        | albumina protein
-                    span.product__brand
-                        | Build Yourself  
-                    .product__price
-                        .price
-                            +vtex-controller('<vtex.cmc:skuPrice />')
-                                .plugin-preco
-                                    .productPrice
-                                        p.descricao-preco
-                                            em.valor-de.price-list-price(style='display: block;')
-                                                | De:
-                                                strong.skuListPrice R$ 109,00
-                                            em.valor-por.price-best-price(style='display: block;')
-                                                | Por:
-                                                strong.skuBestPrice R$ 54,99
-                                            em.valor-dividido.price-installments(style='display: block;')
-                                                span
-                                                    span
-                                                        | ou
-                                                        label.skuBestInstallmentNumber
-                                                            | 12
-                                                            span.x x
-                                                        |  de
-                                                    strong
-                                                        label.skuBestInstallmentValue R$5,49
-                                        p.preco-a-vista.price-cash(style='display: block;')
-                                            | Preço a vista:
-                                            strong.skuPrice R$ 54,99
-                    .product__skus
-                        .product__skus-select
 
-                        +vtex-controller('<vtex.cmc:skuRichSelection changeImage="1" />')
-                            .sku-selector-container.sku-selector-container-0
-                                ul.topic.Voltagem.productid-21.numopt-2
-                                    li.specification Sabor
-                                    li.select.skuList.item-dimension-Voltagem
-                                        span.group_0
-                                            input#21_Voltagem_0.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_110v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='110V', data-dimension='Voltagem', value='110V', specification='110v')
-                                            label.dimension-Voltagem.espec_0.skuespec_110v.skuespec_Voltagem_opcao_110V.skuespec_Voltagem_opcao_110v(for='21_Voltagem_0') morango
-                                            input#21_Voltagem_1.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_220v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='220V', data-dimension='Voltagem', value='220V', specification='220v')
-                                            label.dimension-Voltagem.espec_0.skuespec_220v.skuespec_Voltagem_opcao_220V.skuespec_Voltagem_opcao_220v(for='21_Voltagem_1') chocolate
-                    .product__action
-                        .product__qtd
-                            button.button.button--minus -
-                            input.product__qtd-value(type="text" value="1")/
-                            button.button.button--plus +
-                        .product__buy
-                            +vtex-controller('<vtex.cmc:BuyButton/>')
-                                a.buy-button.buy-button-ref(target='_top', href="javascript:alert('Por favor, selecione o modelo desejado.');", style='display:block')
-                                    | Comprar
-                                .portal-notify-me-ref
-                                    .notifyme.sku-notifyme(style='display: none;')
-                                        .notifyme-title-div(style='display: none;')
-                                            h3.notifymetitle.notifyme-title Avise-Me
-                                        form(action='/no-cache/AviseMe.aspx', style='display: none;')
-                                            fieldset.sku-notifyme-form.notifyme-form
-                                                p
-                                                    | Para ser avisado da disponibilidade deste Produto, basta preencher os campos abaixo.
-                                                input#notifymeClientName.sku-notifyme-client-name.notifyme-client-name(placeholder='Digite seu nome...', size='20', type='text', name='notifymeClientName', style='display: none;')
-                                                input#notifymeClientEmail.sku-notifyme-client-email.notifyme-client-email(placeholder='Digite seu e-mail...', size='20', type='text', name='notifymeClientEmail', style='display: none;')
-                                                input#notifymeButtonOK.btn-ok.sku-notifyme-button-ok.notifyme-button-ok(value='ok', type='button', name='notifymeButtonOK', style='display: none;')
-                                                input.sku-notifyme-skuid.notifyme-skuid(type='hidden', name='notifymeIdSku', value='', style='display: none;')
-                                        p.notifyme-loading-message(style='display: none')
-                                            span.sku-notifyme-loading.notifyme-loading Carregando...
-                                        fieldset.success(style='display:none;')
-                                            label
-                                                em
-                                                    span.sku-notifyme-success.notifyme-success
-                                                        | Cadastrado com sucesso, assim que o produto for disponibilizado você receberá um email avisando.
-                                        fieldset.error(style='display: none')
-                                            label
-                                                span.sku-notifyme-error.notifyme-error
-        section.section.section--page.section--product-bottom
-            .product__nutricional
-                .product__nutricional-inner
-                    ul.product__nutricional-list
-                        li.product__nutricional-item
-                            span.product__nutricional-field Proteínas
-                            span.product__nutricional-value 
-                                | 24
-                                small G
-                        li.product__nutricional-item
-                            span.product__nutricional-field Açucar
-                            span.product__nutricional-value 
-                                | 3
-                                small G
-                        li.product__nutricional-item
-                            span.product__nutricional-field Gordura
-                            span.product__nutricional-value 
-                                | 1
-                                small G
-                        li.product__nutricional-item
-                            span.product__nutricional-field Carboidratos
-                            span.product__nutricional-value 
-                                | 1
-                                small G
-                        li.product__nutricional-item
-                            span.product__nutricional-field Calorias
-                            span.product__nutricional-value 
-                                | 100
-                                small G
-                    button.button.btn--primary-inverse
-                        small informação nutricional 
-                        | completa
-                        i.icon-arrow-right             
-            .product__category
-                .category
-                    .category__description
-                        h3.category__description-title Uma porção de albumina é equivalente a 5 ovos.
-                        .category__description-text
-                            p 
-                                strong ALBUMINA 
-                                | é uma excelente fonte de proteína por ser produzida com a clara do ovo pasteurizada e desidratada de alto valor biológico e também é rica em aminoácidos. A albumina é indicada para os praticantes de modalidades esportivas diversas e na complementação de dietas ricas em proteínas. Aliando o suplemento alimentar com a prática de atividade física e alimentação saudável o resultado chega de forma mais rápida e real.
-                    .category__details
-                        h3.category__details-call 
-                            | Saiba tudo sobre
-                            span Albumina!
-                        .category__details-text    
+	section.section__page.section__breadcrumb
+		.container
+			+vtex-controller('<vtex.cmc:breadCrumb />')
+				.bread-crumb
+					ul
+						li
+							a(href='https://midwaylabs.vtexcommercestable.com.br/', rel='v:url', property='v:title') midwaylabs
+						li
+							a(href='https://midwaylabs.vtexcommercestable.com.br/ferramentas-eletricas', rel='v:url', property='v:title') Ferramentas Elétricas
+						li
+							a(href='https://midwaylabs.vtexcommercestable.com.br/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
+						li.last
+							a(href='https://midwaylabs.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
+	section.section__page.section__product-header
+		.container
+			.product__main
+				.product__benefits
+					ul.benefits
+						li.benefits__item
+							span.benefits__icon
+								i.icon-muscle
+							span.benefits__text
+								| Ganho de
+								strong massa muscular
+						li.benefits__item
+							span.benefits__icon
+								i.icon-table
+							span.benefits__text
+								| Auxilia no
+								strong emagrecimento
+						li.benefits__item
+							span.benefits__icon
+								i.icon-clock
+							span.benefits__text
+								| Ajuda na
+								strong recuperação
+								| de massa muscular
+				.product__media
+					include ../vtexParts/vtexProductImages.pug
+				.product__info
+					.product__name
+						+vtex-controller('<vtex.cmc:productName />')
+							h1
+								.fn.productName.Mandril-1-2--com-Chave-Black-Decker albumina protein
+									input#___rc-p-id(type='hidden', value='125')
+									input#___rc-p-dv-id(type='hidden', value='22,9')
+									input#___rc-p-sku-ids(type='hidden', value='150')
+									input#___rc-p-kit-ids(type='hidden', value='')
+					span.product__weight
+						| 500g
+					span.product__brand
+						| Build Yourself
+					.product__price
+						.price
+							+vtex-controller('<vtex.cmc:skuPrice />')
+								.plugin-preco
+									.productPrice
+										p.descricao-preco
+											em.valor-de.price-list-price(style='display: block;')
+												| De:
+												strong.skuListPrice R$ 109,00
+											em.valor-por.price-best-price(style='display: block;')
+												| Por:
+												strong.skuBestPrice R$ 54,99
+											em.valor-dividido.price-installments(style='display: block;')
+												span
+													span
+														| ou
+														label.skuBestInstallmentNumber
+															| 12
+															span.x x
+														|  de
+													strong
+														label.skuBestInstallmentValue R$5,49
+										p.preco-a-vista.price-cash(style='display: block;')
+											| Preço a vista:
+											strong.skuPrice R$ 54,99
+					.product__skus
+						.product__skus-select
+							.select
+								select
+									option Morango
+									option Chocolate
+						+vtex-controller('<vtex.cmc:skuRichSelection changeImage="1" />')
+							.sku-selector-container.sku-selector-container-0
+								ul.topic.Voltagem.productid-21.numopt-2
+									li.specification Sabor
+									li.select.skuList.item-dimension-Voltagem
+										span.group_0
+											input#21_Voltagem_0.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_110v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='110V', data-dimension='Voltagem', value='110V', specification='110v')
+											label.dimension-Voltagem.espec_0.skuespec_110v.skuespec_Voltagem_opcao_110V.skuespec_Voltagem_opcao_110v(for='21_Voltagem_0') morango
+											input#21_Voltagem_1.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_220v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='220V', data-dimension='Voltagem', value='220V', specification='220v')
+											label.dimension-Voltagem.espec_0.skuespec_220v.skuespec_Voltagem_opcao_220V.skuespec_Voltagem_opcao_220v(for='21_Voltagem_1') chocolate
+					.product__action
+						.product__qtd
+							button.btn.btn--minus
+								i.icon-minus
+							input.product__qtd-value(type="text" value="1")/
+							button.btn.btn--plus
+								i.icon-plus
+						.product__buy
+							+vtex-controller('<vtex.cmc:BuyButton/>')
+								a.buy-button.buy-button-ref(target='_top', href="javascript:alert('Por favor, selecione o modelo desejado.');", style='display:block')
+									| Comprar
+								.portal-notify-me-ref
+									.notifyme.sku-notifyme(style='display: none;')
+										.notifyme-title-div(style='display: none;')
+											h3.notifymetitle.notifyme-title Avise-Me
+										form(action='/no-cache/AviseMe.aspx', style='display: none;')
+											fieldset.sku-notifyme-form.notifyme-form
+												p
+													| Para ser avisado da disponibilidade deste Produto, basta preencher os campos abaixo.
+												input#notifymeClientName.sku-notifyme-client-name.notifyme-client-name(placeholder='Digite seu nome...', size='20', type='text', name='notifymeClientName', style='display: none;')
+												input#notifymeClientEmail.sku-notifyme-client-email.notifyme-client-email(placeholder='Digite seu e-mail...', size='20', type='text', name='notifymeClientEmail', style='display: none;')
+												input#notifymeButtonOK.btn-ok.sku-notifyme-button-ok.notifyme-button-ok(value='ok', type='button', name='notifymeButtonOK', style='display: none;')
+												input.sku-notifyme-skuid.notifyme-skuid(type='hidden', name='notifymeIdSku', value='', style='display: none;')
+										p.notifyme-loading-message(style='display: none')
+											span.sku-notifyme-loading.notifyme-loading Carregando...
+										fieldset.success(style='display:none;')
+											label
+												em
+													span.sku-notifyme-success.notifyme-success
+														| Cadastrado com sucesso, assim que o produto for disponibilizado você receberá um email avisando.
+										fieldset.error(style='display: none')
+											label
+												span.sku-notifyme-error.notifyme-error
+	section.section.section--page.section--product-bottom
+		.product__nutricional
+			.container
+				.product__nutricional-inner
+					ul.product__nutricional-list
+						li.product__nutricional-item
+							span.product__nutricional-field Proteínas
+							span.product__nutricional-value
+								| 24
+								small G
+						li.product__nutricional-item
+							span.product__nutricional-field Açucar
+							span.product__nutricional-value
+								| 3
+								small G
+						li.product__nutricional-item
+							span.product__nutricional-field Gordura
+							span.product__nutricional-value
+								| 1
+								small G
+						li.product__nutricional-item
+							span.product__nutricional-field Carboidratos
+							span.product__nutricional-value
+								| 1
+								small G
+						li.product__nutricional-item
+							span.product__nutricional-field Calorias
+							span.product__nutricional-value
+								| 100
+								small G
+					button.btn.btn--primary-inverse
+						small informação nutricional
+						| completa
+						i.icon-arrow-right
+		.product__category
+			.container
+				.category
+					.category__description
+						h3.category__description-title
+							span Uma porção de albumina é equivalente a 5 ovos.
+						.category__description-text
+							p
+								strong ALBUMINA
+								|  é uma excelente fonte de proteína por ser produzida com a clara do ovo pasteurizada e desidratada de alto valor biológico e também é rica em aminoácidos. A albumina é indicada para os praticantes de modalidades esportivas diversas e na complementação de dietas ricas em proteínas. Aliando o suplemento alimentar com a prática de atividade física e alimentação saudável o resultado chega de forma mais rápida e real.
+					.category__details
+						h3.category__details-call
+							| Saiba tudo sobre
+							br/
+							span Albumina!
+						.category__details-text
+							h3.category__details-title O que é albumina?
 
+							p No significado literal a albumina é toda a gordura do ovo que foi retirada por filtração. Esse filtro torna a albumina a proteína do ovo pasteurizada. Ela é tão procurada e faz tanto sucesso entre os praticantes de esportes por ser uma proteína de alto valor biológico, ajudando no crescimento de massa muscular e boa recuperação do músculo.
 
-                                        
+		.product__why
+			.why
+				.why__top
+					.container
+						h3.why__title Para que serve
+						span.why__subtitle Os objetivos que podem ser alcançados com o consumo de albumina são vários, sendo eles:
+				.why__bottom
+					.container
+						ul.benefits
+							li.benefits__item
+								span.benefits__icon
+									i.icon-muscle
+								span.benefits__text
+									| Ganho de
+									strong  massa muscular
+							li.benefits__item
+								span.benefits__icon
+									i.icon-table
+								span.benefits__text
+									| Auxilia no
+									strong  emagrecimento
+							li.benefits__item
+								span.benefits__icon
+									i.icon-clock
+								span.benefits__text
+									| Ajuda na
+									strong recuperação
+									|  de massa muscular
+		.category-benefits
+			.container
+				h3.category-benefits__title
+					span Benefícios da Albumina
+				span.category-benefits__subtitle
+					| A albumina é excelente para quem intolerância à lactose, a albumina não contém lactose e tem níveis de carboidratos bem baixos.
+					| Quem aposta em dieta low carb também pode adotar a albumina como suplementação devido ao seu valor nutricional.
+				span.category-benefits__count Listamos 8 benefícios da albumina para você entender como de fato essa suplementação irá te ajudar!
 
-            .product__description
-                h2.product__description-title Informações:
-                .product__description-text
-                    +vtex-controller('<vtex.cmc:ProductDescription />')
-                        p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint voluptates laudantium nesciunt veniam quae in error similique aliquid, magnam voluptas ex eum autem architecto? Consequatur unde animi quae aliquid deserunt.
-        section.section__page.section__shelf
-            h2.section__page__title Quem Viu, Viu Também
-            .shelf.shelf__carousel--full
-                +vtex-controller('<vtex:contentPlaceHolder id="Quem-viu-viu-tambem" />')
-                    .prateleira
-                        ul
-                            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                                li
-                                    include ../shelves/prateleira
+				ul.benefits
+					li.benefits__item
+						span.benefits__icon
+							i.icon-muscle
+						span.benefits__text
+							| Ganho de
+							strong massa muscular
+					li.benefits__item
+						span.benefits__icon
+							i.icon-table
+						span.benefits__text
+							| Auxilia no
+							strong emagrecimento
+					li.benefits__item
+						span.benefits__icon
+							i.icon-clock
+						span.benefits__text
+							| Ajuda na
+							strong recuperação
+							| de massa muscular
+					li.benefits__item
+						span.benefits__icon
+							i.icon-clock
+						span.benefits__text
+							| Ajuda na
+							strong recuperação
+							| de massa muscular
+					li.benefits__item
+						span.benefits__icon
+							i.icon-clock
+						span.benefits__text
+							| Ajuda na
+							strong recuperação
+							| de massa muscular
+					li.benefits__item
+						span.benefits__icon
+							i.icon-clock
+						span.benefits__text
+							| Ajuda na
+							strong recuperação
+							| de massa muscular
+					li.benefits__item
+						span.benefits__icon
+							i.icon-clock
+						span.benefits__text
+							| Ajuda na
+							strong recuperação
+							| de massa muscular
+					li.benefits__item
+						span.benefits__icon
+							i.icon-clock
+						span.benefits__text
+							| Ajuda na
+							strong recuperação
+							| de massa muscular
+	section.section__page.section__shelf
+		h2.section__title
+			span Quem Viu, Viu Também
+		.shelf.shelf__carousel--full
+			+vtex-controller('<vtex:contentPlaceHolder id="Quem-viu-viu-tambem" />')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/prateleira
 
 block scripts
-    script(src='/arquivos/ec-easyzoom.js')
+	script(src='/arquivos/ec-easyzoom.js')

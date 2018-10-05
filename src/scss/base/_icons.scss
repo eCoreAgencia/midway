@@ -1,29 +1,18 @@
 $icomoon-font-family: "icomoon" !default;
 $icomoon-font-path: "/arquivos" !default;
 
-$icon-stars: "\e912";
-$icon-finger: "\e913";
-$icon-medal: "\e914";
-$icon-ray: "\e915";
-$icon-arrow-left: "\e900";
-$icon-arrow-right: "\e901";
-$icon-cart: "\e902";
-$icon-coupon: "\e903";
-$icon-help: "\e904";
-$icon-atacado: "\e905";
-$icon-facebook: "\e906";
-$icon-instagram: "\e907";
-$icon-youtube: "\e908";
-$icon-logo-cart: "\e909";
-$icon-mark: "\e90a";
-$icon-menu: "\e90b";
-$icon-phone: "\e90c";
-$icon-refresh: "\e90d";
-$icon-search: "\e90e";
-$icon-truck: "\e90f";
-$icon-user: "\e910";
-$icon-whatsapp: "\e911";
-$icon-cancel: "\ea0d";
+
+$icon-arrow-up: "\e901";
+$icon-arrow-right: "\e902";
+$icon-arrow-left: "\e908";
+$icon-arrow-down: "\e909";
+$icon-minus: "\e907";
+$icon-plus: "\e900";
+$icon-table: "\e903";
+$icon-check: "\e904";
+$icon-clock: "\e905";
+$icon-muscle: "\e906";
+
 
 @font-face {
     font-family: '#{$icomoon-font-family}';
@@ -51,119 +40,57 @@ $icon-cancel: "\ea0d";
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .icon-stars {
+  .icon-arrow-up {
     &:before {
-      content: $icon-stars;
-    }
-  }
-  .icon-finger {
-    &:before {
-      content: $icon-finger;
-    }
-  }
-  .icon-medal {
-    &:before {
-      content: $icon-medal;
-    }
-  }
-  .icon-ray {
-    &:before {
-      content: $icon-ray;
-    }
-  }
-  .icon-arrow-left {
-    &:before {
-      content: $icon-arrow-left;
+      content: $icon-arrow-up; 
     }
   }
   .icon-arrow-right {
     &:before {
-      content: $icon-arrow-right;
+      content: $icon-arrow-right; 
     }
   }
-  .icon-cart {
+  .icon-arrow-left {
     &:before {
-      content: $icon-cart;
-      color: #616161;
+      content: $icon-arrow-left; 
     }
   }
-  .icon-coupon {
+  .icon-arrow-down {
     &:before {
-      content: $icon-coupon;
+      content: $icon-arrow-down; 
     }
   }
-  .icon-help {
+  .icon-minus {
     &:before {
-      content: $icon-help;
+      content: $icon-minus; 
     }
   }
-  .icon-atacado {
+  .icon-plus {
     &:before {
-      content: $icon-atacado;
+      content: $icon-plus; 
     }
   }
-  .icon-facebook {
+  .icon-table {
     &:before {
-      content: $icon-facebook;
+      content: $icon-table;     
+      color: #f22100;
     }
   }
-  .icon-instagram {
+  .icon-check {
     &:before {
-      content: $icon-instagram;
+      content: $icon-check;     
+      color: #f22100;
     }
   }
-  .icon-youtube {
+  .icon-clock {
     &:before {
-      content: $icon-youtube;
+      content: $icon-clock;     
+      color: #f22100;
     }
   }
-  .icon-logo-cart {
+  .icon-muscle {
     &:before {
-      content: $icon-logo-cart;
-    }
-  }
-  .icon-mark {
-    &:before {
-      content: $icon-mark;
-    }
-  }
-  .icon-menu {
-    &:before {
-      content: $icon-menu;
-    }
-  }
-  .icon-phone {
-    &:before {
-      content: $icon-phone;
-    }
-  }
-  .icon-refresh {
-    &:before {
-      content: $icon-refresh;
-    }
-  }
-  .icon-search {
-    &:before {
-      content: $icon-search;
-    }
-  }
-  .icon-truck {
-    &:before {
-      content: $icon-truck;
-    }
-  }
-  .icon-user {
-    &:before {
-      content: $icon-user;
-    }
-  }
-  .icon-whatsapp {
-    &:before {
-      content: $icon-whatsapp;
-    }
-  }
-  .icon-cancel {
-    &:before {
-      content: $icon-cancel;
+      content: $icon-muscle;     
+      color: #f22100;
     }
   }

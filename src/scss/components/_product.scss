@@ -1,4 +1,522 @@
 .product {
 
-  
+    &__main {
+        @extend %u-display-flex;
+		@extend %u-flex-justify-content-center;
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+
+			flex-wrap: wrap;
+
+		}
+    }
+
+    &__nutricional {
+        &-inner, &-list {
+            @extend %u-display-flex;
+        }
+    }
+    &__benefits {
+        width: 145px;
+        .benefits__item {
+            @extend %u-flex-direction-column;
+            @extend %u-flex-total-centered;
+            @extend %u-text-align-center;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #ebebeb;
+            margin-bottom: 20px;
+
+            &:last-child {
+                border: none;
+            }
+        }
+        .benefits__icon {
+            @include font-size(39px);
+            margin-bottom: 15px;
+            max-height: 41px;
+		}
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+
+			display: none;
+
+		}
+
+
+    }
+
+    &__name {
+        h1 {
+            @extend %product__name;
+            @extend %u-italic;
+            @include font-size(30px);
+        }
+    }
+
+    &__weight {
+        @extend %u-italic;
+        @include font-size(14px);
+        letter-spacing: 0.17px;
+        text-transform: uppercase;
+        padding: 5px 0;
+        @extend %u-display-block;
+        line-height: 1;
+    }
+
+    &__brand {
+        @include font-size(14px);
+        @extend %u-italic;
+        color: $c-red;
+        @extend %u-font-secondary;
+        @extend %u-bold;
+        line-height: 1;
+
+    }
+
+
+    &__price {
+        padding: 10px 0;
+    }
+
+    &__skus {
+        .specification {
+            display: none;
+        }
+
+        ul {
+            display: none;
+		}
+
+		&-select {
+			.select, select {
+				width: 100%;
+				text-align: center;
+				text-transform: uppercase;
+				font-style: italic;
+				color: $c-red;
+				border-radius: 0;
+				outline: none !important;
+
+
+			}
+
+			select {
+				border: none;
+				border-bottom: 1px solid #ebebeb;
+				padding-bottom: 10px;
+			}
+
+			.select {
+				&::after {
+					border-color: $c-gray-dark !important;
+				}
+			}
+
+			margin: 20px 0;
+		}
+    }
+
+    &__buy {
+        padding: 10px 0;
+        .buy-button {
+
+            @extend %btn, %btn--primary, %u-italic;
+            @include font-size(17px);
+            letter-spacing: 0.35px;
+            height: 71px;
+            line-height: 65px;
+        }
+    }
+
+    &__qtd {
+        border-bottom: 1px solid #ebebeb;
+        @extend %u-text-align-center, %u-flex-justify-content-space-between, %u-display-flex;
+
+        &-value {
+            @extend %u-no-border, %u-text-align-center;
+        }
+
+        .btn {
+            @include font-size(22px);
+        }
+	}
+	&__nutricional {
+		background-color: $c-red;
+		padding: 18px 0;
+		&-inner {
+			@extend %u-display-flex;
+			align-items: center;
+			justify-content: center;
+
+
+		}
+
+		&-field {
+			@include font-size(14px);
+			letter-spacing: 0.17px;
+			@extend %u-font-secondary, %u-italic, %u-display-block;
+			color: $c-white;
+		}
+		&-value {
+			@include font-size(33px);
+			color: $c-white;
+			letter-spacing: 0.82px;
+			@extend %u-italic, %u-display-block;
+			small {
+				@include font-size(18px);
+			}
+		}
+
+		&-list {
+			height: 80px;
+		}
+
+		&-item {
+			@extend %u-text-align-center, %u-position-relative;
+			padding: 0 30px;
+			width: 150px;
+
+			&::after {
+				content: '';
+				height: 80px;
+				width: 1px;
+				@extend %u-display-block;
+				background-color: $c-white;
+				@extend %u-position-absolute;
+				top: 0;
+				right: 0;
+				transform: skew(-15deg);
+			}
+
+
+		}
+
+		button {
+			display: flex;
+			flex-wrap: wrap;
+			@include font-size(22px);
+			letter-spacing: 0.55px;
+			width: 218px;
+			height: 57px;
+			margin-left: 20px;
+			small {
+				@include font-size(9px);
+				text-transform: uppercase;
+				font-weight: 300;
+				letter-spacing: 0.49px;
+				font-style: italic;
+				font-family: $f-secondary;
+				width: 100%;
+
+
+			}
+		}
+
+
+	}
+
+	&__category {
+		padding: 60px 0;
+	}
+
+	&__why {
+
+	}
+
+	&__media {
+		flex-basis: 40%;
+		margin: 0 10px;
+
+		.thumbs {
+			display: none;
+		}
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+
+			width: 100%;
+
+		}
+	}
+
+
 }
+
+.benefits {
+    &__item {
+        @extend %u-display-flex;
+    }
+
+    &__icon {
+        @include font-size(20px);
+    }
+
+    &__text {
+        @include font-size(16px);
+        @extend %u-font-secondary;
+
+    }
+}
+
+
+%product {
+    &__name {
+        letter-spacing: 0.36px;
+        text-transform: uppercase;
+        color: $c-gray-dark;
+        font-weight: 700;
+        line-height: 1;
+    }
+}
+
+.price {
+    &__list, .skuListPrice {
+        @include font-size(14px);
+        @extend %u-font-secondary;
+        text-transform: uppercase;
+        letter-spacing: 0.17px;
+        @extend %u-italic;
+        @extend %u-strike;
+        color: #808080;
+    }
+
+    &__installments, .skuBestInstallmentNumber, .skuBestInstallmentValue {
+        @include font-size(14px);
+        @extend %u-bold;
+    }
+    .price-installments, .price-installments strong {
+        color: #808080;
+        @extend %u-font-secondary;
+    }
+
+    .skuListPrice, .skuBestPrice {
+
+    }
+
+    .valor-de, .valor-por {
+        font-size: 0;
+        line-height: 1.2;
+    }
+
+    &__best, .skuBestPrice {
+        @include font-size(30px);
+        @extend %u-italic;
+        @extend %u-bold;
+        text-transform: uppercase;
+        letter-spacing: 0.36px;
+    }
+
+    .price-cash {
+        display: none !important;
+	}
+
+
+}
+
+.category {
+	&__description {
+		margin-bottom: 40px;
+		position: relative;
+		&-title {
+			@extend %title--section;
+		}
+
+		&-text {
+			margin-top: 50px;
+			font-family: "Open Sans";
+			color: #222222;
+			font-size: 18px;
+			@media (min-width: 320px) and (max-width: 1024px) {
+				padding: 10px 20px;
+			}
+		}
+	}
+
+	&__details {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		&-call {
+			font-size: 49px;
+			text-transform: uppercase;
+			font-style: italic;
+			line-height: 1;
+			width: 334px;
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				width: 100%;
+				font-size: 29px;
+				text-align: center;
+				margin-bottom: 15px;
+			}
+
+			span {
+				color: $c-red;
+			}
+		}
+
+		&-text {
+			width: 813px;
+			background-color: #f2f2f2;
+			border-left: 10px solid $c-red;
+			transform: skew(-15deg);
+			padding: 30px 40px;
+
+			p {
+				font-size: 18px;
+				font-family: $f-secondary;
+				transform: skew(15deg);
+				margin-left: 30px;
+				@media (min-width: 320px) and (max-width: 1024px) {
+					transform: skew(0deg);
+				}
+			}
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				transform: skew(0deg);
+				border: none;
+				width: 100%;
+			}
+		}
+
+		&-title {
+			font-size: 33px;
+			text-transform: uppercase;
+			letter-spacing: 0.82px;
+			transform: skew(15deg);
+			color: #222222;
+			font-style: italic;
+			@media (min-width: 320px) and (max-width: 1024px) {
+				transform: skew(0deg);
+				font-size: 23px;
+				text-align: center;
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+}
+
+.why {
+
+	&__top {
+		background-color: #f22100;
+		padding: 20px 0;
+	}
+	&__bottom {
+		background-color: #d62205;
+		padding: 10px 0;
+		@media (min-width: 320px) and (max-width: 1024px) {
+			overflow-x: scroll;
+		}
+	}
+
+	&__title {
+		font-size: 33px;
+		text-transform: uppercase;
+		font-style: italic;
+		letter-spacing: 0.82px;
+		text-align: center;
+		color: #ffffff;
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		font-family: "Open Sans";
+		color: #ffffff;
+		text-align: center;
+		width: 100%;
+		display: block;
+		margin: 10px 0;
+	}
+	.benefits {
+		@extend %u-display-flex;
+		color: $c-white;
+		justify-content: center;
+
+		i, strong {
+			color: $c-white;
+			&::before {
+				color: $c-white;
+			}
+		}
+
+		&__item {
+			padding: 0 30px;
+			width: 280px;
+			align-items: center;
+		}
+
+		&__icon {
+			margin-right: 10px;
+		}
+
+
+	}
+
+
+}
+
+.category-benefits {
+	padding: 40px 0px;
+	@media (min-width: 320px) and (max-width: 1024px) {
+		padding: 40px 20px;
+	}
+	&__title {
+		@extend %title--section;
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	&__subtitle {
+		font-family: "Open Sans";
+		font-size: 18px;
+		color: #222222;
+		margin: 20px 0 0;
+		display: block;
+		@media (min-width: 320px) and (max-width: 1024px) {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__count {
+		font-family: "Open Sans";
+		font-size: 18px;
+		color: #222222;
+		font-weight: 700;
+		display: block;
+		margin: 5px auto;
+		text-align: center;
+	}
+
+	.benefits {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 30px 90px;
+		@media (min-width: 320px) and (max-width: 1024px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		&__icon {
+			margin-right: 10px;
+			font-size: 29px;
+		}
+
+		&__item {
+			margin: 10px;
+			@media (min-width: 320px) and (max-width: 1024px) {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		&__text {
+			width: 150px;
+		}
+	}
+}
+
+

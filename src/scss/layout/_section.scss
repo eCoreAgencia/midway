@@ -2,30 +2,20 @@
   &__page {
     position: relative;
   }
-  &__diff {
-    padding: 20px;
-  }
 
-  &__title,
-  &__subtitle {
-    text-align: center;
-    font-family: $f-secondary;
-  }
 
   &__title {
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: 700;
-    color: $c-red;
-    margin-bottom: 20px;
+    @extend %title--section;
   }
 
-  &__subtitle {
-    display: block;
-  }
 
   &__shelf {
-    margin: 20px 0;
+	margin: 20px 0;
+
+	.section__title {
+		width: 600px;
+    	margin: 0 auto;
+	}
   }
 
   &__brand {
@@ -86,5 +76,9 @@
         }
       }
     }
+  }
+
+  &--product-bottom {
+	  padding: 0;
   }
 }
