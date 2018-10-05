@@ -1,11 +1,34 @@
-.button {
+.btn {
     &--primary {
-        color: $c-white;
-        background-color: #004774;
-        border-color: #004774;
-        &:hover {
-            background-color: darken(#004774, 10%);
-            color: $c-white;
+        @extend %btn--primary;
+
+        &-inverse {
+            @extend %btn--primary-inverse;
         }
     }
+
 }
+
+%btn {
+    &--primary {
+        color: $c-white;
+        background-color: $c-primary;
+
+        &:hover {
+            background-color: darken($c-primary, 10%);
+        }
+
+        &-inverse {
+            color: $c-primary;
+            background-color: $c-white;
+
+            &:hover {
+                background-color: darken($c-white, 10%);
+            }
+        }
+    }  
+
+}
+
+
+
