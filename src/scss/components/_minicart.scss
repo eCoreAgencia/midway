@@ -43,7 +43,7 @@
             display: flex;
             align-items: center;
             padding: 20px;
-            background-color: $c-blue;
+            background-color: $c-red;
 
             svg {
                 width: 10px;
@@ -79,7 +79,7 @@
 
     &__totals {
         padding: 20px;
-        background-color: $c-blue;
+        background-color: $c-red;
         text-transform: uppercase;
         color: $c-white;
         text-align: center;
