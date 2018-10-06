@@ -9,10 +9,7 @@
       #f9f9f9 50%
     );
   }
-  .hover {
-    height: 500px;
-    background-color: #fff;
-  }
+
   &__main {
     position: relative;
     .is-flex {
@@ -31,10 +28,12 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    flex: 1;
+    justify-content: flex-start;
     @include atMedium {
       background: #f9f9f9;
-      justify-content: flex-start;
-      flex-basis: 18%
+      flex: 0;
+      flex-basis: 18%;
     }
   }
 
@@ -138,11 +137,11 @@
           line-height: 13px;
           display: inline-block;
           text-transform: uppercase;
-          @include fontFace($f-base,normal);
+          @include fontFace($f-base, normal);
           font-weight: normal;
 
           &__bold {
-            @include fontFace($f-base,700);
+            @include fontFace($f-base, 700);
             color: #fff;
             display: block;
             font-weight: 700;
@@ -174,11 +173,14 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    height: 100vh;
     width: 90%;
     z-index: 9;
     left: -100%;
     order: 2;
+    bottom: 0;
+    top: 0;
+    height: 100vh;
+    background: $c-red;
     &--is-visible {
       left: 0;
     }
@@ -187,6 +189,7 @@
       height: auto;
       z-index: 1;
       width: auto;
+      background: transparent;
     }
   }
 
@@ -198,13 +201,13 @@
     margin-right: 3px;
   }
   &__menu-icon {
-    width: 20px;
     height: 19px;
     position: relative;
     z-index: 10;
     left: 18px;
     margin: 4% 0;
     order: 0;
+    flex-basis: 15%;
 
     &::before {
       content: "";

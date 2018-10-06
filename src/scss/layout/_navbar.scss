@@ -15,14 +15,15 @@ header {
     &::before {
       content: "Voltar";
       order: 0;
-      text-align: center;
+      text-align: left;
       color: #fff;
       font-size: 20px;
       height: 3rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-
+      font-family: $f-secondary;
+      border-bottom: 1px solid #a00f0fa4;
+      padding-left: 40px;
       @include atMedium {
         display: none;
       }
@@ -44,6 +45,12 @@ header {
         align-items: center;
         display: flex;
         justify-content: center;
+        width: 100%;
+        border-bottom: 1px solid #a00f0fa4;
+
+        @include atMedium {
+          border-bottom: 0;
+        }
         &:hover {
           a {
             color: $c-gray-dark;
@@ -56,20 +63,24 @@ header {
         &__link {
           color: #fff;
           display: block;
-          font-family: $f-base;
           line-height: 72px;
           @include font-size(14px);
           letter-spacing: 0.35px;
-          text-align: center;
+          text-align: left;
           position: relative;
-          text-transform: uppercase;
-          font-weight: 700;
           background: $c-red;
-          transform: skew(-15deg);
           border: 1px solid $c-red;
+          width: 100%;
+          font-family: $f-secondary;
+          padding-left: 10px;
           @include atMedium {
+            padding-left: 0;
+            text-align: center;
+            font-family: $f-base;
+            text-transform: uppercase;
+            font-weight: 700;
+            transform: skew(-15deg);
             height: 100%;
-            width: 100%;
           }
           &:hover {
             color: #000;
