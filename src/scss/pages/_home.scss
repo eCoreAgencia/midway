@@ -14,7 +14,7 @@
         font-family: $f-base;
         letter-spacing: 0.82px;
         text-transform: uppercase;
-        padding: 12px 0;
+        margin: 10px 0;
         @include atMedium {
           padding: 40px 0 70px;
           @include font-size(33px);
@@ -68,7 +68,7 @@
         font-size: 11px;
         font-weight: 400;
         font-style: italic;
-        font-family: "Open Sans";
+        font-family: $f-secondary;
         text-transform: uppercase;
         display: flex;
         padding: 0 20px;

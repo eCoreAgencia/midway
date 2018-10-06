@@ -5,10 +5,9 @@ header {
     flex: 1;
     display: flex;
     flex-direction: column;
-    font-family: eurostile;
+    font-family: $f-base;
     @include atMedium {
       align-items: center;
-      //   transform: skew(25deg);
       flex-basis: 80%;
       flex-direction: row;
       position: initial;
@@ -52,11 +51,6 @@ header {
         }
         a {
           text-decoration: none;
-          @include atMedium {
-            // transform: skew(-25deg);
-            height: 100%;
-            width: 100%;
-          }
         }
 
         &__link {
@@ -68,17 +62,20 @@ header {
           letter-spacing: 0.35px;
           text-align: center;
           position: relative;
-          font-style: italic;
           text-transform: uppercase;
           font-weight: 700;
           background: $c-red;
           transform: skew(-15deg);
+          border: 1px solid $c-red;
+          @include atMedium {
+            height: 100%;
+            width: 100%;
+          }
           &:hover {
             color: #000;
             background: $c-white;
-            &:after {
-              display: block;
-            }
+            border: 1px solid $c-white;
+            cursor: pointer;
           }
         }
 
@@ -88,17 +85,53 @@ header {
           left: 0;
           width: 100%;
           display: none;
-          padding: 20px 40px;
           position: absolute;
           background-color: #fff;
-
+          @include atMedium {
+            .container {
+              display: flex;
+              height: 252px;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
           &__item {
+            flex-basis: 17%;
             &__link {
-              color: #666;
+              color: #939393;
+              font-family: $f-secondary;
+              font-size: 13px;
+              font-weight: 300;
+              line-height: 12.01px;
+              letter-spacing: 0.65px;
+            }
+            &--banner-prod {
+              display: flex;
+              flex: 1;
+              img {
+                align-self: center;
+                flex: 0 0 auto;
+              }
             }
           }
         }
-
+        &__dropdown-content {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          flex: 2;
+          &--grid {
+            @include atMedium {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              grid-template-rows: repeat(5, 1fr);
+              flex: 2 1;
+              height: 80%;
+              align-items: center;
+              grid-auto-flow: column;
+            }
+          }
+        }
         &:hover {
           .navbar__list__item__dropdown {
             display: block;
