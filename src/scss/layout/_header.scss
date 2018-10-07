@@ -30,10 +30,16 @@
     height: 100%;
     flex: 1;
     justify-content: flex-start;
+    svg {
+        // padding: 3%;
+    }
     @include atMedium {
       background: #f9f9f9;
       flex: 0;
       flex-basis: 18%;
+      svg {
+          padding: 0;
+      }
     }
   }
 
@@ -207,7 +213,7 @@
     left: 18px;
     margin: 4% 0;
     order: 0;
-    flex-basis: 15%;
+    flex: .3;
 
     &::before {
       content: "";
