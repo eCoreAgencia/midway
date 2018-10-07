@@ -46,9 +46,14 @@
       @include atMedium {
         text-align: left;
         background: transparent;
+        height: 168px;
       }
       .is-flex {
         justify-content: center;
+        @include atMedium {
+          align-items: center;
+          height: 100%;
+        }
       }
       .column {
         padding: 0;
@@ -83,10 +88,10 @@
 
         &:before {
           content: "";
-          width: 10px;
+          width: 12px;
           height: 30px;
           background: #ff0000;
-          //   transform: skew(-15deg);
+          transform: skew(-10deg);
           display: block;
           margin-top: 2px;
           margin-right: 8px;
@@ -100,8 +105,13 @@
 
       .default__form {
         margin: 10px auto;
+        font-size: 12px;
+        font-weight: 400;
         @include atMedium {
           margin: 35px auto;
+          input {
+            width: 30%;
+          }
         }
       }
     }
