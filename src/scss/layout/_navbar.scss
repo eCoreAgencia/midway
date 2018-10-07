@@ -91,19 +91,25 @@ header {
         }
 
         &__dropdown {
-          top: 100%;
+          top: 0;
           right: 0;
           left: 0;
           width: 100%;
           display: none;
           position: absolute;
           background-color: #fff;
+          z-index: 9999;
+          .container {
+            height: 100vh;
+          }
           @include atMedium {
+            top: 100%;
             .container {
               display: flex;
               height: 252px;
               justify-content: space-between;
               align-items: center;
+              z-index: 1;
             }
           }
           &__item {
