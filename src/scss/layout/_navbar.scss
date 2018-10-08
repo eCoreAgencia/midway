@@ -12,22 +12,6 @@ header {
 			flex-direction: row;
 			position: initial;
 		}
-		&::before {
-			content: "Voltar";
-			order: 0;
-			text-align: left;
-			color: #fff;
-			font-size: 20px;
-			height: 3rem;
-			display: flex;
-			align-items: center;
-			font-family: $f-secondary;
-			border-bottom: 1px solid #a00f0fa4;
-			padding-left: 40px;
-			@include atMedium {
-				display: none;
-			}
-		}
 		&__list {
 			width: 100%;
 			display: flex;
@@ -39,6 +23,23 @@ header {
 				flex-direction: row;
 				height: 100%;
 			}
+			.item-voltar,.item-conta,.item-entrar {
+				@include atMedium {
+					display: none;
+				}
+			}
+			i {
+				display: block;
+				svg {
+					use {
+						stroke: white;
+					}
+				}
+				@include atMedium {
+					display: none;
+				}
+			}
+
 			&__item {
 				flex: 1;
 				height: 100%;
@@ -50,24 +51,32 @@ header {
 
 				@include atMedium {
 					border-bottom: 0;
-				}
-				&:hover {
-					.navbar__list__item__link {
-						color: $c-gray-dark;
-						background: $c-white;
-						border: 1px solid $c-white;
-						cursor: pointer;
+					&:hover {
+						.navbar__list__item__link {
+							color: $c-gray-dark;
+							background: $c-white;
+							border: 1px solid $c-white;
+							cursor: pointer;
+						}
 					}
 				}
 				a {
 					text-decoration: none;
 				}
+				&__voltar {
+					@extend .navbar__list__item__link;
+					display: block;
+					padding-left: 45px !important;
+					font-weight: 600;
+					font-style: italic;
+				}
 
 				&__link {
+					text-transform: uppercase;
 					color: #fff;
 					display: block;
 					line-height: 72px;
-					@include font-size(14px);
+					@include font-size(13px);
 					letter-spacing: 0.35px;
 					text-align: left;
 					position: relative;
@@ -76,7 +85,11 @@ header {
 					width: 100%;
 					font-family: $f-secondary;
 					padding-left: 10px;
+					height: 48px;
+					display: flex;
+					align-items: center;
 					@include atMedium {
+						display: block;
 						padding-left: 0;
 						text-align: center;
 						font-family: $f-base;
@@ -88,18 +101,18 @@ header {
 				}
 
 				&__dropdown {
-					top: 0;
-					right: 0;
-					left: 0;
-					width: 100%;
 					display: none;
-					position: absolute;
-					background-color: #fff;
-					z-index: 9999;
 					.container {
 						height: 100vh;
 					}
 					@include atMedium {
+						right: 0;
+						left: 0;
+						width: 100%;
+						display: none;
+						position: absolute;
+						background-color: #fff;
+						z-index: 9999;
 						top: 100%;
 						.container {
 							display: flex;
@@ -118,7 +131,7 @@ header {
 							font-weight: 300;
 							line-height: 12.01px;
 							letter-spacing: 0.65px;
-							&:hover{
+							&:hover {
 								color: $c-gray-dark;
 							}
 						}
@@ -151,7 +164,9 @@ header {
 				}
 				&:hover {
 					.navbar__list__item__dropdown {
-						display: block;
+						@include atMedium {
+							display: block;
+						}
 					}
 				}
 			}
