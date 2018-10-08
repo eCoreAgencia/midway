@@ -12,6 +12,7 @@ $icon-table: "\e903";
 $icon-check: "\e904";
 $icon-clock: "\e905";
 $icon-muscle: "\e906";
+$icon-search: "\e986";
 
 
 @font-face {
@@ -42,55 +43,60 @@ $icon-muscle: "\e906";
 
   .icon-arrow-up {
     &:before {
-      content: $icon-arrow-up; 
+      content: $icon-arrow-up;
     }
   }
   .icon-arrow-right {
     &:before {
-      content: $icon-arrow-right; 
+      content: $icon-arrow-right;
     }
   }
   .icon-arrow-left {
     &:before {
-      content: $icon-arrow-left; 
+      content: $icon-arrow-left;
     }
   }
   .icon-arrow-down {
     &:before {
-      content: $icon-arrow-down; 
+      content: $icon-arrow-down;
     }
   }
   .icon-minus {
     &:before {
-      content: $icon-minus; 
+      content: $icon-minus;
     }
   }
   .icon-plus {
     &:before {
-      content: $icon-plus; 
+      content: $icon-plus;
+    }
+  }
+  .icon-search {
+    &:before {
+      content: $icon-search;
     }
   }
   .icon-table {
     &:before {
-      content: $icon-table;     
+      content: $icon-table;
       color: #f22100;
     }
   }
   .icon-check {
     &:before {
-      content: $icon-check;     
+      content: $icon-check;
       color: #f22100;
     }
   }
   .icon-clock {
     &:before {
-      content: $icon-clock;     
+      content: $icon-clock;
       color: #f22100;
     }
   }
   .icon-muscle {
     &:before {
-      content: $icon-muscle;     
+      content: $icon-muscle;
       color: #f22100;
     }
   }
