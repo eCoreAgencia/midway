@@ -9,19 +9,15 @@ $(() => {
       .parent()
       .find("ul");
     listToExpand.toggleClass("is-active");
-    listToExpand.toggle();
+    listToExpand.toggle(700);
     listToExpand.hasClass("is-active")
       ? arrow.css({ transform: " rotate(90deg)" })
       : arrow.css({ transform: " rotate(0deg)" });
   });
 
-  let iconSearch = document.querySelectorAll('header__account__info i');
-  let searchForm = document.querySelector('header__search-form');
-
-  iconSearch.addEventListener('click', showSearch)
-  let showSearch = () => {
-    searchForm.classList.addClass('is-active');
-  }
-
+  let searchIcon = $(".header__account-info i");
+  let searchBAr = $(".header__search-form");
+  searchIcon.click(() => {
+    searchBAr.toggleClass("header__search-form--is-active");
+  });
 });
-

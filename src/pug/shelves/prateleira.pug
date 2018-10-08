@@ -7,8 +7,8 @@ if (global.process.env.NODE_ENV === 'production')
     - var listPrice = '$product.ListPrice'
     - var bestPrice = '$product.BestPrice'
     - var flags = '$product.HightLight'
-    - var getImageTag = '$product.GetImageTag(30)'
-    - var getImageTag2 = '$product.GetImageTag(30)'
+    - var getImageTag = '$product.GetImageTag(2)'
+    - var getImageTag2 = '$product.GetImageTag(2)'
     - var categoryName = '+ $product.CategoryName'
     - var categoryHref = '$product.CategoryLink'
 
@@ -38,7 +38,9 @@ else
                 != '\n#if ($product.IsInStock)'
                 != '\n  <div class="all-shelf__product__price">'
                 != '\n    <span class="all-shelf__product__price__oldprice">' + listPrice + '</span>'
+                != '\n    #if ($product.HasBestPrice)'
                 != '\n    <span class="all-shelf__product__price__newprice">' + bestPrice + '</span>'
+                != '\n    #end'
                 != '\n    #if ($product.NumbersOfInstallment > 1)'
                 != '\n      <span class="all-shelf__product__price__installment">ou até'
                 != '\n        ${product.NumbersOfInstallment}<b>X</b> de <b>${product.InstallmentValue}</b> sem juros'
@@ -52,7 +54,7 @@ else
                 .price
                     span.all-shelf__product__price__oldprice R$ 432,75
                     span.all-shelf__product__price__newprice R$ 199,99
-                    <span class="all-shelf__product__price__installment">ou até 10x de R$ 19,99 sem juros </span> 
+                    <span class="all-shelf__product__price__installment">ou até 10x de R$ 19,99 sem juros </span>
         .flag.destaque Lançamento
         .all-shelf__product__info__actions
             a.all-shelf__product__info__actions__btn(title= title, href= href) Compre Agora

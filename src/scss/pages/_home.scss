@@ -6,18 +6,22 @@
       &__title {
         width: 100%;
         height: 34px;
-        color: #000;
+        color: #222;
         @include font-size(20px);
         font-weight: 700;
         font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 0.36px;
         text-align: center;
         font-family: $f-base;
-        letter-spacing: 0.82px;
         text-transform: uppercase;
-        padding: 12px 0;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         @include atMedium {
-          padding: 40px 0 70px;
-          @include font-size(33px);
+          margin: 60px 0 20px 0;
+          @include font-size(30px);
         }
 
         &:after,
@@ -25,10 +29,9 @@
           content: "";
           width: 3%;
           height: 2px;
-          margin: 0 1%;
-          display: inline-block;
-          vertical-align: middle;
+          display: inline-flex;
           background-color: #ff0000;
+          margin: 0 1%;
         }
       }
     }
@@ -43,9 +46,14 @@
       @include atMedium {
         text-align: left;
         background: transparent;
+        height: 168px;
       }
       .is-flex {
         justify-content: center;
+        @include atMedium {
+          align-items: center;
+          height: 100%;
+        }
       }
       .column {
         padding: 0;
@@ -68,7 +76,7 @@
         font-size: 11px;
         font-weight: 400;
         font-style: italic;
-        font-family: "Open Sans";
+        font-family: $f-secondary;
         text-transform: uppercase;
         display: flex;
         padding: 0 20px;
@@ -80,10 +88,10 @@
 
         &:before {
           content: "";
-          width: 10px;
+          width: 12px;
           height: 30px;
           background: #ff0000;
-          transform: skew(-15deg);
+          transform: skew(-10deg);
           display: block;
           margin-top: 2px;
           margin-right: 8px;
@@ -96,9 +104,14 @@
       }
 
       .default__form {
-          margin: 10px auto;
+        margin: 10px auto;
+        font-size: 12px;
+        font-weight: 400;
         @include atMedium {
           margin: 35px auto;
+          input {
+            width: 30%;
+          }
         }
       }
     }
