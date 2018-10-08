@@ -6,7 +6,7 @@
   "scripts": {
     "build:checkout": "cross-env NODE_ENV=production webpack --config ./config/webpack.checkout.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js",
-    "dev": "webpack-dev-server --open --hot --config ./config/webpack.dev.js",
+    "dev": "webpack-dev-server --open --hot --config ./config/webpack.dev.js --host 0.0.0.0",
     "deploy": "node scripts/deploy.js",
     "mock": "json-server --watch ./config/db.json"
   },

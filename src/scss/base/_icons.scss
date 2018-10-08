@@ -3,7 +3,7 @@ $icomoon-font-path: "/arquivos" !default;
 
 
 $icon-arrow-up: "\e901";
-$icon-arrow-right: "\e902";
+// $icon-arrow-right: "\e902";
 $icon-arrow-left: "\e908";
 $icon-arrow-down: "\e909";
 $icon-minus: "\e907";
@@ -12,7 +12,7 @@ $icon-table: "\e903";
 $icon-check: "\e904";
 $icon-clock: "\e905";
 $icon-muscle: "\e906";
-$icon-search: "\e986";
+// $icon-search: "\e986";
 
 
 @font-face {
@@ -46,11 +46,11 @@ $icon-search: "\e986";
       content: $icon-arrow-up;
     }
   }
-  .icon-arrow-right {
-    &:before {
-      content: $icon-arrow-right;
-    }
-  }
+//   .icon-arrow-right {
+//     &:before {
+//       content: $icon-arrow-right;
+//     }
+//   }
   .icon-arrow-left {
     &:before {
       content: $icon-arrow-left;
@@ -71,11 +71,11 @@ $icon-search: "\e986";
       content: $icon-plus;
     }
   }
-  .icon-search {
-    &:before {
-      content: $icon-search;
-    }
-  }
+//   .icon-search {
+//     &:before {
+//       content: $icon-search;
+//     }
+//   }
   .icon-table {
     &:before {
       content: $icon-table;

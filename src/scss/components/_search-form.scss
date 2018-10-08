@@ -25,16 +25,13 @@
 			border-radius: 0;
 		}
 		.control {
-			display: flex;
-			align-items: center;
-			flex: 1;
 			@include atMedium {
 				flex-basis: 80%;
 			}
 		}
 		.input {
 			width: 100vw;
-			height: 100%;
+			height: 45px;
 			color: #b1b3b6;
 			font-family: Montserrat;
 			font-size: 12px;
@@ -45,23 +42,27 @@
 			}
 			@include atMedium {
 				width: 100%;
+				height: 100%;
 			}
 		}
 		.icon-search,
 		.cancel-ico {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			padding: 0 7px;
 			font-size: 22px;
-			position: relative;
-			left: -41px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
 			color: #b1b3b6;
 			font-weight: bold;
 			z-index: 8;
 			text-decoration: none;
+			cursor: pointer;
 		}
 		.cancel-ico {
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			svg {
 				width: 18px;
 				fill: gray;
@@ -73,7 +74,7 @@
 		.icon-search {
 			display: none;
 			@include atMedium {
-				display: block;
+				display: flex;
 			}
 		}
 	}
