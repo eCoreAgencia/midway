@@ -6,7 +6,8 @@
 
 		@media (min-width: 320px) and (max-width: 1024px) {
 
-			flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 10px;
 
 		}
     }
@@ -341,7 +342,8 @@
 			text-transform: uppercase;
 			font-style: italic;
 			line-height: 1;
-			width: 334px;
+            width: 334px;
+            font-weight: 700;
 
 			@media (min-width: 320px) and (max-width: 1024px) {
 				width: 100%;
@@ -360,7 +362,10 @@
 			background-color: #f2f2f2;
 			border-left: 10px solid $c-red;
 			transform: skew(-15deg);
-			padding: 30px 40px;
+            padding: 30px 40px;
+            @media (min-width: 320px) and (max-width: 1024px) {
+                padding: 30px 10px;
+            }
 
 			p {
 				font-size: 18px;
@@ -385,7 +390,8 @@
 			letter-spacing: 0.82px;
 			transform: skew(15deg);
 			color: #222222;
-			font-style: italic;
+            font-style: italic;
+            font-weight: 700;
 			@media (min-width: 320px) and (max-width: 1024px) {
 				transform: skew(0deg);
 				font-size: 23px;
@@ -417,7 +423,8 @@
 		font-style: italic;
 		letter-spacing: 0.82px;
 		text-align: center;
-		color: #ffffff;
+        color: #ffffff;
+        font-weight: 700;
 	}
 
 	&__subtitle {

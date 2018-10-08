@@ -32,7 +32,8 @@
 			color: #222222;
 			padding: 0 15px;
 			position: static;
-			background-color: $c-white;
+            background-color: $c-white;
+            font-weight: 700;
 		}
 
 		@media (min-width: 320px) and (max-width: 1024px) {
