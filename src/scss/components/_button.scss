@@ -25,6 +25,7 @@
     &--primary {
         color: $c-white;
         background-color: $c-primary;
+        font-weight: 700;
 
         &:hover {
             background-color: darken($c-primary, 10%);

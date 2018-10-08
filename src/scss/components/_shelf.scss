@@ -12,22 +12,24 @@
     background-color: #fff;
     -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
     box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+    width: 262px;
+    overflow: hidden;
     @include atMedium {
       margin: 1.2rem;
     }
     .flag {
       top: 0;
-      left: 0;
-      padding: 7px;
+      left: -5px;
+      padding: 7px 15px;
       color: #fff;
       font-size: 11px;
       font-weight: bold;
       position: absolute;
-      font-style: italic;
       font-family: $f-base;
       letter-spacing: 0.17px;
       text-transform: uppercase;
       background-color: #ff3717;
+      transform: skew(-15deg);
     }
 
     .all-shelf {
@@ -37,13 +39,12 @@
 
       &__product {
         &__name {
-          padding: 0 10px;
+          padding: 10px 10px 0;
         }
 
         &__link {
           color: #222;
           font-size: 20px;
-          font-size: 16px;
           font-weight: 700;
           font-style: italic;
           font-family: $f-base;
@@ -55,6 +56,20 @@
           }
         }
 
+        &__skuname {
+            color: #222;
+            font-size: 14px;
+            font-weight: 700;
+            font-style: italic;
+            text-transform: uppercase;
+            padding: 0 10px;
+        }
+
+        &__brand {
+            padding: 10px;
+            @extend .product__brand;
+        }
+
         &__pic {
           margin: auto;
           @include atMedium {
@@ -63,7 +78,7 @@
         }
 
         &__price {
-          padding: 0 10px;
+          padding: 15px 10px;
 
           &__oldprice {
             display: block;
@@ -74,6 +89,8 @@
             letter-spacing: 0.17px;
             font-family: "Open Sans";
             text-transform: uppercase;
+            text-decoration: line-through;
+            line-height: 1.2;
           }
 
           &__newprice {
@@ -85,6 +102,7 @@
             letter-spacing: 0.36px;
             font-family: $f-base;
             text-transform: uppercase;
+            line-height: 1.2;
             @include atMedium {
               font-size: 30px;
             }

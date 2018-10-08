@@ -1,0 +1,15 @@
+.catalog {
+    .searchResultsTime, .sub, .pages, .pager {
+        display: none;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .aside__filter {
+        width: 293px;
+    }
+}    

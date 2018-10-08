@@ -25,14 +25,16 @@ else
     - var categoryHref = '/category.html'
 
 .product.all-shelf
-    span.product__id(data-product-id= dataProductId)
+    span.product__id(data-product-id=dataProductId)
     .all-shelf__header
         .all-shelf__header__media
-            a.all-shelf__header__product(href= href)
+            a.all-shelf__header__product(href=href)
                 != getImageTag
     .all-shelf__product
         h3.all-shelf__product__name
-            a.all-shelf__product__link(title= title, href= href)= title
+            a.all-shelf__product__link(title=title, href=href)=title
+        h4.all-shelf__product__skuname 20 un - FRUTAS VERMELHAS
+        spa.all-shelf__product__brand Build Yourself   
         .all-shelf__product__price
             if ( global.process.env.NODE_ENV === 'production' )
                 != '\n#if ($product.IsInStock)'
@@ -54,7 +56,12 @@ else
                 .price
                     span.all-shelf__product__price__oldprice R$ 432,75
                     span.all-shelf__product__price__newprice R$ 199,99
-                    <span class="all-shelf__product__price__installment">ou até 10x de R$ 19,99 sem juros </span>
+                    span.all-shelf__product__price__installment 
+                        | ou até 
+                        strong 10x 
+                        | de 
+                        strong R$ 19,99 
+                        | sem juros
         .flag.destaque Lançamento
         .all-shelf__product__info__actions
             a.all-shelf__product__info__actions__btn(title= title, href= href) Compre Agora
