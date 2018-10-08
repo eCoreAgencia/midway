@@ -16,7 +16,7 @@ body.account {
           font-weight: 700;
           line-height: 24px;
           font-style: italic;
-          font-family: eurostileregular;
+          font-family: $f-base;
           text-transform: uppercase;
         }
       }
@@ -345,7 +345,7 @@ body.account {
         text-align: center;
         font-style: italic;
         text-decoration: none;
-        font-family: eurostileregular;
+        font-family: $f-base;
         text-transform: uppercase;
         background-color: #f22100;
      }

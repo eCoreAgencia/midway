@@ -1,58 +1,60 @@
 include ../helpers.pug
 
 if (global.process.env.NODE_ENV === 'production')
-  - var title = '$product.HtmlEscapedName'
-  - var href = '$product.Uri'
-  - var dataProductId = '$product.Id'
-  - var listPrice = '$product.ListPrice'
-  - var bestPrice = '$product.BestPrice'
-  - var flags = '$product.HightLight'
-  - var getImageTag = '$product.GetImageTag(2)'
-  - var getImageTag2 = '$product.GetImageTag(2)'
-  - var categoryName = '+ $product.CategoryName'
-  - var categoryHref = '$product.CategoryLink'
+    - var title = '$product.HtmlEscapedName'
+    - var href = '$product.Uri'
+    - var dataProductId = '$product.Id'
+    - var listPrice = '$product.ListPrice'
+    - var bestPrice = '$product.BestPrice'
+    - var flags = '$product.HightLight'
+    - var getImageTag = '$product.GetImageTag(2)'
+    - var getImageTag2 = '$product.GetImageTag(2)'
+    - var categoryName = '+ $product.CategoryName'
+    - var categoryHref = '$product.CategoryLink'
 
 else
-  - var title = 'Nome do produto'
-  - var href = '/product.html'
-  - var dataProductId = Math.floor(Math.random() * 9999999)
-  - var listPrice = 'R$ 299,99'
-  - var bestPrice = 'R$ 199,99'
-  - var flags = '<p class="flag destaque">Lançamento</p>'
-  - var getImageTag = '<img class="all-shelf__product__pic"" src="http://via.placeholder.com/146x203" width="146" height="203" />'
-  - var getImageTag2 = '<img class="all-shelf__product__pic" src="http://via.placeholder.com/146x203" width="146" height="203" />'
-  - var categoryName = '+ Iluminação'
-  - var categoryHref = '/category.html'
+    - var title = 'Nome do produto'
+    - var href = '/product.html'
+    - var dataProductId = Math.floor(Math.random() * 9999999)
+    - var listPrice = 'R$ 299,99'
+    - var bestPrice = 'R$ 199,99'
+    - var flags = '<p class="flag destaque">Lançamento</p>'
+    - var getImageTag = '<img class="all-shelf__product__pic"" src="http://via.placeholder.com/146x203" width="146" height="203" />'
+    - var getImageTag2 = '<img class="all-shelf__product__pic" src="http://via.placeholder.com/146x203" width="146" height="203" />'
+    - var categoryName = '+ Iluminação'
+    - var categoryHref = '/category.html'
 
 .product.all-shelf
-  span.product__id(data-product-id= dataProductId)
-  .all-shelf__header
-    .all-shelf__header__media
-      a.all-shelf__header__product(href= href)
-        != getImageTag
-  .all-shelf__product
-    h3.all-shelf__product__name
-      a.all-shelf__product__link(title= title, href= href)= title
-    .all-shelf__product__price
-      if ( global.process.env.NODE_ENV === 'production' )
-        != '\n#if ($product.IsInStock)'
-        != '\n  <div class="all-shelf__product__price">'
-        != '\n    <span class="all-shelf__product__price__oldprice">' + listPrice + '</span>'
-        != '\n    <span class="all-shelf__product__price__newprice">' + bestPrice + '</span>'
-        != '\n    #if ($product.NumbersOfInstallment > 1)'
-        != '\n      <span class="all-shelf__product__price__installment">ou até'
-        != '\n        ${product.NumbersOfInstallment}<b>X</b> de <b>${product.InstallmentValue}</b> sem juros'
-        != '\n      </span>'
-        != '\n    #end'
-        != '\n  </div>'
-        != '\n#else'
-        != '\n  <span class="product__unavailable">Indisponível</span>'
-        != '\n#end\n'
-      else
-        .price
-          span.all-shelf__product__price__oldprice R$ 432,75
-          span.all-shelf__product__price__newprice R$ 199,99
-          <span class="all-shelf__product__price__installment">ou até 10x de R$ 19,99 sem juros </span> 
-    .flag.destaque Lançamento
-    .all-shelf__product__info__actions
-      a.all-shelf__product__info__actions__btn(title= title, href= href) Compre Agora
+    span.product__id(data-product-id= dataProductId)
+    .all-shelf__header
+        .all-shelf__header__media
+            a.all-shelf__header__product(href= href)
+                != getImageTag
+    .all-shelf__product
+        h3.all-shelf__product__name
+            a.all-shelf__product__link(title= title, href= href)= title
+        .all-shelf__product__price
+            if ( global.process.env.NODE_ENV === 'production' )
+                != '\n#if ($product.IsInStock)'
+                != '\n  <div class="all-shelf__product__price">'
+                != '\n    <span class="all-shelf__product__price__oldprice">' + listPrice + '</span>'
+                != '\n    #if ($product.HasBestPrice)'
+                != '\n    <span class="all-shelf__product__price__newprice">' + bestPrice + '</span>'
+                != '\n    #end'
+                != '\n    #if ($product.NumbersOfInstallment > 1)'
+                != '\n      <span class="all-shelf__product__price__installment">ou até'
+                != '\n        ${product.NumbersOfInstallment}<b>X</b> de <b>${product.InstallmentValue}</b> sem juros'
+                != '\n      </span>'
+                != '\n    #end'
+                != '\n  </div>'
+                != '\n#else'
+                != '\n  <span class="product__unavailable">Indisponível</span>'
+                != '\n#end\n'
+            else
+                .price
+                    span.all-shelf__product__price__oldprice R$ 432,75
+                    span.all-shelf__product__price__newprice R$ 199,99
+                    <span class="all-shelf__product__price__installment">ou até 10x de R$ 19,99 sem juros </span>
+        .flag.destaque Lançamento
+        .all-shelf__product__info__actions
+            a.all-shelf__product__info__actions__btn(title= title, href= href) Compre Agora

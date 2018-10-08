@@ -42,30 +42,22 @@ if ($('body').hasClass('product')) {
       this.thumbsClickEvent()
       this.simulateShipping()
 
-      $('.js-product-buy-button').on('click', function (e) {
-        e.preventDefault()
-        let quantity = $('.js-quantity-value').val()
-        addToCart(self.skuJson.skus[0], +quantity)
+      $('.btn--plus').on('click', () =>{
+        self.changeQuantity(1);
       })
 
-      $('.js-product-qty-button').on('click', function (e) {
-        e.preventDefault()
-        let val = $(this).data('value')
-        self.changeQuantity(val)
+      $('.btn--minus').on('click', () =>{
+        self.changeQuantity(-1);
       })
 
-      $('.js-product-qty-value').on('blur', function (e) {
-        e.preventDefault()
-        let val = +$(this).val()
-        if (!val || val < 1) $(this).val(1)
-      })
+     
     }
 
     changeQuantity(val) {
-      let currentVal = $('.js-product-qty-value').val()
+      let currentVal = $('.product__qtd-value').val()
       let newVal = +currentVal + +val
       if (newVal) {
-        $('.js-product-qty-value').val(newVal)
+        $('.product__qtd-value').val(newVal)
       }
     }
 

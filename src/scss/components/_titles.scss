@@ -1,0 +1,46 @@
+
+
+%title {
+
+}
+
+%section-title {
+    color: $c-black;
+}
+
+%title {
+	&--section {
+		position: relative;
+		z-index: 1;
+		text-align: center;
+
+		&:before {
+			border-top: 2px solid $c-red;
+			content:"";
+			margin: 0 auto; /* this centers the line to the full width specified */
+			position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+			top: 50%; left: 0; right: 0; bottom: 0;
+			width: 95%;
+			z-index: -1;
+		}
+
+		span {
+			font-style: italic;
+			text-transform: uppercase;
+			letter-spacing: 0.82px;
+			font-size: 33px;
+			color: #222222;
+			padding: 0 15px;
+			position: static;
+			background-color: $c-white;
+		}
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+
+			&:before {
+				display: none;
+			}
+
+		}
+	}
+}

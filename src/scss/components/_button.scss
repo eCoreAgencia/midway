@@ -1,11 +1,49 @@
-.button {
+.btn {
+    @extend %btn;
     &--primary {
-        color: $c-white;
-        background-color: #004774;
-        border-color: #004774;
-        &:hover {
-            background-color: darken(#004774, 10%);
-            color: $c-white;
+        @extend %btn--primary;
+
+        &-inverse {
+            @extend %btn--primary-inverse;
         }
     }
+
 }
+
+%btn {
+    @extend %u-display-flex, %u-flex-total-centered, %u-text-align-center, %u-uppercase, %u-no-border-radius, , %u-no-border;
+    padding-bottom: calc(0.375em - 1px);
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    padding-top: calc(0.375em - 1px);
+    color: $c-gray-dark;
+    background-color: $c-white;
+    &:hover {
+        cursor: pointer;
+        @extend %u-no-text-decoration;
+    }
+    &--primary {
+        color: $c-white;
+        background-color: $c-primary;
+
+        &:hover {
+            background-color: darken($c-primary, 10%);
+            color: $c-white;
+        }
+
+        &-inverse {
+            color: $c-primary;
+            background-color: $c-white;
+
+            &:hover {
+                background-color: darken($c-white, 10%);
+                color: $c-primary;
+            }
+        }
+    } 
+    
+
+}
+
+
+

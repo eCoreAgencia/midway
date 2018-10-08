@@ -1,20 +1,21 @@
 .header {
-  background: linear-gradient(
-    to left,
-    #f11e08 50%,
-    #f11e08 50%,
-    #f9f9f9 50%,
-    #f9f9f9 50%
-  ) !important;
-
-  .hover {
-    height: 500px;
-    background-color: #fff;
+  background: $c-white;
+  @include atMedium {
+    background: linear-gradient(
+      to left,
+      $c-red 67%,
+      $c-red 50%,
+      #f9f9f9 50%,
+      #f9f9f9 50%
+    );
   }
+
   &__main {
+    position: relative;
     .is-flex {
       flex-wrap: wrap;
       justify-content: space-between;
+      align-items: center;
       @include atMedium {
         flex-wrap: nowrap;
       }
@@ -22,25 +23,35 @@
   }
 
   &__area__logo__link {
-    background: #f9f9f9;
-    transform: skew(-25deg);
     order: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    flex: 1;
+    justify-content: flex-start;
     svg {
-      padding: 0 20px;
-      transform: skew(25deg);
+        // padding: 3%;
+    }
+    @include atMedium {
+      background: #f9f9f9;
+      flex: 0;
+      flex-basis: 18%;
+      svg {
+          padding: 0;
+      }
     }
   }
 
   &__account-info {
     display: flex;
-    background: #f11e08;
     align-items: center;
     flex-basis: 12%;
     justify-content: space-around;
     order: 2;
+    @include atMedium {
+      background: $c-red;
+    }
     i {
       font-size: 20px;
       font-weight: bold;
@@ -49,13 +60,13 @@
       align-items: center;
       width: 48px;
       justify-content: center;
+      color: #b3b5b4;
       @include atMedium {
         display: none;
       }
     }
     @include atMedium {
       order: 4;
-      transform: skew(-25deg);
     }
 
     &__account-box {
@@ -73,7 +84,6 @@
         display: none;
         padding: 0 0 0 20px;
         background-color: #fff;
-        transform: skew(0deg);
 
         &__item {
           border-bottom: 1px solid #ccc;
@@ -86,7 +96,7 @@
           &:hover {
             .header__account-info__account-box__list__item__link {
               color: #fff;
-              background: #f11e08;
+              background: $c-red;
             }
           }
 
@@ -103,16 +113,16 @@
         cursor: pointer;
 
         .header__account-info__account-box__wrap-items__txt {
-          color: #f11e08;
+          color: $c-red;
           strong {
-            color: #f11e08;
+            color: $c-red;
           }
         }
 
         .header__account-info__account-box__wrap-items__ico {
           use {
-            fill: #f11e08;
-            stroke: #f11e08;
+            fill: $c-red;
+            stroke: $c-red;
           }
         }
 
@@ -125,7 +135,6 @@
       &__wrap-items {
         display: flex;
         flex-wrap: nowrap;
-        transform: skew(25deg);
         padding: 0 10px;
 
         &__txt {
@@ -134,12 +143,14 @@
           line-height: 13px;
           display: inline-block;
           text-transform: uppercase;
-          font-family: eurostileregular;
+          @include fontFace($f-base, normal);
+          font-weight: normal;
 
           &__bold {
-            font-family: eurostilebold;
+            @include fontFace($f-base, 700);
             color: #fff;
             display: block;
+            font-weight: 700;
           }
         }
       }
@@ -151,12 +162,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-    > div {
-      padding: 0 10px;
-      @include atMedium {
-        transform: skew(25deg);
-      }
-    }
     svg {
       use {
         fill: black;
@@ -165,29 +170,23 @@
         }
       }
     }
-    &:hover {
-      background: #fff;
-      cursor: pointer;
-      svg {
-        use {
-          fill: #f11e08;
-        }
-      }
+    @include atMedium {
     }
   }
   &__menu {
     flex: 2;
     display: flex;
     align-items: center;
-    background: #f11e08;
     justify-content: center;
     position: absolute;
-    height: 100vh;
     width: 90%;
     z-index: 9;
-    transform: skew(0deg);
     left: -100%;
     order: 2;
+    bottom: 0;
+    top: 0;
+    height: 100vh;
+    background: $c-red;
     &--is-visible {
       left: 0;
     }
@@ -195,8 +194,8 @@
       position: initial;
       height: auto;
       z-index: 1;
-      transform: skew(-25deg);
       width: auto;
+      background: transparent;
     }
   }
 
@@ -208,13 +207,13 @@
     margin-right: 3px;
   }
   &__menu-icon {
-    width: 20px;
     height: 19px;
     position: relative;
     z-index: 10;
     left: 18px;
     margin: 4% 0;
     order: 0;
+    flex: .3;
 
     &::before {
       content: "";
@@ -223,7 +222,7 @@
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: #f11e08;
+      background-color: $c-red;
       transform-origin: 0 0;
       transition: transform 0.3s ease-out;
     }
@@ -233,7 +232,7 @@
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: #f11e08;
+      background-color: $c-red;
       transition: all 0.3s ease-out;
       transform-origin: 0 50%;
     }
@@ -244,7 +243,7 @@
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: #f11e08;
+      background-color: $c-red;
       transform-origin: 0% 100%;
       transition: transform 0.3s ease-out;
     }
