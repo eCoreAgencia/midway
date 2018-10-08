@@ -11,8 +11,8 @@ $(() => {
     listToExpand.toggleClass("is-active");
     listToExpand.toggle(700);
     listToExpand.hasClass("is-active")
-      ? arrow.css({ transform: " rotate(90deg)" })
-      : arrow.css({ transform: " rotate(0deg)" });
+      ? arrow.css({ transform: " rotate(-270deg)" })
+      : arrow.css({ transform: " rotate(-90deg)" });
   });
 
   let searchIcon = $(".header__account-info i");

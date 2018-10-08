@@ -1,160 +1,160 @@
 header {
-  .navbar {
-    height: 100%;
-    background: none;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    font-family: $f-base;
-    @include atMedium {
-      align-items: center;
-      flex-basis: 80%;
-      flex-direction: row;
-      position: initial;
-    }
-    &::before {
-      content: "Voltar";
-      order: 0;
-      text-align: left;
-      color: #fff;
-      font-size: 20px;
-      height: 3rem;
-      display: flex;
-      align-items: center;
-      font-family: $f-secondary;
-      border-bottom: 1px solid #a00f0fa4;
-      padding-left: 40px;
-      @include atMedium {
-        display: none;
-      }
-    }
-    &__list {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: auto;
-      flex-direction: column;
-      @include atMedium {
-        flex-direction: row;
-        height: 100%;
-      }
-      &__item {
-        flex: 1;
-        height: 100%;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        border-bottom: 1px solid #a00f0fa4;
+	.navbar {
+		height: 100%;
+		background: none;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		font-family: $f-base;
+		@include atMedium {
+			align-items: center;
+			flex-basis: 80%;
+			flex-direction: row;
+			position: initial;
+		}
+		&::before {
+			content: "Voltar";
+			order: 0;
+			text-align: left;
+			color: #fff;
+			font-size: 20px;
+			height: 3rem;
+			display: flex;
+			align-items: center;
+			font-family: $f-secondary;
+			border-bottom: 1px solid #a00f0fa4;
+			padding-left: 40px;
+			@include atMedium {
+				display: none;
+			}
+		}
+		&__list {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: auto;
+			flex-direction: column;
+			@include atMedium {
+				flex-direction: row;
+				height: 100%;
+			}
+			&__item {
+				flex: 1;
+				height: 100%;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				border-bottom: 1px solid #a00f0fa4;
 
-        @include atMedium {
-          border-bottom: 0;
-        }
-        &:hover {
-          a {
-            color: $c-gray-dark;
-          }
-        }
-        a {
-          text-decoration: none;
-        }
+				@include atMedium {
+					border-bottom: 0;
+				}
+				&:hover {
+					.navbar__list__item__link {
+						color: $c-gray-dark;
+						background: $c-white;
+						border: 1px solid $c-white;
+						cursor: pointer;
+					}
+				}
+				a {
+					text-decoration: none;
+				}
 
-        &__link {
-          color: #fff;
-          display: block;
-          line-height: 72px;
-          @include font-size(14px);
-          letter-spacing: 0.35px;
-          text-align: left;
-          position: relative;
-          background: $c-red;
-          border: 1px solid $c-red;
-          width: 100%;
-          font-family: $f-secondary;
-          padding-left: 10px;
-          @include atMedium {
-            padding-left: 0;
-            text-align: center;
-            font-family: $f-base;
-            text-transform: uppercase;
-            font-weight: 700;
-            transform: skew(-15deg);
-            height: 100%;
-          }
-          &:hover {
-            color: #000;
-            background: $c-white;
-            border: 1px solid $c-white;
-            cursor: pointer;
-          }
-        }
+				&__link {
+					color: #fff;
+					display: block;
+					line-height: 72px;
+					@include font-size(14px);
+					letter-spacing: 0.35px;
+					text-align: left;
+					position: relative;
+					background: $c-red;
+					border: 1px solid $c-red;
+					width: 100%;
+					font-family: $f-secondary;
+					padding-left: 10px;
+					@include atMedium {
+						padding-left: 0;
+						text-align: center;
+						font-family: $f-base;
+						text-transform: uppercase;
+						font-weight: 700;
+						transform: skew(-15deg);
+						height: 100%;
+					}
+				}
 
-        &__dropdown {
-          top: 0;
-          right: 0;
-          left: 0;
-          width: 100%;
-          display: none;
-          position: absolute;
-          background-color: #fff;
-          z-index: 9999;
-          .container {
-            height: 100vh;
-          }
-          @include atMedium {
-            top: 100%;
-            .container {
-              display: flex;
-              height: 252px;
-              justify-content: space-between;
-              align-items: center;
-              z-index: 1;
-            }
-          }
-          &__item {
-            flex-basis: 17%;
-            &__link {
-              color: #939393;
-              font-family: $f-secondary;
-              font-size: 13px;
-              font-weight: 300;
-              line-height: 12.01px;
-              letter-spacing: 0.65px;
-            }
-            &--banner-prod {
-              display: flex;
-              flex: 1;
-              img {
-                align-self: center;
-                flex: 0 0 auto;
-              }
-            }
-          }
-        }
-        &__dropdown-content {
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-          flex: 2;
-          &--grid {
-            @include atMedium {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr 1fr;
-              grid-template-rows: repeat(5, 1fr);
-              flex: 2 1;
-              height: 80%;
-              align-items: center;
-              grid-auto-flow: column;
-            }
-          }
-        }
-        &:hover {
-          .navbar__list__item__dropdown {
-            display: block;
-          }
-        }
-      }
-    }
-  }
+				&__dropdown {
+					top: 0;
+					right: 0;
+					left: 0;
+					width: 100%;
+					display: none;
+					position: absolute;
+					background-color: #fff;
+					z-index: 9999;
+					.container {
+						height: 100vh;
+					}
+					@include atMedium {
+						top: 100%;
+						.container {
+							display: flex;
+							height: 252px;
+							justify-content: space-between;
+							align-items: center;
+							z-index: 1;
+						}
+					}
+					&__item {
+						flex-basis: 17%;
+						&__link {
+							color: #939393;
+							font-family: $f-secondary;
+							font-size: 13px;
+							font-weight: 300;
+							line-height: 12.01px;
+							letter-spacing: 0.65px;
+							&:hover{
+								color: $c-gray-dark;
+							}
+						}
+						&--banner-prod {
+							display: flex;
+							flex: 1;
+							img {
+								align-self: center;
+								flex: 0 0 auto;
+							}
+						}
+					}
+				}
+				&__dropdown-content {
+					display: flex;
+					flex-direction: column;
+					flex-wrap: wrap;
+					flex: 2;
+					&--grid {
+						@include atMedium {
+							display: grid;
+							grid-template-columns: 1fr 1fr 1fr 1fr;
+							grid-template-rows: repeat(5, 1fr);
+							flex: 2 1;
+							height: 80%;
+							align-items: center;
+							grid-auto-flow: column;
+						}
+					}
+				}
+				&:hover {
+					.navbar__list__item__dropdown {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 }
