@@ -9,7 +9,7 @@ import './components/searchForm'
 import './components/minicart';
 import './components/mobile-menu';
 
-//import './components/shelf';
+import './components/filter';
 import './components/modal';
 import './components/product';
 

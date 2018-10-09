@@ -155,7 +155,7 @@ jQuery.fn.vtexSmartResearch=function(opts)
 			if ("undefined" === typeof pages)
 				pages = 99999999;
 	
-			loadContentE.append("<div class='button btn-load-more confira-todos-produtos'>Ver Mais</div>");
+			//loadContentE.append("<div class='button btn-load-more confira-todos-produtos'>Ver Mais</div>");
 	
 			pageJqxhr = jQuery.ajax({
 				url: fn.getUrl(true),

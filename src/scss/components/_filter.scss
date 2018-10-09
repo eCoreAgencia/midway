@@ -14,15 +14,18 @@
     }
 
     &__item {
-        padding: 20px 30px;
+        padding: 15px 0 15px 10px;
         width: 100%;
-        span {
-            font-size: 18px;
-            font-weight: 700;
-            color: $c-gray-dark;
-            font-style: italic;
-        }
+        border-bottom: 1px solid #ebebeb;
         
+    }
+
+    &__link {
+        font-size: 15px;
+        font-weight: 700;
+        color: $c-gray-dark;
+        font-style: italic;
+        text-transform: uppercase;
     }
 
     &__content {
@@ -37,46 +40,52 @@
 
 
     &__options {
+        padding: 10px;
         .filter__item:hover & {
-            display: flex;
+            display: block;
         }
-        display: none;
-        position: absolute;
         
         label {
             display: flex;
-            text-transform: uppercase;
+            font-size: 14px;
+            padding: 2px;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
             flex-direction: row-reverse;
             margin-left: 10px;
-        
+            margin-right: auto;
+            font-family: $f-secondary;
+            &:hover {
+                cursor: pointer;
+            }
+
             &.sr_selected .sr_box::after {
                 content: '';
                 display: block;
-                width: 20px;
-                height: 20px;
+                width: 8px;
+                height: 8px;
                 background-color: $c-primary;
-                border-radius: 50%;
                 transition: all .3s ease;
             }  
+            
         }
         input {
             display: none;
         }
         
+        
+        
         .sr_box {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+            width: 16px;
+            height: 16px;
             display: flex;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #e4e4e4;
             background-color: $c-white;
-            margin-right: 10px;
             position: relative;
             align-items: center;
             justify-content: center;
             transition: all .2s ease-in-out;
+            margin-right: 10px;
                        
         }
         

@@ -16,6 +16,10 @@
         &-inner, &-list {
             @extend %u-display-flex;
         }
+
+        &-inner {
+            //background: radial-gradient(ellipse cover, center bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 100%);
+        }
     }
     &__benefits {
         width: 145px;

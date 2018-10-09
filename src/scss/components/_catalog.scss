@@ -7,9 +7,15 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        flex-wrap: wrap;
     }
 
     .aside__filter {
-        width: 293px;
+        width: 260px;
+        margin-right: 30px;
+    }
+
+    &__content {
+        width: 910px;
     }
 }    

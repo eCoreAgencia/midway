@@ -1,116 +1,116 @@
 extends ../layouts/default.pug
 
 block vars
-  - var pageTitle = 'Home'
-  - var bodyClass = 'home '
+    - var pageTitle = 'Home'
+    - var bodyClass = 'home '
 
 block content
-  section.section__page.section__hero
-    .banner.banner--top
-      .banner__inner
-        +vtex-controller('<vtex:contentPlaceHolder id="Banners Top" />')
-          .box-banner
-            a(href="")
-              img(src="/arquivos/banner-top-left.jpg")/
-          .box-banner
-            a(href="")
-              img(src="/arquivos/banner-top-right-one.jpg")/
-          .box-banner
-            a(href="")
-              img(src="/arquivos/banner-top-right-two.jpg")/
-  section.section__page.section__why
-    .container
-      h2.section__page__title Meu Objetivo
-      .banner.banner--after
-        .banner__inner
-          +vtex-controller('<vtex:contentPlaceHolder id="Banners After" />')
-            .box-banner
-              a(href="")
-                img(src="/arquivos/micro-banner-one.png")/
-            .box-banner
-              a(href="")
-                img(src="/arquivos/micro-banner-two.png")/
-            .box-banner
-              a(href="")
-                img(src="/arquivos/micro-banner-three.png")/
-            .box-banner
-              a(href="")
-                img(src="/arquivos/micro-banner-four.png")/
+    section.section__page.section__hero
+        .banner.banner--top
+            .banner__inner
+                +vtex-controller('<vtex:contentPlaceHolder id="Banners Top" />')
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/banner-top-left.jpg")/
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/banner-top-right-one.jpg")/
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/banner-top-right-two.jpg")/
+    section.section__page.section__why
+        .container
+            h2.section__page__title Meu Objetivo
+            .banner.banner--after
+                .banner__inner
+                    +vtex-controller('<vtex:contentPlaceHolder id="Banners After" />')
+                        .box-banner
+                            a(href="")
+                                img(src="/arquivos/micro-banner-one.png")/
+                        .box-banner
+                            a(href="")
+                                img(src="/arquivos/micro-banner-two.png")/
+                        .box-banner
+                            a(href="")
+                                img(src="/arquivos/micro-banner-three.png")/
+                        .box-banner
+                            a(href="")
+                                img(src="/arquivos/micro-banner-four.png")/
 
-  section.section__page.section__shelf
-    .container
-      h2.section__page__title Destaques
-      .shelf.shelf__carousel--full
-        +vtex-controller('<vtex:contentPlaceHolder id="Destaques" />')
-        .prateleira
-          ul
-            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-              li
-                include ../shelves/prateleira
+    section.section__page.section__shelf
+        .container
+            h2.section__page__title Destaques
+            .shelf.shelf__carousel--full
+                +vtex-controller('<vtex:contentPlaceHolder id="Destaques" />')
+                    .prateleira
+                        ul
+                            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                                li
+                                    include ../shelves/prateleira
 
-  section.section__page.section__more-banners
-    section.section__newsletter
-        .section-newsletter--color-gray
-        .container.is-flex
-          .columns
-            .column.is-5
-              h3.section__newsletter__tlt Siga o Plano
-              span.section__newsletter__smallph
-                p GANHE <b>DESCONTOS EXCLUSIVOS</b> E SEJA O PRIMEIRO A RECEBER NOSSAS NOVIDADES!
-            .column.is-7
-              form.default__form
-                input.default__form__input#newsName(type="text", name="name",placeholder="Digite seu nome")/
-                input.default__form__input#newsEmail(type="text", name="email",placeholder="Digite seu email")/
-                input.btn.submit(type="button", name="btn", value="Inscreva-se")/
-        .section-newsletter--color-red
-    .banner.banner--middle
-      .banner__inner
-        +vtex-controller('<vtex:contentPlaceHolder id="Banners Middle" />')
-          .box-banner
-            a(href="")
-              img(src="/arquivos/middle-banner-one.jpg")/
-          .box-banner
-            a(href="")
-              img(src="/arquivos/middle-banner-two.jpg")/
-          .box-banner
-            a(href="")
-              img(src="/arquivos/middle-banner-three.jpg")/
-          .box-banner
-            a(href="")
-              img(src="/arquivos/middle-banner-four.jpg")/
+    section.section__page.section__more-banners
+        section.section__newsletter
+            .section-newsletter--color-gray
+            .container.is-flex
+                .columns
+                    .column.is-5
+                        h3.section__newsletter__tlt Siga o Plano
+                        span.section__newsletter__smallph
+                            p GANHE <b>DESCONTOS EXCLUSIVOS</b> E SEJA O PRIMEIRO A RECEBER NOSSAS NOVIDADES!
+                    .column.is-7
+                        form.default__form
+                            input.default__form__input#newsName(type="text", name="name",placeholder="Digite seu nome")/
+                            input.default__form__input#newsEmail(type="text", name="email",placeholder="Digite seu email")/
+                            input.btn.submit(type="button", name="btn", value="Inscreva-se")/
+            .section-newsletter--color-red
+        .banner.banner--middle
+            .banner__inner
+                +vtex-controller('<vtex:contentPlaceHolder id="Banners Middle" />')
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/middle-banner-one.jpg")/
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/middle-banner-two.jpg")/
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/middle-banner-three.jpg")/
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/middle-banner-four.jpg")/
 
-  section.section__page.section__shelf
-    .container
-      h2.section__page__title Mais Vendidos
-      .shelf.shelf__carousel--full
-        +vtex-controller('<vtex:contentPlaceHolder id="Mais Vendidos" />')
-        .prateleira
-          ul
-            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-              li
-                include ../shelves/prateleira
+    section.section__page.section__shelf
+        .container
+            h2.section__page__title Mais Vendidos
+            .shelf.shelf__carousel--full
+                +vtex-controller('<vtex:contentPlaceHolder id="Mais Vendidos" />')
+                    .prateleira
+                        ul
+                            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                                li
+                                    include ../shelves/prateleira
 
-  section.section__page.section__bigbanner
-      .banner.banner--team
-        .banner__inner
-          +vtex-controller('<vtex:contentPlaceHolder id="Team Banner" />')
-            .box-banner
-              a(href="/team-midway.html")
-                img(src="/arquivos/big-banner-team-midway.jpg")/
-      .banner.banner--team-mobile
-        .banner__inner
-          +vtex-controller('<vtex:contentPlaceHolder id="Team Banner mob" />')
-            .box-banner
-              a(href="/team-midway.html")
-                img(src="/arquivos/teammobile.png")/
+    section.section__page.section__bigbanner
+        .banner.banner--team
+            .banner__inner
+                +vtex-controller('<vtex:contentPlaceHolder id="Team Banner" />')
+                    .box-banner
+                        a(href="/team-midway.html")
+                            img(src="/arquivos/big-banner-team-midway.jpg")/
+        .banner.banner--team-mobile
+            .banner__inner
+                +vtex-controller('<vtex:contentPlaceHolder id="Team Banner mob" />')
+                    .box-banner
+                        a(href="/team-midway.html")
+                            img(src="/arquivos/teammobile.png")/
 
-  section.section__page.section__shelf
-    .container
-      h2.section__page__title Kits/Combos
-      .shelf.shelf__carousel--full
-        +vtex-controller('<vtex:contentPlaceHolder id="Exemplo" />')
-        .prateleira
-          ul
-            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-              li
-                include ../shelves/prateleira
+    section.section__page.section__shelf
+        .container
+            h2.section__page__title Kits/Combos
+            .shelf.shelf__carousel--full
+                +vtex-controller('<vtex:contentPlaceHolder id="Exemplo" />')
+                    .prateleira
+                        ul
+                            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                                li
+                                    include ../shelves/prateleira
