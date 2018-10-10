@@ -2,11 +2,11 @@
 	background: $c-white;
 	@include atMedium {
 		background: linear-gradient(
-			to left,
-			$c-red 67%,
-			$c-red 50%,
-			#f9f9f9 50%,
-			#f9f9f9 50%
+			to right,
+			#f9f9f9 0%,
+			#f9f9f9 36%,
+			#f12121 35%,
+			#f12121 100%
 		);
 	}
 
@@ -33,6 +33,9 @@
 		svg {
 			padding: 7px 0;
 			width: auto;
+		}
+		@media only screen and (max-width: 959px) and (min-width: 500px){
+			justify-content: center;
 		}
 		@include atMedium {
 			background: #f9f9f9;

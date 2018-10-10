@@ -84,6 +84,7 @@
 				h3.footer__main__title {
 					display: inline-block;
 					vertical-align: middle;
+					margin-right: 20px;
 				}
 			}
 		}
@@ -133,6 +134,10 @@
 					flex: 1;
 					justify-content: space-evenly;
 					align-items: center;
+					margin-top: 5px;
+					@include atMedium {
+						margin-top: 0;
+					}
 
 					&__item {
 						margin-right: 5px;
@@ -156,6 +161,18 @@
 							margin-right: 0;
 						}
 					}
+				}
+			}
+			&--container {
+				display: flex;
+				align-items: center;
+			}
+			&.is-flex {
+				flex-direction: column;
+			}
+			.fb-page {
+				@include atMedium {
+					margin-top: 20px;
 				}
 			}
 		}
