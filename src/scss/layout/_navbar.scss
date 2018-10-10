@@ -6,27 +6,43 @@ header {
 		display: flex;
 		flex-direction: column;
 		font-family: $f-base;
+		background:rgba(241, 33, 33, 0.74);
 		@include atMedium {
+			&::before {
+				display: none;
+			}
 			align-items: center;
 			flex-basis: 80%;
 			flex-direction: row;
 			position: initial;
+			background: initial;
+			.item-voltar {
+				display: none;
+			}
 		}
 		&__list {
 			width: 100%;
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
 			height: auto;
-			flex-direction: column;
+			display: block;
+			overflow-y: auto;
 			@include atMedium {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-direction: column;
 				flex-direction: row;
 				height: 100%;
+				overflow: visible;
 			}
-			.item-voltar,.item-conta,.item-entrar {
+			.item-conta,
+			.item-entrar {
+				border: 0;
 				@include atMedium {
 					display: none;
 				}
+			}
+			.item-entrar{
+				padding-top: 20px;
 			}
 			i {
 				display: block;
@@ -41,21 +57,28 @@ header {
 			}
 
 			&__item {
-				flex: 1;
 				height: 100%;
-				align-items: center;
-				display: flex;
-				justify-content: center;
 				width: 100%;
-				border-bottom: 1px solid #a00f0fa4;
+				flex: 1;
+				border-bottom: 1px solid #2f020224;
+				display: block;
+				&.hide {
+					display: none;
+				}
 
 				@include atMedium {
+					&.hide {
+						display: flex;
+					}
+					align-items: center;
+					display: flex;
+					justify-content: center;
 					border-bottom: 0;
 					&:hover {
 						.navbar__list__item__link {
 							color: $c-gray-dark;
 							background: $c-white;
-							border: 1px solid $c-white;
+							// border: 1px solid $c-white;
 							cursor: pointer;
 						}
 					}
@@ -66,9 +89,19 @@ header {
 				&__voltar {
 					@extend .navbar__list__item__link;
 					display: block;
-					padding-left: 45px !important;
+					padding-left: 50px !important;
 					font-weight: 600;
 					font-style: italic;
+				}
+				&__entrar {
+					@extend .navbar__list__item__link;
+					background: #c61b08 !important;
+					font-weight: 700 !important;
+				}
+				&__conta {
+					@extend .navbar__list__item__link;
+					background: #c61b08 !important;
+					font-weight: 700 !important;
 				}
 
 				&__link {
@@ -80,15 +113,20 @@ header {
 					letter-spacing: 0.35px;
 					text-align: left;
 					position: relative;
-					background: $c-red;
-					border: 1px solid $c-red;
 					width: 100%;
 					font-family: $f-secondary;
 					padding-left: 10px;
 					height: 48px;
 					display: flex;
 					align-items: center;
+					display: flex;
+					justify-content: space-between;
+					i {
+						margin-right: 10px;
+						transform: rotate(270deg);
+					}
 					@include atMedium {
+						background: $c-red;
 						display: block;
 						padding-left: 0;
 						text-align: center;
@@ -102,10 +140,13 @@ header {
 
 				&__dropdown {
 					display: none;
-					.container {
-						height: 100vh;
+					&.is-visible {
+						display: block;
 					}
 					@include atMedium {
+						&.is-visible {
+							display: none;
+						}
 						right: 0;
 						left: 0;
 						width: 100%;
@@ -123,24 +164,42 @@ header {
 						}
 					}
 					&__item {
+						border: 1px solid #af2525;
 						flex-basis: 17%;
+						padding: 10px;
+						display: flex;
+						@include atMedium {
+							border: 0;
+							padding: 0;
+							display: list-item;
+						}
 						&__link {
-							color: #939393;
+							color: $c-white;
 							font-family: $f-secondary;
 							font-size: 13px;
 							font-weight: 300;
 							line-height: 12.01px;
 							letter-spacing: 0.65px;
+							width: 100%;
+							padding: 20px;
+							@include atMedium {
+								color: #939393;
+								width: auto;
+								padding: 0;
+							}
 							&:hover {
 								color: $c-gray-dark;
 							}
 						}
 						&--banner-prod {
-							display: flex;
-							flex: 1;
-							img {
-								align-self: center;
-								flex: 0 0 auto;
+							display: none;
+							@include atMedium {
+								display: flex;
+								flex: 1;
+								img {
+									align-self: center;
+									flex: 0 0 auto;
+								}
 							}
 						}
 					}

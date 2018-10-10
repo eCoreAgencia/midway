@@ -111,8 +111,8 @@
 						align-items: center;
 						background: #f12121;
 						color: white;
-                        text-decoration: none;
-                        padding: 0 10%;
+						text-decoration: none;
+						padding: 0 10%;
 					}
 				}
 			}
@@ -213,11 +213,23 @@
 		bottom: 0;
 		top: 0;
 		height: 100vh;
-		background: $c-red;
+
 		&--is-visible {
 			left: 0;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(8, 7, 7, 0.83);
+				z-index: -1;
+				width: 100vw;
+			}
 		}
 		@include atMedium {
+			background: $c-red;
 			position: initial;
 			height: auto;
 			z-index: 1;
@@ -238,7 +250,7 @@
 		position: relative;
 		z-index: 10;
 		left: 18px;
-		margin: 4% 0;
+		// margin: 4% 0;
 		order: 0;
 		flex: 0.3;
 
@@ -250,7 +262,7 @@
 			width: 20px;
 			height: 3px;
 			background-color: $c-red;
-			transform-origin: 0 0;
+			transform-origin: 50% 0;
 			transition: transform 0.3s ease-out;
 		}
 		&__middle {
@@ -271,7 +283,7 @@
 			width: 20px;
 			height: 3px;
 			background-color: $c-red;
-			transform-origin: 0% 100%;
+			transform-origin: 50% 0;
 			transition: transform 0.3s ease-out;
 		}
 		@include atMedium {
@@ -281,8 +293,9 @@
 
 	&__menu-icon--close-x {
 		&::before {
-			transform: rotate(45deg) scaleX(1.25);
-			background-color: black;
+			transform: rotate(-40deg) scale(1.1) translateY(2px);
+			background-color: white;
+			height: 1.5px;
 		}
 
 		.header__menu-icon__middle {
@@ -291,9 +304,9 @@
 		}
 
 		&::after {
-			transform: rotate(-45deg) scale(1.25) translateY(1px)
-				translateX(-1px);
-			background-color: black;
+			transform: rotate(40deg) scale(1.1) translateY(-4px);
+			background-color: white;
+			height: 1.5px;
 		}
 	}
 }
