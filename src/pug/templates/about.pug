@@ -27,68 +27,86 @@ block content
 	section.about__linhas
 		h2.about__title-line Linhas Midway Labs
 		.grid-template
-			img(src="/arquivos/nbuild-yourself.png", alt="")/
+			img.img(src="/arquivos/nbuild-yourself.png", alt="")/
 			article.about__content
 				h2.about__title.about__title--red Build Yourself
 				p.about__generic-txt
 					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
+		.grid-template.grid-template--reverse
 			article.about__content
 				h2.about__title.about__title--gold Military Trail
 				p.about__generic-txt
 					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
-			img(src="/arquivos/nmilitary-banner.png", alt="")/
-			img(src="/arquivos/nglamour-banner.png", alt="")/
+			img.img(src="/arquivos/nmilitary-banner.png", alt="")/
+		.grid-template
+			img.img(src="/arquivos/nglamour-banner.png", alt="")/
 			article.about__content
 				h2.about__title.about__title--purple Glamour Nutrition
 				p.about__generic-txt
 					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
+		.grid-template.grid-template--reverse
 			article.about__content
 				h2.about__title.about__title--grape Diet Way
 				p.about__generic-txt
 					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
-			img(src="/arquivos/nmilitary-banner.png", alt="")/
+			img.img(src="/arquivos/ndiet-banner.png", alt="")/
 	section.about__science.bg-static
 		h2.about__title-line#science Ciência
-		p.about__generic-txt--center
+		p.about__generic-txt.about__generic-txt--center
 			| Nossa equipe de consultores inclui vários cientistas, químicos, médicos e nutricionistas altamente talentosos e dedicados, todos dispostos a ajudar a Midway Labs USA a criar os melhores produtos possíveis. Cada especialista em nosso conselho está envolvido
 			| em todas as etapas do ciclo de produção, desde o desenvolvimento até a fabricação e teste. O conselho realiza uma extensa pesquisa para garantir que nossos produtos não apenas atinjam as afirmações feitas sobre cada mercadoria, mas também que os mesmos sejam seguros e feitos com a mais alta qualidade dos ingredientes disponíveis.
-		h2.about__title Conselho Científico Midway
-		.about__each-doctor.red-line
+		h2.about__title-line.about__title-line--smaller Conselho Científico Midway
+		.about__each-doctor
+			.red-line
 			.about__doctor-container
 				.about__one-doctor
 					img(src="/arquivos/ndr1.png", alt="")/
 					.about__dr-name Dr. Turíbio
 						.about__dr-name.about__dr-name--red Barros
 					ul.about__expert
-						li.about__items Doutorado e Especialização em Fisiologia do Exercício
-						li.about__items Membro do Colégio Americano de Medicina Esportiva
-						li.about__items Ex-médico esportivo do São Paulo Soccer Club
+						li.about__items
+							span Doutorado e Especialização em Fisiologia do Exercício
+						li.about__items
+							span Membro do Colégio Americano de Medicina Esportiva
+						li.about__items
+							span Ex-médico esportivo do São Paulo Soccer Club
 				.about__one-doctor
 					img(src="/arquivos/ndr2.png", alt="")/
 					.about__dr-name Dr. Gerseli
 						.about__dr-name.about__dr-name--red Angeli
 					ul.about__expert
-						li.about__items Doutorado em Medicina Esportiva e Reabilitação
-						li.about__items Especialização em fisioterapia
-						li.about__items Membro do Colégio Americano de Medicina Esportiva
+						li.about__items
+							span Doutorado em Medicina Esportiva e Reabilitação
+						li.about__items
+							span Especialização em fisioterapia
+						li.about__items
+							span Membro do Colégio Americano de Medicina Esportiva
 				.about__one-doctor
 					img(src="/arquivos/ndr3.png", alt="")/
 					.about__dr-name Dr. Dirceu
 						.about__dr-name.about__dr-name--red Raposo
 					ul.about__expert
-						li.about__items Doutor em Análises Clínicas
-						li.about__items Especialização em Ciências da Saúde
-						li.about__items Membro da Academia Nacional de Farmácia
-						li.about__items Ex-presidente da Anvisa
-						li.about__items Ex-presidente do CRF-SP
+						li.about__items
+							span Doutor em Análises Clínicas
+						li.about__items
+							span Especialização em Ciências da Saúde
+						li.about__items
+							span Membro da Academia Nacional de Farmácia
+						li.about__items
+							span Ex-presidente da Anvisa
+						li.about__items
+							span Ex-presidente do CRF-SP
 				.about__one-doctor
 					img(src="/arquivos/ndr4.png", alt="")/
 					.about__dr-name Dr. Karen
 						.about__dr-name.about__dr-name--red Lima
 					ul.about__expert
-						li.about__items Nutricionista Midway
-						li.about__items MBA em Nutrição Esportiva Clínica
-						li.about__items Especialização em Controle de Qualidade e Desenvolvimento de Produto
+						li.about__items
+							span Nutricionista Midway
+						li.about__items
+							span MBA em Nutrição Esportiva Clínica
+						li.about__items
+							span Especialização em Controle de Qualidade e Desenvolvimento de Produto
 
 
 

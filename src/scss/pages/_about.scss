@@ -1,4 +1,12 @@
 .about {
+	&__banner-hero {
+		img {
+			width: 100%;
+		}
+	}
+	img {
+		width: 100%;
+	}
 	&__midway {
 		display: flex;
 		justify-content: center;
@@ -7,6 +15,8 @@
 		flex-wrap: nowrap;
 		border-bottom: 2px solid #b7b7b7;
 		margin: 40px auto;
+	}
+	&__linhas {
 	}
 	&__links {
 		@include font-size(14px);
@@ -27,8 +37,9 @@
 			text-decoration: none;
 		}
 	}
+
 	&__title {
-		@include font-size(33px);
+		@include font-size(20px);
 		color: #222222;
 		font-family: Eurostile;
 		font-weight: 700;
@@ -38,43 +49,75 @@
 		text-align: center;
 		@include atMedium {
 			text-align: initial;
+			@include font-size(33px);
+		}
+	}
+	&__title--allpd {
+		padding: 0 20px;
+		@include atMedium {
+			transform: skew(10deg);
+		}
+	}
+
+	&__title-line {
+		color: #222222;
+		font-family: Eurostile;
+		@include font-size(20px);
+		font-weight: 700;
+		font-style: italic;
+		text-transform: uppercase;
+		letter-spacing: 0.82px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 40px;
+		margin-bottom: 25px;
+		&::before {
+			content: "";
+			width: 3%;
+			height: 2px;
+			display: inline-flex;
+			background-color: #ff0000;
+			margin: 0 1%;
+		}
+		&::after {
+			content: "";
+			width: 3%;
+			height: 2px;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			background-color: #ff0000;
+			margin: 0 1%;
+		}
+		@include atMedium {
+			margin: 40px 0 70px 0;
+			@include font-size(33px);
+		}
+
+		&--smaller {
+			@include font-size(15px);
+			@include atMedium {
+				margin-top: 75px;
+			}
 		}
 	}
 	&__generic-txt {
-		@include font-size(18px);
+		@include font-size(14px);
 		color: #222222;
 		font-family: "Open Sans";
 		font-weight: 400;
 		line-height: 30px;
-	}
-	.grid-template {
-		&--first {
-			@include atMedium {
-				display: grid;
-				align-items: center;
-				grid-template-columns: 0.5fr 1fr;
-			}
-		}
-	}
-	&__content {
-	}
-	&__content--bg-gray {
+		padding: 0 20px;
 		@include atMedium {
-			position: relative;
-			background: #f2f2f2;
-			transform: skew(-10deg);
-			&::before {
-				content: "";
-				background-color: #f22100;
-				width: 10px;
-				height: 100%;
-				position: absolute;
-				left: -10px;
+			padding: 0;
+		}
+		&--center {
+			@include atMedium {
+				padding: 0 15%;
 			}
 		}
 	}
 	&__generic-txt--allpd {
-		padding: 20px;
 		font-size: 14px;
 		@include atMedium {
 			transform: skew(10deg);
@@ -96,17 +139,30 @@
 			}
 		}
 	}
-	&__title--allpd {
-		padding: 0 20px;
+
+	&__content--bg-gray {
 		@include atMedium {
-			transform: skew(10deg);
+			position: relative;
+			background: #f2f2f2;
+			transform: skew(-10deg);
+			&::before {
+				content: "";
+				background-color: #f22100;
+				width: 10px;
+				height: 100%;
+				position: absolute;
+				left: -10px;
+			}
 		}
 	}
+
 	&__gmp--absolute {
+		margin-top: 40px;
 		img {
 			display: block;
 		}
 		@include atMedium {
+			margin-top: 0;
 			background: url("/arquivos/gmp-banner-n.png") no-repeat center
 				center;
 			background-size: cover;
@@ -119,56 +175,134 @@
 			}
 		}
 	}
-	&__title-line {
+	&__science {
+		@include atMedium {
+			margin-top: 140px;
+			margin-bottom: 40px;
+		}
+		img {
+			width: auto;
+		}
+	}
+	&__doctor-container {
+		display: grid;
+		@include atMedium {
+			grid-template-columns: repeat(4, 1fr);
+			padding: 0 15%;
+			grid-gap: 4%;
+		}
+	}
+	&__each-doctor {
+		position: relative;
+	}
+	&__one-doctor {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 10%;
+		@include atMedium {
+			position: relative;
+			padding: 0;
+			&::after {
+				content: "";
+				height: 70%;
+				display: inline-flex;
+				width: 1px;
+				background: #ebebeb;
+				position: absolute;
+				top: 28%;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+	&__dr-name {
 		color: #222222;
 		font-family: Eurostile;
-		font-size: 33px;
+		font-size: 24px;
 		font-weight: 700;
 		font-style: italic;
 		text-transform: uppercase;
-		/* Text style for "Linhas Mid" */
-		letter-spacing: 0.82px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		@include atMedium {
-			margin: 40px 0 70px 0;
-		}
-		&::before {
-			content: "";
-			width: 3%;
-			height: 2px;
-			display: inline-flex;
-			background-color: #ff0000;
-			margin: 0 1%;
+		letter-spacing: 0.6px;
+		&--red {
+			color: #f22100;
 		}
 		&::after {
 			content: "";
-			width: 3%;
+			width: 39px;
 			height: 2px;
-			display: -ms-inline-flexbox;
-			display: inline-flex;
-			background-color: #ff0000;
-			margin: 0 1%;
+			background-color: #f22100;
+			display: block;
+		}
+	}
+	&__items {
+		list-style-type: disc;
+		color: #f22100;
+		span {
+			color: #222222;
+			font-family: "Open Sans";
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 30px;
+		}
+	}
+	&__expert {
+		margin-top: 20px;
+		@include atMedium {
+			margin-top: 40px;
 		}
 	}
 	.grid-template {
-		@include atMedium {
+		display: grid;
+		grid-template-areas: "img" "txt";
+		grid-gap: 20px;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 40px;
+		.img {
+			grid-area: img;
+		}
+		.about__content {
+			grid-area: txt;
+		}
+
+		@include atLarger {
 			display: grid;
-			grid-template-columns: 1fr 1fr .2fr;
-			grid-gap: 4rem;
-			grid-template-areas:
-				"img article ."
-				". article img"
-				"img article ."
-				". article img";
+			grid-template-columns: 708px minmax(100px, 743px) 0.4fr;
+			grid-template-areas: "img txt .";
+		}
+		&--reverse {
+			@include atLarger {
+				display: grid;
+				grid-template-columns: 1fr minmax(100px, 743px) 708px;
+				grid-template-areas: ". txt img";
+			}
+		}
+		&--first {
+			img {
+				width: auto;
+			}
+			@include atMedium {
+				display: grid;
+				align-items: center;
+				grid-template-columns: 0.5fr 1fr;
+			}
 		}
 	}
-	&__generic-txt {
-		color: #222222;
-		font-family: "Open Sans";
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 30px;
+	.bg-static {
+		background: url("/arquivos/ntranpColmeia.png");
+		background-repeat: no-repeat;
+		background-size: auto;
+		background-position: top;
+	}
+	.red-line {
+		width: 100vw;
+		height: 93px;
+		background: url("/arquivos/red-line.png");
+		background-position: center;
+		@include atMedium {
+			position: absolute;
+			top: 27px;
+		}
 	}
 }
