@@ -76,7 +76,7 @@ body.team-midway {
     padding-bottom: 80px;
 
     &__title {
-      font-size: calc(31px + (115 - 31) * ((100vw - 300px) / (1200 - 300)));
+      font-size: calc(31px + (80 - 31) * ((100vw - 300px) / (1200 - 300)));
       width: 100%;
       color: #000;
       font-weight: 700;
@@ -111,7 +111,7 @@ body.team-midway {
 
         &__link {
           display: block;
-
+          width: 165px;
           &:hover {
             text-decoration: none;
           }
