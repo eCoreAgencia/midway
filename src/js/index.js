@@ -24,5 +24,7 @@ $(document).ready(function(){
     if($('li.helperComplement')[0]){
         $('li.helperComplement').remove();
       }
+
+      $('.search-form').searchform({'vtexStore': 'midwaylabs', 'showDepartments': false});     
 })
 

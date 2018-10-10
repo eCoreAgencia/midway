@@ -75,16 +75,23 @@ $(document).ready(function () {
     });
   }
 
-  const renderCollectionName = (id, collection) => {
+    const renderCollectionName = (id, collection) => {
       const html = `<span class="all-shelf__product__brand">${collection}</span>`;
 
-      $(html).insertBefore(`.product[data-product-id="${id}"] all-shelf__product__price`);
-  }
+        $(`.product[data-product-id="${id}"] all-shelf__product__brand`).text(name[1]);
+    }
 
-  const renderSkuName = (id, name) => {
-    name = name.split('-');
-    const html = `<span class="all-shelf__product__brand">${name[1]}</span>`;
+    const renderSkuName = (id, name) => {
+        name = name.split('-');
+        const html = `<span class="all-shelf__product__brand">${name[1]}</span>`;
 
-    $(`.product[data-product-id="${id}"] all-shelf__product__skuname`).text(name[1]);
-}
+        $(`.product[data-product-id="${id}"] all-shelf__product__skuname`).text(name[1]);
+    }
+
+
+    $('.shelf .product').each(function(){
+        const id = $(this).data('product-id');
+
+        getInfoShelf(id);
+    })
 });
