@@ -51,7 +51,7 @@
     }
 
     &__name {
-        h1 {
+        .productName {
             @extend %product__name;
             @extend %u-italic;
             @include font-size(30px);
