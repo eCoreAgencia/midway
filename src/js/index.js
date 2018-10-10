@@ -12,6 +12,7 @@ import './components/mobile-menu';
 import './components/filter';
 import './components/modal';
 import './components/product';
+import './components/teamMidway';
 import './components/shelf';
 
 import './pages/home';
