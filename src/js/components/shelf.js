@@ -62,12 +62,15 @@ $(document).ready(function () {
   })
 
   const getInfoShelf = (id) => {
-    const urlRequest = `/api/catalog_system/pub/products/search/?fq=productId:${id}`;
+    //const urlRequest = `/api/catalog_system/pub/products/search/?fq=productId:${id}`;
+    const urlRequest = `http://localhost:3000/searchProductId`;
 
-    axios.get(urlRequest).then(product => {
-        if(product.productClusters){
-            renderCollectionName(id, product.productClusters)
-        }
+    axios.get(urlRequest).then(res => {
+        const product = res.data[0];
+        console.log(product);
+        // if(product.productClusters){
+        //     renderCollectionName(id, product.productClusters)
+        // }
 
         if(product.items[0].nameComplete){
             renderSkuName(id, product.items[0].nameComplete)
@@ -78,14 +81,14 @@ $(document).ready(function () {
     const renderCollectionName = (id, collection) => {
       const html = `<span class="all-shelf__product__brand">${collection}</span>`;
 
-        $(`.product[data-product-id="${id}"] all-shelf__product__brand`).text(name[1]);
+        $(`.product[data-product-id="${id}"] .all-shelf__product__brand`).text(collection);
     }
 
     const renderSkuName = (id, name) => {
-        name = name.split('-');
+        //name = name.split('-');
         const html = `<span class="all-shelf__product__brand">${name[1]}</span>`;
 
-        $(`.product[data-product-id="${id}"] all-shelf__product__skuname`).text(name[1]);
+        $(`.product[data-product-id="${id}"] .all-shelf__product__skuname`).text(name);
     }
 
 
@@ -94,4 +97,6 @@ $(document).ready(function () {
 
         getInfoShelf(id);
     })
+
+    
 });

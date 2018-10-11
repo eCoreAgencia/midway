@@ -26,6 +26,8 @@
         color: $c-gray-dark;
         font-style: italic;
         text-transform: uppercase;
+        display: block;
+        width: 100%;
     }
 
     &__content {
@@ -41,7 +43,8 @@
 
     &__options {
         padding: 10px;
-        .filter__item:hover & {
+        display: none;
+        .filter__item.is-active & {
             display: block;
         }
         

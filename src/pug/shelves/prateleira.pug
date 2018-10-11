@@ -11,6 +11,8 @@ if (global.process.env.NODE_ENV === 'production')
     - var getImageTag2 = '$product.GetImageTag(2)'
     - var categoryName = '+ $product.CategoryName'
     - var categoryHref = '$product.CategoryLink'
+    - var skuName = ''
+    - var lineName = ''
 
 else
     - var title = 'Nome do produto'
@@ -23,6 +25,8 @@ else
     - var getImageTag2 = '<img class="all-shelf__product__pic" src="http://via.placeholder.com/146x203" width="146" height="203" />'
     - var categoryName = '+ Iluminação'
     - var categoryHref = '/category.html'
+    - var skuName = '20 un - FRUTAS VERMELHAS'
+    - var lineName = '20 un - FRUTAS VERMELHAS'
 
 .product.all-shelf(data-product-id=dataProductId)
     span.product__id(data-product-id=dataProductId)
@@ -33,8 +37,8 @@ else
     .all-shelf__product
         h3.all-shelf__product__name
             a.all-shelf__product__link(title=title, href=href)=title
-        h4.all-shelf__product__skuname 20 un - FRUTAS VERMELHAS
-        spa.all-shelf__product__brand Build Yourself   
+        h4.all-shelf__product__skuname=skuName
+        spa.all-shelf__product__brand=lineName  
         .all-shelf__product__price
             if ( global.process.env.NODE_ENV === 'production' )
                 != '\n#if ($product.IsInStock)'
@@ -62,6 +66,6 @@ else
                         | de 
                         strong R$ 19,99 
                         | sem juros
-        .flag.destaque Lançamento
+        != flags
         .all-shelf__product__info__actions
             a.all-shelf__product__info__actions__btn(title= title, href= href) Compre Agora

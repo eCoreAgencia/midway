@@ -38,6 +38,10 @@ class Filter {
   if($('body').hasClass('category')){
     $(document).ready(function(){
       window.filter = new Filter();
+
+      $('body').on('click', '.filter__link', function(){
+        $(this).parent('.filter__item').toggleClass('is-active');
+      })
     })
    
   }

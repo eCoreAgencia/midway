@@ -149,6 +149,10 @@
         }
       }
     }
+
+    .prateleira h2 {
+        display: none;
+    }
   }
 
   .slick-prev,
@@ -178,7 +182,8 @@
       height: 2px;
       cursor: pointer;
       margin-bottom: 0;
-      margin-right: 10px;
+      margin-right: 0;
+      margin-left: 7px;
       background-color: #b7b7b7;
 
       &:hover,
@@ -192,7 +197,5 @@
     }
   }
 
-  > h2 {
-      display: none;
-  }
+  
 }
