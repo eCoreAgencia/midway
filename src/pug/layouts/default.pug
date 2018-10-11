@@ -1,45 +1,54 @@
 include ../helpers
 
 block vars
-  - var pageTitle = ''
-  - var bodyClass = ''
+	- var pageTitle = ''
+	- var bodyClass = ''
 
 doctype html
 html(xmlns="http://www.w3.org/1999/xhtml", xmlns:vtex="http://www.vtex.com.br/2009/vtex-common", xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce", lang="pt-br")
-  head
-    +vtex-controller()
-      title= "%STORE_NAME%" + pageTitle
-    meta(charset="UTF-8")/
-    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")/
-    meta(name="format-detection", content="telephone=no")/
-    //+vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%Favicons" />')
-      //include ../subtemplates/Favicons
-    +vtex-controller('<vtex:metaTags />')
-    +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%head" />')
-    +vtex-controller()
-      script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
-      script
-        include ../../../config/vtxctx.js
-        if bodyClass == 'product'
-          include ../../../config/skuJson.js
-        include ../../../config/vtexjs-mock.js
+	head
+		+vtex-controller()
+			title= "%STORE_NAME%" + pageTitle
+		meta(charset="UTF-8")/
+		meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")/
+		meta(name="format-detection", content="telephone=no")/
+		//+vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%Favicons" />')
+		//include ../subtemplates/Favicons
+		+vtex-controller('<vtex:metaTags />')
+		+vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%head" />')
+		+vtex-controller()
+			script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+			script
+				include ../../../config/vtxctx.js
+				if bodyClass == 'product'
+					include ../../../config/skuJson.js
+				include ../../../config/vtexjs-mock.js
 
-    block head
+		block head
 
-  body(class= bodyClass)
-    +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%header" />')
-      include ../subtemplates/header
+	body(class= bodyClass)
+		#fb-root
+		script.
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.1';
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		+vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%header" />')
+			include ../subtemplates/header
 
-    main
-      block content
+		main
+			block content
 
-    +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%footer" />')
-      include ../subtemplates/footer
+		+vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%footer" />')
+			include ../subtemplates/footer
 
-    block scripts
+		block scripts
 
-    +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%bottom" />')
-      script(src='/arquivos/ec-slick.js')
+		+vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%bottom" />')
+			script(src='/arquivos/ec-slick.js')
 
 
 

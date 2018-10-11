@@ -12,10 +12,16 @@ class Minicart {
            <div class="minicart-product__image"><img src="${item.imageUrl}"></div>
            <div class="minicart-product__info">
              <h4 class="minicart-product__name">${item.name}</h4>
+             <div class="minicart-product__quantity">
+                <button onclick="Minicart.updateItem.apply(null, [{index: ${i}, qty: ${item.quantity}, calc: -1}])" >-</button>
+                    <input type="text" value="${item.quantity}" />    
+                <button onclick="Minicart.updateItem.apply(null, [{index: ${i}, qty: ${item.quantity}, calc: 1}])">+</button>
+             </div>
              <strong class="minicart-product__price">R$ ${(item.price / 100).formatMoney()}</strong>
+             <button class="minicart-product__remove" type="button" onclick="Minicart.removeItem.apply(null, [${i}])" title="Remover ${item.name} do carrinho">X</button>
            </div>
 
-             <button class="minicart-product__remove" type="button" onclick="Minicart.removeItem.apply(null, [${i}])" title="Remover ${item.name} do carrinho">X</button>
+             
          </li>
        `
      }
@@ -50,11 +56,18 @@ class Minicart {
 
 
                     <div class="minicart__totals">
-                        <span class="minicart__totals-text">Total</span>
-                        <strong class="minicart__totals-value">${this.getTotal()}</strong>
+                        <div class="">
+                            <span class="minicart__totals-text">Itens</span>
+                            <strong class="minicart__totals-value">${this.getQuantity()}</strong>
+                        </div>
+                        <div class="">
+                            <span class="minicart__totals-text">Total</span>
+                            <strong class="minicart__totals-value">${this.getTotal()}</strong>
+                        </div>
+                        
                     </div>
                     <a class="minicart__checkout" href="/Site/Carrinho.aspx">
-                    Finalizar Pedido</a>
+                    Finalizar</a>
                 </div>
             </div>
 
@@ -66,7 +79,16 @@ class Minicart {
        vtexjs.checkout.removeItems([{index}])
      }
 
+     changeQuantity(val) {
+        let currentVal = $('.product__qtd-value').val()
+        let newVal = +currentVal + +val
+        if (newVal) {
+          $('.product__qtd-value').val(newVal)
+        }
+      }
+
      updateItem(obj) {
+         console.log(obj)
        let { index, qty, calc } = obj
        let quantity = qty + +calc
        if (quantity) {

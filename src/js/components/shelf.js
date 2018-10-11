@@ -3,8 +3,7 @@ import {
 } from '../utils';
 
 import Price from '../modules/price';
-
-import vtexRequest from '../modules/vtexRequest';
+import axios from 'axios';
 
 
 export const productShelf = (product, list = false) => {
@@ -61,4 +60,38 @@ $(document).ready(function () {
     const productID = $(this).data('product-id');
     addToCart(productID);
   })
+
+  const getInfoShelf = (id) => {
+    const urlRequest = `/api/catalog_system/pub/products/search/?fq=productId:${id}`;
+
+    axios.get(urlRequest).then(product => {
+        if(product.productClusters){
+            renderCollectionName(id, product.productClusters)
+        }
+
+        if(product.items[0].nameComplete){
+            renderSkuName(id, product.items[0].nameComplete)
+        }
+    });
+  }
+
+    const renderCollectionName = (id, collection) => {
+      const html = `<span class="all-shelf__product__brand">${collection}</span>`;
+
+        $(`.product[data-product-id="${id}"] all-shelf__product__brand`).text(name[1]);
+    }
+
+    const renderSkuName = (id, name) => {
+        name = name.split('-');
+        const html = `<span class="all-shelf__product__brand">${name[1]}</span>`;
+
+        $(`.product[data-product-id="${id}"] all-shelf__product__skuname`).text(name[1]);
+    }
+
+
+    $('.shelf .product').each(function(){
+        const id = $(this).data('product-id');
+
+        getInfoShelf(id);
+    })
 });

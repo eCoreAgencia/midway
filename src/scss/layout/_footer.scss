@@ -5,8 +5,8 @@
 
 	&__main {
 		background-color: transparent;
-		padding: 20px 0 20px;
 		@include atMedium {
+			padding: 20px 0 20px;
 			padding: 45px 0 45px;
 			background-color: #f01914;
 		}
@@ -33,13 +33,13 @@
 			color: #fff;
 			font-style: italic;
 			text-transform: uppercase;
-			padding: 4px;
+			padding: 4px 10px;
 			border-bottom: 1px solid rgba(234, 234, 234, 0.29);
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 			font-weight: 700;
-			padding: 0 10px;
 			&.no-border {
 				border-bottom: 0;
 				width: auto;
@@ -84,6 +84,7 @@
 				h3.footer__main__title {
 					display: inline-block;
 					vertical-align: middle;
+					margin-right: 20px;
 				}
 			}
 		}
@@ -103,6 +104,7 @@
 						background: transparent;
 						padding: 0;
 						border: 0;
+						margin: 13px 0;
 					}
 					&__link {
 						color: #f01914;
@@ -132,6 +134,10 @@
 					flex: 1;
 					justify-content: space-evenly;
 					align-items: center;
+					margin-top: 5px;
+					@include atMedium {
+						margin-top: 0;
+					}
 
 					&__item {
 						margin-right: 5px;
@@ -155,6 +161,18 @@
 							margin-right: 0;
 						}
 					}
+				}
+			}
+			&--container {
+				display: flex;
+				align-items: center;
+			}
+			&.is-flex {
+				flex-direction: column;
+			}
+			.fb-page {
+				@include atMedium {
+					margin-top: 20px;
 				}
 			}
 		}

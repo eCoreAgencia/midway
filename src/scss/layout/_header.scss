@@ -2,11 +2,11 @@
 	background: $c-white;
 	@include atMedium {
 		background: linear-gradient(
-			to left,
-			$c-red 67%,
-			$c-red 50%,
-			#f9f9f9 50%,
-			#f9f9f9 50%
+			to right,
+			#f9f9f9 0%,
+			#f9f9f9 36%,
+			#f12121 35%,
+			#f12121 100%
 		);
 	}
 
@@ -31,8 +31,11 @@
 		flex: 1;
 		justify-content: flex-start;
 		svg {
-            padding: 7px 0;
-            width: auto;
+			padding: 7px 0;
+			width: auto;
+		}
+		@media only screen and (max-width: 959px) and (min-width: 500px){
+			justify-content: center;
 		}
 		@include atMedium {
 			background: #f9f9f9;
@@ -52,6 +55,7 @@
 		order: 2;
 		@include atMedium {
 			background: $c-red;
+			align-self: normal;
 		}
 		i {
 			font-size: 20px;
@@ -79,40 +83,44 @@
 			@include atMedium {
 				display: flex;
 			}
-
 			&__list {
 				z-index: 1;
 				display: none;
-				padding: 0 0 0 20px;
 				background-color: #fff;
 
 				&__item {
-					border-bottom: 1px solid #ccc;
-
+					flex: 1;
+					display: flex;
+					align-items: center;
+					width: 80%;
+					margin: 0 auto;
 					&__link {
 						color: #666;
 						display: block;
-					}
-
-					&:hover {
-						.header__account-info__account-box__list__item__link {
-							color: #fff;
-							background: $c-red;
+						width: 100%;
+						&:hover {
+							text-decoration: none;
 						}
 					}
-
-					&:last-child {
-						margin: 0;
-						padding: 0;
-						border: none;
+					&:first-of-type {
+						border-bottom: 1px solid #ccc;
+					}
+				}
+				&__button {
+					a {
+						text-align: center;
+						height: 82px;
+						display: flex;
+						align-items: center;
+						background: #f12121;
+						color: white;
+						text-decoration: none;
+						padding: 0 10%;
 					}
 				}
 			}
 
 			&:hover {
-				background-color: #fff;
-				cursor: pointer;
-
 				.header__account-info__account-box__wrap-items__txt {
 					color: $c-red;
 					strong {
@@ -128,8 +136,19 @@
 				}
 
 				.header__account-info__account-box__list {
-					display: none;
+					display: flex;
 					position: absolute;
+					top: 100%;
+					flex-direction: column;
+					width: 250px;
+					height: 210px;
+					right: 11%;
+				}
+				.header__account-info__account-box__wrap-items {
+					@include atMedium {
+						background-color: #fff;
+						cursor: pointer;
+					}
 				}
 			}
 
@@ -137,7 +156,14 @@
 				display: flex;
 				flex-wrap: nowrap;
 				padding: 0 10px;
-
+				@include atMedium {
+					height: 100%;
+					align-items: center;
+					transform: skew(-15deg);
+					svg {
+						transform: skew(15deg);
+					}
+				}
 				&__txt {
 					color: #fff;
 					font-size: 14px;
@@ -146,6 +172,9 @@
 					text-transform: uppercase;
 					@include fontFace($f-base, normal);
 					font-weight: normal;
+					@include atMedium {
+						transform: skew(15deg);
+					}
 
 					&__bold {
 						@include fontFace($f-base, 700);
@@ -187,11 +216,23 @@
 		bottom: 0;
 		top: 0;
 		height: 100vh;
-		background: $c-red;
+
 		&--is-visible {
 			left: 0;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(8, 7, 7, 0.83);
+				z-index: -1;
+				width: 100vw;
+			}
 		}
 		@include atMedium {
+			background: $c-red;
 			position: initial;
 			height: auto;
 			z-index: 1;
@@ -212,7 +253,7 @@
 		position: relative;
 		z-index: 10;
 		left: 18px;
-		margin: 4% 0;
+		// margin: 4% 0;
 		order: 0;
 		flex: 0.3;
 
@@ -224,7 +265,7 @@
 			width: 20px;
 			height: 3px;
 			background-color: $c-red;
-			transform-origin: 0 0;
+			transform-origin: 50% 0;
 			transition: transform 0.3s ease-out;
 		}
 		&__middle {
@@ -245,7 +286,7 @@
 			width: 20px;
 			height: 3px;
 			background-color: $c-red;
-			transform-origin: 0% 100%;
+			transform-origin: 50% 0;
 			transition: transform 0.3s ease-out;
 		}
 		@include atMedium {
@@ -255,8 +296,9 @@
 
 	&__menu-icon--close-x {
 		&::before {
-			transform: rotate(45deg) scaleX(1.25);
-			background-color: black;
+			transform: rotate(-40deg) scale(1.1) translateY(2px);
+			background-color: white;
+			height: 1.5px;
 		}
 
 		.header__menu-icon__middle {
@@ -265,9 +307,9 @@
 		}
 
 		&::after {
-			transform: rotate(-45deg) scale(1.25) translateY(1px)
-				translateX(-1px);
-			background-color: black;
+			transform: rotate(40deg) scale(1.1) translateY(-4px);
+			background-color: white;
+			height: 1.5px;
 		}
 	}
 }

@@ -9,11 +9,11 @@ import './components/searchForm'
 import './components/minicart';
 import './components/mobile-menu';
 
-//import './components/shelf';
+import './components/filter';
 import './components/modal';
 import './components/product';
 import './components/teamMidway';
-
+import './components/shelf';
 
 import './pages/home';
 import './pages/sub-templates';
@@ -25,5 +25,8 @@ $(document).ready(function(){
     if($('li.helperComplement')[0]){
         $('li.helperComplement').remove();
       }
+
+      $('.search-form').searchform({'vtexStore': 'midwaylabs', 'showDepartments': false});     
 })
+
 
