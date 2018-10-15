@@ -66,10 +66,12 @@ if ($('body').hasClass('product')) {
           if(product.skus.length > 1) {
               self.renderSkuSelect(product.skus);
               self.renderPrice(product.skus[0]);
-          }
+              $('.product__buy').html(`<a class="buy-button buy-button-ref buy-sku-button" target="_top" href="javascript:alert('Por favor, selecione o modelo desejado.');" style="display:block">Comprar</a>`);
+            }
       })
+      
 
-      $('.buy-button').on('click', function(e){ 
+      $('.product__buy').on('buy-sku-button', 'click', function(e){ 
         e.preventDefault();
         let href = $(this).attr('href');
         const text = "javascript:alert('Por favor, selecione o modelo desejado.');";
@@ -84,17 +86,21 @@ if ($('body').hasClass('product')) {
           return false;
         }
 
-        var item = {
-            id: sku,
-            quantity: qty,
-            seller: '1'
-        };
+        
+            var item = {
+                id: sku,
+                quantity: qty,
+                seller: '1'
+            };
+    
+            vtexjs.checkout.addToCart([item], null)
+            .done(function(orderForm) {
+                console.log(orderForm);
+                window.location.href = '/checkout/#/cart';
+            });
+        }
 
-        vtexjs.checkout.addToCart([item], null)
-        .done(function(orderForm) {
-            console.log(orderForm);
-            window.location.href = '/checkout/#/cart';
-        });
+        
 
        
         

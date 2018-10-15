@@ -305,7 +305,7 @@ block content
             .catalog__content
                     
                                 
-                section.section__page.section__shelf.shelf
+                section.section__page.section__shelf
                     .catalog__top
                         +vtex-controller('<vtex.cmc:breadCrumb />')
                             .bread-crumb
@@ -331,7 +331,7 @@ block content
                                     option(value='OrderByReleaseDateDESC') Data de lançamento
                                     option(value='OrderByBestDiscountDESC') Melhor Desconto
 
-                    .catalog__bottom                
+                    .catalog__bottom.shelf                
                         +vtex-controller('<vtex.cmc:searchResult layout="65c15678-2bbe-72e0-3aa6-0aa635db2f86" itemCount="12"  columnCount="4" />')
                             p.searchResultsTime
                                 span.resultado-busca-numero
