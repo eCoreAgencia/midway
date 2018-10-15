@@ -41,6 +41,7 @@ if ($('body').hasClass('product')) {
       this.skuJson = skuJson ? skuJson : skuJson_1
       this.thumbsClickEvent()
       this.simulateShipping()
+      this.product = '';
 
       $('.btn--plus').on('click', () =>{
         self.changeQuantity(1);
@@ -49,6 +50,63 @@ if ($('body').hasClass('product')) {
       $('.btn--minus').on('click', () =>{
         self.changeQuantity(-1);
       })
+
+
+      if (!$('.product__why .why__subtitle').is(':empty')){
+        $('.product__why').addClass('is-not-empty');
+      }
+
+      if (!$('.category-benefits .category-benefits__subtitle').is(':empty')){
+        $('.category-benefits').addClass('is-not-empty');
+      }
+
+      vtexjs.catalog.getCurrentProductWithVariations().then(product => {
+          console.log(product);
+          self.product = product;
+          if(product.skus.length > 1) {
+              self.renderSkuSelect(product.skus);
+              self.renderPrice(product.skus[0]);
+          }
+      })
+
+      $('.buy-button').on('click', function(e){ 
+        e.preventDefault();
+        let href = $(this).attr('href');
+        const text = "javascript:alert('Por favor, selecione o modelo desejado.');";
+        let qty = $('.product__qtd-value').val();
+        const sku = $('.product__skus-select select').val();
+
+        if(href === text){
+          swal({
+            text: 'Selecione o sabor',
+            icon: 'warning',
+          })
+          return false;
+        }
+
+        var item = {
+            id: sku,
+            quantity: qty,
+            seller: '1'
+        };
+
+        vtexjs.checkout.addToCart([item], null)
+        .done(function(orderForm) {
+            console.log(orderForm);
+            window.location.href = '/checkout/#/cart';
+        });
+
+       
+        
+      });
+
+      $('.product__skus-select').on('change', 'select', function(){
+          const sku = $(this).val();
+          const qty = $('.product__qtd-value').val();
+          const endpoint = `/checkout/cart/add?sku=${sku}&amp;qty=${qty}&amp;seller=1&amp;redirect=true&amp;sc=1`;
+          console.log(sku);
+          $('.buy-button').attr('href', endpoint);
+      });
 
      
     }
@@ -77,6 +135,55 @@ if ($('body').hasClass('product')) {
 
     simulateShipping() {
       //window.OMSimulateShipping = new SimulateShipping()
+    }
+
+    renderSkuSelect(skus) {
+        const select =  `<div class="select">
+            <select>
+                ${ skus.map(sku => {
+                    return `<option value="${sku.sku}">${sku.skuname}</option>`
+                }).join('')}
+            </select>
+        </div>`
+        $('.product__skus-select').append(select);
+    }
+
+    renderPrice(sku) {
+        let price = '';
+        if (sku.listPrice == 0) {
+            price = `<div class="productPrice">
+                <p class="descricao-preco">
+                    <em class="valor-de price-list-price" style="display: block;">
+                        De: <strong class="skuListPrice">${sku.listPriceFormated}</strong>
+                    </em>
+                    <em class="valor-por price-best-price" style="display: block;">
+                        Por: <strong class="skuBestPrice">${sku.bestPriceFormated}</strong>
+                    </em>
+                    <em class="valor-dividido price-installments">
+                    <span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
+                    </em>
+                </p>
+                
+            </div>`;
+        }else {
+            price = `<div class="productPrice">
+            <p class="descricao-preco">
+                <em class="valor-de price-list-price" style="display: none;">
+                    De: <strong class="skuListPrice">${sku.listPriceFormated}</strong>
+                </em>
+                <em class="valor-por price-best-price" style="display: block;">
+                    Por: <strong class="skuBestPrice">${sku.bestPriceFormated}</strong>
+                </em>
+                <em class="valor-dividido price-installments">
+                <span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
+                </em>
+            </p>
+            
+        </div>`;
+        }
+         
+
+        $('.product__price .price').html(price);
     }
 
     

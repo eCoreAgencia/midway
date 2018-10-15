@@ -90,6 +90,10 @@
             display: none;
         }
 
+        .skuList {
+            display: none;
+        }
+
         ul {
             display: none;
 		}
@@ -224,11 +228,16 @@
 	}
 
 	&__category {
-		padding: 60px 0;
+        padding: 60px 0;
+        .category__details {
+            display: none;
+        }
 	}
 
 	&__why {
+        display: none;
 
+        
 	}
 
 	&__media {
@@ -244,7 +253,11 @@
 			width: 100%;
 
 		}
-	}
+    }
+    
+    .is-not-empty {
+        display: block;
+    }
 
 
 }
@@ -407,7 +420,11 @@
 				margin-bottom: 15px;
 			}
 		}
-	}
+    }
+    
+    &-benefits {
+        display: none;
+    }
 
 }
 

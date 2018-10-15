@@ -89,20 +89,16 @@ block content
                                             strong.skuPrice R$ 54,99
                     .product__skus
                         .product__skus-select
-                            .select
-                                +vtex-controller('<vtex.cmc:skuRichSelection changeImage="1" />')
-                                    select
-                                        option Morango
-                                        option Chocolate
-                                    .sku-selector-container.sku-selector-container-0
-                                        ul.topic.Voltagem.productid-21.numopt-2
-                                            li.specification Sabor
-                                            li.select.skuList.item-dimension-Voltagem
-                                                span.group_0
-                                                    input#21_Voltagem_0.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_110v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='110V', data-dimension='Voltagem', value='110V', specification='110v')
-                                                    label.dimension-Voltagem.espec_0.skuespec_110v.skuespec_Voltagem_opcao_110V.skuespec_Voltagem_opcao_110v(for='21_Voltagem_0') morango
-                                                    input#21_Voltagem_1.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_220v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='220V', data-dimension='Voltagem', value='220V', specification='220v')
-                                                    label.dimension-Voltagem.espec_0.skuespec_220v.skuespec_Voltagem_opcao_220V.skuespec_Voltagem_opcao_220v(for='21_Voltagem_1') chocolate
+                            +vtex-controller('<vtex.cmc:skuRichSelection changeImage="1" />')
+                                .sku-selector-container.sku-selector-container-0
+                                    ul.topic.Voltagem.productid-21.numopt-2
+                                        li.specification Sabor
+                                        li.select.skuList.item-dimension-Voltagem
+                                            span.group_0
+                                                input#21_Voltagem_0.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_110v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='110V', data-dimension='Voltagem', value='110V', specification='110v')
+                                                label.dimension-Voltagem.espec_0.skuespec_110v.skuespec_Voltagem_opcao_110V.skuespec_Voltagem_opcao_110v(for='21_Voltagem_0') morango
+                                                input#21_Voltagem_1.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_220v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='220V', data-dimension='Voltagem', value='220V', specification='220v')
+                                                label.dimension-Voltagem.espec_0.skuespec_220v.skuespec_Voltagem_opcao_220V.skuespec_Voltagem_opcao_220v(for='21_Voltagem_1') chocolate
                     .product__action
                         .product__qtd
                             button.btn.btn--minus
@@ -173,30 +169,34 @@ block content
                             i.icon-arrow-right
         .product__category
             .container
-                .category
-                    .category__description
-                        h3.category__description-title
-                            span Uma porção de albumina é equivalente a 5 ovos.
-                        .category__description-text
-                            p
-                                strong ALBUMINA
-                                |  é uma excelente fonte de proteína por ser produzida com a clara do ovo pasteurizada e desidratada de alto valor biológico e também é rica em aminoácidos. A albumina é indicada para os praticantes de modalidades esportivas diversas e na complementação de dietas ricas em proteínas. Aliando o suplemento alimentar com a prática de atividade física e alimentação saudável o resultado chega de forma mais rápida e real.
-                    .category__details
-                        h3.category__details-call
-                            | Saiba tudo sobre
-                            br/
-                            span Albumina!
-                        .category__details-text
-                            h3.category__details-title O que é albumina?
+                +vtex-controller('<vtex.cmc:ProductDescription/>')
+                    .category
+                        .category__description
+                            h3.category__description-title
+                                span Uma porção de albumina é equivalente a 5 ovos.
+                            .category__description-text
+                                p
+                                    strong ALBUMINA
+                                    |  é uma excelente fonte de proteína por ser produzida com a clara do ovo pasteurizada e desidratada de alto valor biológico e também é rica em aminoácidos. A albumina é indicada para os praticantes de modalidades esportivas diversas e na complementação de dietas ricas em proteínas. Aliando o suplemento alimentar com a prática de atividade física e alimentação saudável o resultado chega de forma mais rápida e real.
+                        .category__details
+                            h3.category__details-call
+                                | Saiba tudo sobre
+                                br/
+                                span Albumina!
+                            .category__details-text
+                                h3.category__details-title O que é albumina?
 
-                            p No significado literal a albumina é toda a gordura do ovo que foi retirada por filtração. Esse filtro torna a albumina a proteína do ovo pasteurizada. Ela é tão procurada e faz tanto sucesso entre os praticantes de esportes por ser uma proteína de alto valor biológico, ajudando no crescimento de massa muscular e boa recuperação do músculo.
+                                p No significado literal a albumina é toda a gordura do ovo que foi retirada por filtração. Esse filtro torna a albumina a proteína do ovo pasteurizada. Ela é tão procurada e faz tanto sucesso entre os praticantes de esportes por ser uma proteína de alto valor biológico, ajudando no crescimento de massa muscular e boa recuperação do músculo.
 
         .product__why
             .why
                 .why__top
                     .container
+                        
                         h3.why__title Para que serve
-                        span.why__subtitle Os objetivos que podem ser alcançados com o consumo de albumina são vários, sendo eles:
+                        span.why__subtitle
+                            +vtex-controller('<vtex:contentPlaceHolder id="Para que serve" />') 
+                                | Os objetivos que podem ser alcançados com o consumo de albumina são vários, sendo eles:
                 .why__bottom
                     .container
                         +vtex-controller('')
@@ -223,10 +223,13 @@ block content
         .category-benefits
             .container
                 h3.category-benefits__title
-                    span Benefícios da Albumina
+                    span
+                        +vtex-controller('<vtex:contentPlaceHolder id="Benefícios Título" />') 
+                            |  Benefícios da Albumina
                 span.category-benefits__subtitle
-                    | A albumina é excelente para quem intolerância à lactose, a albumina não contém lactose e tem níveis de carboidratos bem baixos.
-                    | Quem aposta em dieta low carb também pode adotar a albumina como suplementação devido ao seu valor nutricional.
+                    +vtex-controller('<vtex:contentPlaceHolder id="Benefícios Descrição" />') 
+                        | A albumina é excelente para quem intolerância à lactose, a albumina não contém lactose e tem níveis de carboidratos bem baixos.
+                        | Quem aposta em dieta low carb também pode adotar a albumina como suplementação devido ao seu valor nutricional.
                 +vtex-controller('')    
                     span.category-benefits__count Listamos 8 benefícios da albumina para você entender como de fato essa suplementação irá te ajudar!
 
@@ -292,6 +295,7 @@ block content
             .shelf.shelf__carousel--full
                 +vtex-controller('<vtex:contentPlaceHolder id="Quem-viu-viu-tambem" />')
                     .prateleira
+                        h2 Quem Viu, Viu Também
                         ul
                             each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                                 li
