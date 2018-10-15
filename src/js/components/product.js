@@ -71,7 +71,7 @@ if ($('body').hasClass('product')) {
       })
       
 
-      $('.product__buy').on('buy-sku-button', 'click', function(e){ 
+      $('.product__buy').on('click', '.buy-sku-button', function(e){ 
         e.preventDefault();
         let href = $(this).attr('href');
         const text = "javascript:alert('Por favor, selecione o modelo desejado.');";
@@ -98,7 +98,6 @@ if ($('body').hasClass('product')) {
                 console.log(orderForm);
                 window.location.href = '/checkout/#/cart';
             });
-        }
 
         
 
