@@ -48,7 +48,18 @@ $(document).ready(function(){
         $('li.helperComplement').remove();
       }
 
-      $('.search-form').searchform({'vtexStore': 'midwaylabs', 'showDepartments': false});     
+      $('.search-form').searchform({'vtexStore': 'midwaylabs', 'showDepartments': false}); 
+    
+    if($('.navbar__list__item__dropdown__item--banner-prod')[0]){
+        const banner = $('.navbar__list__item__dropdown__item--banner-prod .box-banner').length;
+
+        
+        const bannerShow = Math.round(Math.random() * banner);
+
+        console.log(bannerShow);
+        $(`.navbar__list__item__dropdown__item--banner-prod .box-banner:eq(${bannerShow})`).show();
+    }
+      
 })
 
 

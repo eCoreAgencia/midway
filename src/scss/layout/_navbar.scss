@@ -6,7 +6,17 @@ header {
 		display: flex;
 		flex-direction: column;
 		font-family: $f-base;
-		background:rgba(241, 33, 33, 0.74);
+        background:rgba(241, 33, 33, 0.74);
+        @include atLarge {
+            &::before {
+                content: '';
+                width: 25px;
+                height: 72px;
+                display: block;
+                background-color: $c-red;
+                transform: skew(-15deg);
+            }
+        }
 		@include atMedium {
 			&::before {
 				display: none;
@@ -75,16 +85,18 @@ header {
 					justify-content: center;
 					border-bottom: 0;
 					&:hover {
-						.navbar__list__item__link {
+						.navbar__list__item__link span {
 							color: $c-gray-dark;
 							background: $c-white;
 							// border: 1px solid $c-white;
-							cursor: pointer;
+                            cursor: pointer;
+                            display: block;
 						}
 					}
 				}
 				a {
-					text-decoration: none;
+                    text-decoration: none;
+                    padding: 0 15px;
 				}
 				&__voltar {
 					@extend .navbar__list__item__link;
@@ -113,7 +125,7 @@ header {
 					letter-spacing: 0.35px;
 					text-align: left;
 					position: relative;
-					width: 100%;
+					
 					font-family: $f-secondary;
 					padding-left: 10px;
 					height: 48px;
@@ -126,6 +138,7 @@ header {
 						transform: rotate(270deg);
 					}
 					@include atMedium {
+                        width: 100%;
 						background: $c-red;
 						display: block;
 						padding-left: 0;
@@ -194,12 +207,15 @@ header {
 						&--banner-prod {
 							display: none;
 							@include atMedium {
-								display: flex;
-								flex: 1;
+								display: block;
 								img {
 									align-self: center;
 									flex: 0 0 auto;
-								}
+                                }
+                                
+                                .box-banner {
+                                    display: none;
+                                }
 							}
 						}
 					}
