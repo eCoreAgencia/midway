@@ -1,126 +1,130 @@
 include ../helpers
 header.header
-    .header__area.header__main
-        .container.is-flex
-            .header__menu-icon
-                .header__menu-icon__middle
-            a.header__area__logo__link(href="/")
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="192" height="51" viewBox="0 0 192 51"><g><g transform="translate(-383 -15)"><image width="192" height="51" transform="translate(383 15)" xlink:href="data:image/png;base64,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"/></g></g></svg>
-            .header__area.header__menu
-                nav.navbar
-                    .item-voltar
-                        a.navbar__list__item__voltar Voltar
-                    ul.navbar__list
-                        li.navbar__list__item
-                            a.navbar__list__item__link Produtos
-                                i.icon-arrow-right
-                                    include ../../svg/arrow-midway.svg
-                            div.navbar__list__item__dropdown
-                                .container
-                                    ul.navbar__list__item__dropdown-content--grid
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/albumina") Albumina
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/aminoacidos") Aminoácidos
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/arginina") Arginina
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/carnitina") Carnitina
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/colageno") Colágeno
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/creatina") Creatina
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/emagrecimento") Emagrecimento
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/fibras") Fibras
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/glutamina") Glutamina
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/hipercalorico") Hipercalórico
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/maltodextrina") Maltodextrina
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/multivitaminico") Multivitamínico
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/pre-treino") Pré-treino
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/proteina") Proteína
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/substituto-alimentar") Substituto Alimentar
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/cabelo-e-unhas") Cabelo e unhas
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/combo") Combo
-                                        li.navbar__list__item__dropdown__item
-                                            a.navbar__list__item__dropdown__item__link(href="/kit") Kit
-                                    +vtex-controller('<vtex.cmc:menu-prod-banner />')
-                                        a.navbar__list__item__dropdown__item--banner-prod
-                                            img(src="https://placehold.it/392x202?text=shake")/
-                        li.navbar__list__item.hide
-                            a.navbar__list__item__link Linhas
-                                i.icon-arrow-right
-                                    include ../../svg/arrow-midway.svg
-                            ul.navbar__list__item__dropdown
-                                ul.navbar__list__item__dropdown-content
-                                    .container
-                                        +vtex-controller('<vtex.cmc:menu-linha-banner />')
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                        li.navbar__list__item.hide
-                            a.navbar__list__item__link Objetivos
-                                i.icon-arrow-right
-                                    include ../../svg/arrow-midway.svg
-                            ul.navbar__list__item__dropdown
-                                ul.navbar__list__item__dropdown-content
-                                    .container
-                                        +vtex-controller('<vtex.cmc:menu-objetivos-banner />')
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                        li.navbar__list__item
-                            a.navbar__list__item__link Outlet
-                                i.icon-arrow-right
-                                    include ../../svg/arrow-midway.svg
-                        li.navbar__list__item.item-entrar
-                            a.navbar__list__item__entrar(href="/login") Entrar
-                        li.navbar__list__item.item-conta
-                            a.navbar__list__item__conta(href="/account") Minha Conta
-            .header__search-form
-                form.search-form#header-form(action="/busca")
-                    .field.has-addons
-                        .control
-                            input.input(type='text', placeholder='Buscar produto')/
-                            a.icon-search
-                                include ../../svg/icon-search.svg
-                            a.cancel-ico
-                                include ../../svg/cancel-ico.svg
-                .search-form__result-list
+	.header__area.header__main
+		.container.is-flex
+			.header__menu-icon
+				.header__menu-icon__middle
+			a.header__area__logo__link(href="/")
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="192" height="51" viewBox="0 0 192 51"><g><g transform="translate(-383 -15)"><image width="192" height="51" transform="translate(383 15)" xlink:href="data:image/png;base64,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"/></g></g></svg>
+			.header__area.header__menu
+				nav.navbar
+					.item-voltar
+						a.navbar__list__item__voltar Voltar
+					ul.navbar__list
+						li.navbar__list__item
+							a.navbar__list__item__link Produtos
+								i.icon-arrow-right
+									include ../../svg/arrow-midway.svg
+							div.navbar__list__item__dropdown
+								.container
+									ul.navbar__list__item__dropdown-content--grid
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/albumina") Albumina
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/aminoacidos") Aminoácidos
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/arginina") Arginina
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/carnitina") Carnitina
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/colageno") Colágeno
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/creatina") Creatina
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/emagrecimento") Emagrecimento
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/fibras") Fibras
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/glutamina") Glutamina
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/hipercalorico") Hipercalórico
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/maltodextrina") Maltodextrina
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/multivitaminico") Multivitamínico
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/pre-treino") Pré-treino
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/proteina") Proteína
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/substituto-alimentar") Substituto Alimentar
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/cabelo-e-unhas") Cabelo e unhas
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/combo") Combo
+										li.navbar__list__item__dropdown__item
+											a.navbar__list__item__dropdown__item__link(href="/kit") Kit
+									a.navbar__list__item__dropdown__item--banner-prod
+										+vtex-controller('<vtex.cmc:menuprodbanner />')
+											img(src="https://placehold.it/392x202?text=shake")/
+						li.navbar__list__item.hide
+							a.navbar__list__item__link Linhas
+								i.icon-arrow-right
+									include ../../svg/arrow-midway.svg
+							ul.navbar__list__item__dropdown
+								ul.navbar__list__item__dropdown-content
+									.container
+										a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+											+vtex-controller('<vtex.cmc:menulinhabanner1 />')
+												img(src="https://placehold.it/263x200?text=shake")/
+										a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+											+vtex-controller('<vtex.cmc:menulinhabanner2 />')
+												img(src="https://placehold.it/263x200?text=shake")/
+										a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+											+vtex-controller('<vtex.cmc:menulinhabanner3 />')
+												img(src="https://placehold.it/263x200?text=shake")/
+										a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+											+vtex-controller('<vtex.cmc:menulinhabanner4 />')
+												img(src="https://placehold.it/263x200?text=shake")/
 
-            .header__account-info
-                i.icon-search
-                    include ../../svg/icon-search.svg
-                .header__account-info__account-box
-                    span.header__account-info__account-box__wrap-items
-                        <svg class="header__account-info__account-box__wrap-items__ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="23" viewBox="0 0 20 23"><defs><path id="gtv0a" d="M1388.7 34.16c.12-2.64 1.3-3.9 2.28-4.49a4.9 4.9 0 0 1 2.49-.67h.08a4.9 4.9 0 0 1 2.48.7c.97.58 2.13 1.84 2.25 4.46.03.34.3 3.78-1.29 5.94l.02.01a13 13 0 0 0 3.84 1.86l.04.02c2.01.73 2.07 3 2.1 3.98V46.11c0 .26.01 1.57-.22 2.23a.65.65 0 0 1-.24.3c-.14.1-3.46 2.36-9.03 2.36-5.56 0-8.88-2.26-9.02-2.35a.62.62 0 0 1-.24-.31 8.02 8.02 0 0 1-.24-2.24v-.01-.12c.03-.97.1-3.25 2.1-3.99l.05-.01a12.86 12.86 0 0 0 3.84-1.87c-1.59-2.16-1.31-5.6-1.28-5.94zm4.86 7.66h-.14a4.26 4.26 0 0 1-2.54-.82.65.65 0 0 1-.18.2c-.08.05-1.92 1.42-4.22 2.05-1.08.4-1.2 1.63-1.23 2.76v.12c-.01.44.02 1.13.1 1.52.75.45 3.7 2.03 8.15 2.03 4.47 0 7.4-1.57 8.15-2.02.08-.4.1-1.08.1-1.53v-.12c-.04-1.12-.16-2.35-1.23-2.76-2.3-.63-4.15-2-4.23-2.05a.65.65 0 0 1-.18-.2c-.7.52-1.55.8-2.55.82zm-2.47-2.39c.58.7 1.36 1.05 2.38 1.06h.04a2.95 2.95 0 0 0 2.39-1.06c1.47-1.76 1.14-5.11 1.14-5.15v-.03c-.15-3.34-2.27-3.89-3.52-3.92h-.06c-1 0-3.36.38-3.51 3.92v.03c-.01.03-.33 3.4 1.14 5.15z"/></defs><g><g transform="translate(-1384 -28)"><use fill="#fff" xlink:href="#gtv0a"/><use fill="#fff" fill-opacity="0" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" xlink:href="#gtv0a"/></g></g></svg>
-                        span.header__account-info__account-box__wrap-items__txt Minha <strong class="header__account-info__account-box__wrap-items__txt__bold">Conta</strong>
-                    ul.header__account-info__account-box__list
-                        li.header__account-info__account-box__list__item
-                            a.header__account-info__account-box__list__item__link(href="/account.html") Meu perfil
-                        li.header__account-info__account-box__list__item
-                            a.header__account-info__account-box__list__item__link(href="/login.html") Criar uma conta
-                        li.header__account-info__account-box__list__button
-                            a.header__account-info__account-box__list__item__link(href="/orders.html") Meus pedidos
-                .header__minicart.js-minicart
- 
+						li.navbar__list__item.hide
+							a.navbar__list__item__link Objetivos
+								i.icon-arrow-right
+									include ../../svg/arrow-midway.svg
+							ul.navbar__list__item__dropdown
+								ul.navbar__list__item__dropdown-content
+									.container
+										+vtex-controller('<vtex.cmc:menu-objetivos-banner />')
+											a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+												img(src="https://placehold.it/263x200?text=shake")/
+											a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+												img(src="https://placehold.it/263x200?text=shake")/
+											a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+												img(src="https://placehold.it/263x200?text=shake")/
+											a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+												img(src="https://placehold.it/263x200?text=shake")/
+						li.navbar__list__item
+							a.navbar__list__item__link Outlet
+								i.icon-arrow-right
+									include ../../svg/arrow-midway.svg
+						li.navbar__list__item.item-entrar
+							a.navbar__list__item__entrar(href="/login") Entrar
+						li.navbar__list__item.item-conta
+							a.navbar__list__item__conta(href="/account") Minha Conta
+			.header__search-form
+				form.search-form#header-form(action="/busca")
+					.field.has-addons
+						.control
+							input.input(type='text', placeholder='Buscar produto')/
+							a.icon-search
+								include ../../svg/icon-search.svg
+							a.cancel-ico
+								include ../../svg/cancel-ico.svg
+				.search-form__result-list
+
+			.header__account-info
+				i.icon-search
+					include ../../svg/icon-search.svg
+				.header__account-info__account-box
+					span.header__account-info__account-box__wrap-items
+						<svg class="header__account-info__account-box__wrap-items__ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="23" viewBox="0 0 20 23"><defs><path id="gtv0a" d="M1388.7 34.16c.12-2.64 1.3-3.9 2.28-4.49a4.9 4.9 0 0 1 2.49-.67h.08a4.9 4.9 0 0 1 2.48.7c.97.58 2.13 1.84 2.25 4.46.03.34.3 3.78-1.29 5.94l.02.01a13 13 0 0 0 3.84 1.86l.04.02c2.01.73 2.07 3 2.1 3.98V46.11c0 .26.01 1.57-.22 2.23a.65.65 0 0 1-.24.3c-.14.1-3.46 2.36-9.03 2.36-5.56 0-8.88-2.26-9.02-2.35a.62.62 0 0 1-.24-.31 8.02 8.02 0 0 1-.24-2.24v-.01-.12c.03-.97.1-3.25 2.1-3.99l.05-.01a12.86 12.86 0 0 0 3.84-1.87c-1.59-2.16-1.31-5.6-1.28-5.94zm4.86 7.66h-.14a4.26 4.26 0 0 1-2.54-.82.65.65 0 0 1-.18.2c-.08.05-1.92 1.42-4.22 2.05-1.08.4-1.2 1.63-1.23 2.76v.12c-.01.44.02 1.13.1 1.52.75.45 3.7 2.03 8.15 2.03 4.47 0 7.4-1.57 8.15-2.02.08-.4.1-1.08.1-1.53v-.12c-.04-1.12-.16-2.35-1.23-2.76-2.3-.63-4.15-2-4.23-2.05a.65.65 0 0 1-.18-.2c-.7.52-1.55.8-2.55.82zm-2.47-2.39c.58.7 1.36 1.05 2.38 1.06h.04a2.95 2.95 0 0 0 2.39-1.06c1.47-1.76 1.14-5.11 1.14-5.15v-.03c-.15-3.34-2.27-3.89-3.52-3.92h-.06c-1 0-3.36.38-3.51 3.92v.03c-.01.03-.33 3.4 1.14 5.15z"/></defs><g><g transform="translate(-1384 -28)"><use fill="#fff" xlink:href="#gtv0a"/><use fill="#fff" fill-opacity="0" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" xlink:href="#gtv0a"/></g></g></svg>
+						span.header__account-info__account-box__wrap-items__txt Minha <strong class="header__account-info__account-box__wrap-items__txt__bold">Conta</strong>
+					ul.header__account-info__account-box__list
+						li.header__account-info__account-box__list__item
+							a.header__account-info__account-box__list__item__link(href="/account.html") Meu perfil
+						li.header__account-info__account-box__list__item
+							a.header__account-info__account-box__list__item__link(href="/login.html") Criar uma conta
+						li.header__account-info__account-box__list__button
+							a.header__account-info__account-box__list__item__link(href="/orders.html") Meus pedidos
+				.header__minicart.js-minicart
+
