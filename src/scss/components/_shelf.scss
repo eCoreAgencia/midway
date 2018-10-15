@@ -1,201 +1,212 @@
 .shelf {
-  margin: 10px 0;
-  position: relative;
-  @include atMedium {
-    margin: 40px 0;
-  }
+	margin: 10px 0;
+	position: relative;
 
-  li {
-    position: relative;
-    margin: 0.2rem;
-    display: inline-block;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
-    box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
-    width: 262px;
-    overflow: hidden;
-    @include atMedium {
-      margin: 1.2rem;
-    }
-    .flag {
-      top: 0;
-      left: -5px;
-      padding: 7px 15px;
-      color: #fff;
-      font-size: 11px;
-      font-weight: bold;
-      position: absolute;
-      font-family: $f-base;
-      letter-spacing: 0.17px;
-      text-transform: uppercase;
-      background-color: #ff3717;
-      transform: skew(-15deg);
-    }
+	.prateleira h2 {
+		display: none;
+	}
 
-    .all-shelf {
-      &__header {
-        text-align: center;
-      }
+	@include atMedium {
+		margin: 40px 0;
+	}
 
-      &__product {
-        &__name {
-          padding: 10px 10px 0;
-        }
+	li {
+		position: relative;
+		margin: 0.2rem;
+		display: inline-block;
+		background-color: #fff;
+		-webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+		box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+		width: 262px;
+		overflow: hidden;
 
-        &__link {
-          color: #222;
-          font-size: 20px;
-          font-weight: 700;
-          font-style: italic;
-          font-family: $f-base;
-          letter-spacing: 0.24px;
-          text-transform: uppercase;
-          @include atMedium {
-            line-height: 24px;
-            line-height: 22px;
-          }
-        }
+		@include atMedium {
+			margin: 1.2rem;
+		}
 
-        &__skuname {
-            color: #222;
-            font-size: 14px;
-            font-weight: 700;
-            font-style: italic;
-            text-transform: uppercase;
-            padding: 0 10px;
-        }
+		.flag {
+			top: 0;
+			left: -5px;
+			padding: 7px 15px;
+			color: #fff;
+			font-size: 11px;
+			font-weight: bold;
+			position: absolute;
+			font-family: $f-base;
+			letter-spacing: 0.17px;
+			text-transform: uppercase;
+			background-color: #ff3717;
+			transform: skew(-15deg);
+		}
 
-        &__brand {
-            padding: 10px;
-            @extend .product__brand;
-        }
+		.all-shelf {
+			&__header {
+				text-align: center;
+			}
 
-        &__pic {
-          margin: auto;
-          @include atMedium {
-            margin: auto;
-          }
-        }
+			&__product {
+				&__name {
+					padding: 10px 10px 0;
+				}
 
-        &__price {
-          padding: 15px 10px;
+				&__link {
+					color: #222;
+					font-size: 20px;
+					font-weight: 700;
+					font-style: italic;
+					font-family: $f-base;
+					letter-spacing: 0.24px;
+					text-transform: uppercase;
 
-          &__oldprice {
-            display: block;
-            font-size: 14px;
-            font-weight: 400;
-            color: #808080;
-            font-style: italic;
-            letter-spacing: 0.17px;
-            font-family: "Open Sans";
-            text-transform: uppercase;
-            text-decoration: line-through;
-            line-height: 1.2;
-          }
+					@include atMedium {
+						line-height: 24px;
+						line-height: 22px;
+					}
+				}
 
-          &__newprice {
-            color: #222;
-            display: block;
-            font-size: 22px;
-            font-weight: 700;
-            font-style: italic;
-            letter-spacing: 0.36px;
-            font-family: $f-base;
-            text-transform: uppercase;
-            line-height: 1.2;
-            @include atMedium {
-              font-size: 30px;
-            }
-          }
+				&__skuname {
+					color: #222;
+					font-size: 14px;
+					font-weight: 700;
+					font-style: italic;
+					text-transform: uppercase;
+					padding: 0 10px;
+				}
 
-          &__installment {
-            display: block;
-            font-size: 12px;
-            color: #808080;
-            font-weight: 400;
-            font-style: italic;
-            font-family: "Open Sans";
-            @include atMedium {
-              font-size: 14px;
-            }
-          }
-        }
+				&__brand {
+					padding: 10px;
+					@extend .product__brand;
+				}
 
-        &__info__actions {
-          margin-top: 10px;
-          @include atMedium {
-            margin-top: 20px;
-          }
+				&__pic {
+					margin: auto;
 
-          &__btn {
-            height: 48px;
-            color: #fff;
-            display: flex;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 64px;
-            text-align: center;
-            font-style: italic;
-            font-family: $f-base;
-            letter-spacing: 0.35px;
-            text-transform: uppercase;
-            background-color: #f22100;
-            align-items: center;
-            justify-content: center;
-            @include atMedium {
-              height: 58px;
-            }
-          }
-        }
-      }
-    }
+					@include atMedium {
+						margin: auto;
+					}
+				}
 
-    .prateleira h2 {
-        display: none;
-    }
-  }
+				&__price {
+					padding: 15px 10px;
 
-  .slick-prev,
-  .slick-next {
-    top: 40%;
-    z-index: 1;
-    border: none;
-    position: absolute;
-    background: transparent !important;
-  }
+					&__oldprice {
+						display: block;
+						font-size: 14px;
+						font-weight: 400;
+						color: #808080;
+						font-style: italic;
+						letter-spacing: 0.17px;
+						font-family: "Open Sans";
+						text-transform: uppercase;
+						text-decoration: line-through;
+						line-height: 1.2;
+					}
 
-  .slick-prev {
-    left: 0;
-  }
+					&__newprice {
+						color: #222;
+						display: block;
+						font-size: 22px;
+						font-weight: 700;
+						font-style: italic;
+						letter-spacing: 0.36px;
+						font-family: $f-base;
+						text-transform: uppercase;
+						line-height: 1.2;
 
-  .slick-next {
-    right: 0;
-  }
+						@include atMedium {
+							font-size: 30px;
+						}
+					}
 
-  .slick-dots {
-    margin: 0 auto;
-    text-align: center;
+					&__installment {
+						display: block;
+						font-size: 12px;
+						color: #808080;
+						font-weight: 400;
+						font-style: italic;
+						font-family: "Open Sans";
 
-    li {
-      padding: 0;
-      width: 24px;
-      height: 2px;
-      cursor: pointer;
-      margin-bottom: 0;
-      margin-right: 0;
-      margin-left: 7px;
-      background-color: #b7b7b7;
+						@include atMedium {
+							font-size: 14px;
+						}
+					}
+				}
 
-      &:hover,
-      &.slick-active {
-        background-color: #f22100;
-      }
+				&__info__actions {
+					margin-top: 10px;
 
-      button {
-        display: none;
-      }
-    }
-  }
+					@include atMedium {
+						margin-top: 20px;
+					}
 
-  
+					&__btn {
+						height: 48px;
+						color: #fff;
+						display: flex;
+						font-size: 14px;
+						font-weight: bold;
+						line-height: 64px;
+						text-align: center;
+						font-style: italic;
+						font-family: $f-base;
+						letter-spacing: 0.35px;
+						text-transform: uppercase;
+						background-color: #f22100;
+						align-items: center;
+						justify-content: center;
+
+						@include atMedium {
+							height: 58px;
+						}
+					}
+				}
+			}
+		}
+
+
+	}
+
+	.slick-prev,
+	.slick-next {
+		top: 40%;
+		z-index: 1;
+		border: none;
+		position: absolute;
+		background: transparent !important;
+	}
+
+	.slick-prev {
+		left: 0;
+	}
+
+	.slick-next {
+		right: 0;
+	}
+
+	.slick-dots {
+		margin: 0 auto;
+		text-align: center;
+
+		li {
+			padding: 0;
+			width: 24px;
+			height: 2px;
+			cursor: pointer;
+			margin-bottom: 0;
+			margin-right: 0;
+			margin-left: 7px;
+			background-color: #b7b7b7;
+
+			&:hover,
+			&.slick-active {
+				background-color: #f22100;
+			}
+
+			button {
+				display: none;
+			}
+		}
+	}
+
+
 }
