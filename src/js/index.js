@@ -5,6 +5,7 @@ import '../scss/main.scss'
 //import './components/hover-menu'
 //import './components/sticky'
 import './components/searchForm'
+import './components/send-form'
 
 import './components/minicart';
 import './components/mobile-menu';
@@ -19,6 +20,7 @@ import './pages/home';
 import './pages/sub-templates';
 import './pages/persona';
 import './pages/empty-search';
+import './pages/fale-conosco';
 
 
 var isMobile = {
@@ -48,18 +50,20 @@ $(document).ready(function(){
         $('li.helperComplement').remove();
       }
 
-      $('.search-form').searchform({'vtexStore': 'midwaylabs', 'showDepartments': false}); 
-    
+	  $('.search-form').searchform({'vtexStore': 'midwaylabs', 'showDepartments': false});
+
+	  $('.default__form').sendForm('NL');
+
     if($('.navbar__list__item__dropdown__item--banner-prod')[0]){
         const banner = $('.navbar__list__item__dropdown__item--banner-prod .box-banner').length;
 
-        
+
         const bannerShow = Math.round(Math.random() * banner);
 
         console.log(bannerShow);
         $(`.navbar__list__item__dropdown__item--banner-prod .box-banner:eq(${bannerShow})`).show();
     }
-      
+
 })
 
 

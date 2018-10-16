@@ -14,7 +14,8 @@ header {
                 height: 72px;
                 display: block;
                 background-color: $c-red;
-                transform: skew(-15deg);
+				transform: skew(-15deg);
+				margin-left: -10px;
             }
         }
 		@include atMedium {
@@ -64,6 +65,10 @@ header {
 				@include atMedium {
 					display: none;
 				}
+			}
+
+			@include atLarge {
+				margin-left: -10px;
 			}
 
 			&__item {
@@ -125,7 +130,7 @@ header {
 					letter-spacing: 0.35px;
 					text-align: left;
 					position: relative;
-					
+
 					font-family: $f-secondary;
 					padding-left: 10px;
 					height: 48px;
@@ -212,7 +217,7 @@ header {
 									align-self: center;
 									flex: 0 0 auto;
                                 }
-                                
+
                                 .box-banner {
                                     display: none;
                                 }

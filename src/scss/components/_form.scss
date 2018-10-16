@@ -36,5 +36,19 @@
 		@include atMedium {
 			margin: 0;
 		}
-    }
+	}
+
+
+}
+
+.form--success {
+	margin-left: 100px;
+    padding: 30px 50px;
+	color: #fff;
+
+	strong {
+		color: #fff;
+	}
+	display: none;
+
 }

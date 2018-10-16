@@ -19,7 +19,13 @@
 
         &-inner {
             //background: radial-gradient(ellipse cover, center bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 100%);
-        }
+		}
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+
+			display: none;
+
+		}
     }
     &__benefits {
         width: 145px;
@@ -72,11 +78,26 @@
     &__brand {
         @include font-size(14px);
         @extend %u-italic;
-        color: $c-red;
         @extend %u-font-secondary;
         @extend %u-bold;
-        line-height: 1;
-       
+		line-height: 1;
+
+		&.build-yourself {
+			color: $c-red;
+		}
+
+		&.glamour-nutrition {
+			color: #af0680;
+		}
+
+		&.military, &.military-trail {
+			color: #c1b66d;
+		}
+
+		&.diet-way {
+			color: #2e3092;
+		}
+
 
     }
 
@@ -156,6 +177,9 @@
 	&__nutricional {
 		background-color: $c-red;
 		padding: 18px 0;
+		background-image: url('/arquivos/bg-middle.png');
+    	background-position: top;
+    	background-repeat: no-repeat;
 		&-inner {
 			@extend %u-display-flex;
 			align-items: center;
@@ -232,13 +256,17 @@
         padding: 60px 0;
         .category__details {
             display: none;
-        }
+		}
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+			padding: 20px 10px;
+		}
 	}
 
 	&__why {
         display: none;
 
-        
+
 	}
 
 	&__media {
@@ -251,14 +279,32 @@
 
 		@media (min-width: 320px) and (max-width: 1024px) {
 
-			width: 100%;
+			flex-basis: 100%;
 
 		}
     }
-    
+
     .is-not-empty {
         display: block;
-    }
+	}
+
+	&__info {
+		max-width: 377px;
+		width: 100%;
+		@media (min-width: 320px) and (max-width: 1024px) {
+
+			padding: 10px;
+
+		}
+	}
+
+	.bread-crumb {
+		@media (min-width: 320px) and (max-width: 1024px) {
+
+			display: none;
+
+		}
+	}
 
 
 }
@@ -340,7 +386,7 @@
 		position: relative;
 		&-title {
             @extend %title--section;
-        
+
 		}
 
 		&-text {
@@ -422,7 +468,7 @@
 			}
 		}
     }
-    
+
     &-benefits {
         display: none;
     }
@@ -439,7 +485,7 @@
         background-color: #d62205;
         padding: 10px 0;
 		@media (min-width: 320px) and (max-width: 1024px) {
-			overflow-x: scroll;
+
 		}
 	}
 
@@ -450,7 +496,10 @@
 		letter-spacing: 0.82px;
 		text-align: center;
         color: #ffffff;
-        font-weight: 700;
+		font-weight: 700;
+		@media (min-width: 320px) and (max-width: 1024px) {
+			font-size: 22px;
+		}
 	}
 
 	&__subtitle {
@@ -461,11 +510,18 @@
 		width: 100%;
 		display: block;
 		margin: 10px 0;
+		@media (min-width: 320px) and (max-width: 1024px) {
+			font-size: 14px;
+			padding: 0 10px;
+		}
 	}
 	.benefits {
 		@extend %u-display-flex;
 		color: $c-white;
 		justify-content: center;
+		@media (min-width: 320px) and (max-width: 1024px) {
+			flex-wrap: wrap;
+		}
 
 		i, strong {
 			color: $c-white;
@@ -478,8 +534,14 @@
 			padding: 20px 30px;
 			width: 280px;
             align-items: center;
-            position: relative;
-            
+			position: relative;
+			@media (min-width: 320px) and (max-width: 1024px) {
+				width: 100%;
+				padding: 10px;
+				flex-wrap: wrap;
+				text-align: center;
+			}
+
             &::after {
 				content: '';
 				height: 50px;
@@ -490,11 +552,25 @@
 				top: 15px;
 				right: 0;
 				transform: skew(-15deg);
+
+				@media (min-width: 320px) and (max-width: 1024px) {
+					display: none;
+				}
 			}
 		}
 
 		&__icon {
 			margin-right: 10px;
+			@media (min-width: 320px) and (max-width: 1024px) {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		&__text {
+			@media (min-width: 320px) and (max-width: 1024px) {
+				width: 100%;
+			}
 		}
 
 
@@ -561,8 +637,19 @@
 
 		&__text {
 			width: 150px;
+
 		}
 	}
 }
+
+.ganho-de-massa-muscular {
+	@extend .icon-muscle;
+}
+
+.ganho-de-massa-muscular, .auxilia-no-emagrecimento, .ajuda-na-recuperacao-de-massa-muscular, .gera-saciedade-e-auxilia-no-emagrecimento, .melhora-a-saude-ossea {
+	@extend [class*=" icon-"];
+}
+
+
 
 

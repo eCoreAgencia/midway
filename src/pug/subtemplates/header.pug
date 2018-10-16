@@ -1,7 +1,7 @@
 include ../helpers
 header.header
     .header__area.header__main
-        .container.is-flex
+        .container.is-flex.header--bg
             .header__menu-icon
                 .header__menu-icon__middle
             a.header__area__logo__link(href="/")
@@ -12,7 +12,7 @@ header.header
                         a.navbar__list__item__voltar Voltar
                     ul.navbar__list
                         li.navbar__list__item
-                            a.navbar__list__item__link 
+                            a.navbar__list__item__link
                                 span Produtos
                                 i.icon-arrow-right
                                     include ../../svg/arrow-midway.svg
@@ -56,51 +56,43 @@ header.header
                                         li.navbar__list__item__dropdown__item
                                             a.navbar__list__item__dropdown__item__link(href="/kit") Kit
                                     .navbar__list__item__dropdown__item--banner-prod
-                                        +vtex-controller('<vtex.cmc:menuprodbanner />')
-                                            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                                                .box-banner
-                                                    a(href="")
-                                                        img(src="https://placehold.it/392x202?text=shake-#{val}")/
+                                        img(src="/arquivos/prod-banner.jpg")/
                         li.navbar__list__item.hide
-                            a.navbar__list__item__link 
+                            a.navbar__list__item__link
                                 span Linhas
                                 i.icon-arrow-right
                                     include ../../svg/arrow-midway.svg
                             ul.navbar__list__item__dropdown
                                 ul.navbar__list__item__dropdown-content
                                     .container
+
+                                        a.navbar__list__item__dropdown__item--banner-prod(href="")
+                                            img(src="/arquivos/banner-build.jpg")/
                                         a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                            +vtex-controller('<vtex.cmc:menulinhabanner1 />')
-                                                img(src="https://placehold.it/263x200?text=shake")/
+                                            img(src="/arquivos/banner-military.png")/
                                         a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                            +vtex-controller('<vtex.cmc:menulinhabanner2 />')
-                                                img(src="https://placehold.it/263x200?text=shake")/
+                                            img(src="/arquivos/banner-glamour.jpg")/
                                         a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                            +vtex-controller('<vtex.cmc:menulinhabanner3 />')
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                        a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                            +vtex-controller('<vtex.cmc:menulinhabanner4 />')
-                                                img(src="https://placehold.it/263x200?text=shake")/
+                                            img(src="/arquivos/banner-diet.jpg")/
 
                         li.navbar__list__item.hide
-                            a.navbar__list__item__link 
+                            a.navbar__list__item__link
                                 span Objetivos
                                 i.icon-arrow-right
                                     include ../../svg/arrow-midway.svg
                             ul.navbar__list__item__dropdown
                                 ul.navbar__list__item__dropdown-content
                                     .container
-                                        +vtex-controller('<vtex.cmc:menu-objetivos-banner />')
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
-                                            a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
-                                                img(src="https://placehold.it/263x200?text=shake")/
+                                        a.navbar__list__item__dropdown__item--banner-prod(href="")
+                                            img(src="/arquivos/banner-massa.jpg")/
+                                        a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+                                            img(src="/arquivos/banner-emagrecimento.jpg")/
+                                        a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+                                            img(src="/arquivos/banner-energia.jpg")/
+                                        a.navbar__list__item__dropdown__item--banner-prod(href="/category.html")
+                                            img(src="/arquivos/banner-saude.jpg")/
                         li.navbar__list__item
-                            a.navbar__list__item__link 
+                            a.navbar__list__item__link
                                 span Outlet
                                 i.icon-arrow-right
                                     include ../../svg/arrow-midway.svg

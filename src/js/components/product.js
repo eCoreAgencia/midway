@@ -1,4 +1,10 @@
+import axios from 'axios';
+import {
+	slugify
+  } from '../utils';
+
 export default (function() {
+
 if ($('body').hasClass('product')) {
   let thumbs = $('.thumbs')
   let fix_zoom = function () {
@@ -56,9 +62,7 @@ if ($('body').hasClass('product')) {
         $('.product__why').addClass('is-not-empty');
       }
 
-      if (!$('.category-benefits .category-benefits__subtitle').is(':empty')){
-        $('.category-benefits').addClass('is-not-empty');
-      }
+
 
       vtexjs.catalog.getCurrentProductWithVariations().then(product => {
           console.log(product);
@@ -68,10 +72,15 @@ if ($('body').hasClass('product')) {
               self.renderPrice(product.skus[0]);
               $('.product__buy').html(`<a class="buy-button buy-button-ref buy-sku-button" target="_top" href="javascript:alert('Por favor, selecione o modelo desejado.');" style="display:block">Comprar</a>`);
             }
-      })
-      
+	  })
 
-      $('.product__buy').on('click', '.buy-sku-button', function(e){ 
+
+	  const productID = $('#___rc-p-id').val();
+
+	  self.getProductData(productID);
+
+
+      $('.product__buy').on('click', '.buy-sku-button', function(e){
         e.preventDefault();
         let href = $(this).attr('href');
         const text = "javascript:alert('Por favor, selecione o modelo desejado.');";
@@ -86,23 +95,23 @@ if ($('body').hasClass('product')) {
           return false;
         }
 
-        
+
             var item = {
                 id: sku,
                 quantity: qty,
                 seller: '1'
             };
-    
+
             vtexjs.checkout.addToCart([item], null)
             .done(function(orderForm) {
                 console.log(orderForm);
                 window.location.href = '/checkout/#/cart';
             });
 
-        
 
-       
-        
+
+
+
       });
 
       $('.product__skus-select').on('change', 'select', function(){
@@ -113,8 +122,42 @@ if ($('body').hasClass('product')) {
           $('.buy-button').attr('href', endpoint);
       });
 
-     
-    }
+
+	}
+
+	getProductData(productId) {
+		//const endpoint = `/api/catalog_system/pub/products/search/?fq=productId:${productId}`;
+		const endpoint = 'http://localhost:3000/searchProductId';
+		axios.get(endpoint).then(res => {
+			const product = res.data[0];
+			console.log(product)
+
+			if(product.Linhas){
+				$('.section__product-header .product__brand').addClass(slugify(product.Linhas));
+				$('.section__product-header .product__brand').html(product.Linhas);
+			}
+
+
+
+			if(product.TituloDescricaoProduto){
+				$('.category__description-title span').html(product.TituloDescricaoProduto)
+			}
+
+			if(product.TituloBeneficios){
+				$('.category-benefits').addClass('is-not-empty');
+
+				$('.category-benefits__title span').html(product.TituloBeneficios);
+				$('.category-benefits__subtitle').html(product.DescricaoBeneficios)
+			}
+
+			if(product.TituloSaibaTudo){
+				$('.category__details').addClass('is-not-empty');
+				$('.category__details-call span').html(product.productName);
+				$('.category__details-title').html(product.TituloSaibaTudo);
+				$('.category__details-text p').html(product.DescricaoSaibaTudo);
+			}
+		})
+	}
 
     changeQuantity(val) {
       let currentVal = $('.product__qtd-value').val()
@@ -168,7 +211,7 @@ if ($('body').hasClass('product')) {
                     <span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
                     </em>
                 </p>
-                
+
             </div>`;
         }else {
             price = `<div class="productPrice">
@@ -183,15 +226,15 @@ if ($('body').hasClass('product')) {
                 <span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
                 </em>
             </p>
-            
+
         </div>`;
         }
-         
+
 
         $('.product__price .price').html(price);
     }
 
-    
+
   }
 
   $(() => {

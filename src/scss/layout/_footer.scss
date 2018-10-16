@@ -291,3 +291,33 @@
 		transform: translateY(0%);
 	}
 }
+
+.social {
+	&--facebook {
+		svg {
+			width: 22px;
+			height: auto;
+		}
+	}
+
+	&--instagram {
+		svg {
+			width: 22px;
+			height: auto;
+		}
+	}
+
+	&--twitter {
+		svg {
+			width: 22px;
+			height: auto;
+		}
+	}
+
+	&--youtube {
+		svg {
+			width: 25px;
+			height: auto;
+		}
+	}
+}

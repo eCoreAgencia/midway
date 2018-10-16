@@ -10,37 +10,36 @@
 
 %title {
 	&--section {
-		position: relative;
-		z-index: 1;
+		width: 100%;
+		color: #000;
+		font-size: 33px;
+		font-weight: 700;
+		font-style: italic;
 		text-align: center;
+		font-family: "Eurostile",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+		letter-spacing: 0.82px;
+		text-transform: uppercase;
+		display: flex;
+    	align-items: center;
+    	justify-content: center;
 
-		&:before {
-			border-top: 2px solid $c-red;
-			content:"";
-			margin: 0 auto; /* this centers the line to the full width specified */
-			position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-			top: 50%; left: 0; right: 0; bottom: 0;
-			width: 95%;
-			z-index: -1;
-		}
-
-		span {
-			font-style: italic;
-			text-transform: uppercase;
-			letter-spacing: 0.82px;
-			font-size: 33px;
-			color: #222222;
-			padding: 0 15px;
-			position: static;
-            background-color: $c-white;
-            font-weight: 700;
+		&:after, &:before {
+			content: "";
+			width: 40px;
+			height: 2px;
+			margin: 0 35px;
+			display: inline-block;
+			vertical-align: middle;
+			background-color: #ff0000;
 		}
 
 		@media (min-width: 320px) and (max-width: 1024px) {
 
-			&:before {
+			&:before, &:after {
 				display: none;
 			}
+
+			font-size: 20px;
 
 		}
 	}

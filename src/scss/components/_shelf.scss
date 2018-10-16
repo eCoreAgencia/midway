@@ -10,6 +10,15 @@
 		margin: 40px 0;
 	}
 
+	ul, .slick-track  {
+		display: flex;
+		align-items: stretch;
+		flex-wrap: wrap;
+
+	}
+
+
+
 	li {
 		position: relative;
 		margin: 0.2rem;
@@ -40,28 +49,33 @@
 		}
 
 		.all-shelf {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
 			&__header {
 				text-align: center;
 			}
 
 			&__product {
 				&__name {
-                    padding: 10px 10px 0;
-                    min-height: 60px;
+                    padding: 0 10px;
 				}
 
 				&__link {
 					color: #222;
-					font-size: 20px;
 					font-weight: 700;
 					font-style: italic;
 					font-family: $f-base;
 					letter-spacing: 0.24px;
 					text-transform: uppercase;
+					@include atLarge {
+						font-size: 20px;
+					}
 
-					@include atMedium {
+					@include atSmall {
 						line-height: 24px;
 						line-height: 22px;
+						font-size: 12px;
 					}
 				}
 
@@ -72,11 +86,26 @@
 					font-style: italic;
 					text-transform: uppercase;
 					padding: 0 10px;
+					@include atLarge {
+						font-size: 14px;
+					}
+
+					@include atSmall {
+						font-size: 11px;
+					}
 				}
 
 				&__brand {
 					padding: 10px;
 					@extend .product__brand;
+
+					@include atLarge {
+						font-size: 14px;
+					}
+
+					@include atSmall {
+						font-size: 11px;
+					}
 				}
 
 				&__pic {
@@ -88,8 +117,7 @@
 				}
 
 				&__price {
-                    padding: 15px 10px;
-                    min-height: 103px;
+                    padding: 5px 10px;
 
 					&__oldprice {
 						display: block;
@@ -102,6 +130,13 @@
 						text-transform: uppercase;
 						text-decoration: line-through;
 						line-height: 1.2;
+						@include atLarge {
+							font-size: 14px;
+						}
+
+						@include atSmall {
+							font-size: 12px;
+						}
 					}
 
 					&__newprice {
@@ -117,6 +152,14 @@
 
 						@include atMedium {
 							font-size: 30px;
+						}
+
+						@include atLarge {
+							font-size: 22px;
+						}
+
+						@include atSmall {
+							font-size: 16px;
 						}
 					}
 
@@ -211,4 +254,12 @@
 	}
 
 
+}
+
+.all-shelf__product__info {
+    min-height: 95px;
+}
+
+.all-shelf__product__price {
+    min-height: 93px;
 }

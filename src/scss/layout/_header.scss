@@ -10,6 +10,17 @@
 		);
 	}
 
+
+	&--bg {
+		@include atLarge {
+			background-color: $c-red;
+
+			.header__area__logo__link {
+				height: 72px;
+			}
+		}
+	}
+
 	&__main {
 		position: relative;
 		.is-flex {
