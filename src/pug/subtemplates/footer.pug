@@ -35,7 +35,7 @@ footer.footer
 					.footer__main__menu
 						ul.footer__main__menu__list
 							li.footer__main__menu__list__item
-								a.footer__main__menu__list__item__link Sac: (62) 3090-0600
+								a.footer__main__menu__list__item__link(href="callto:(62)3090-0600", target="_blank") Sac: (62) 3090-0600
 							li.footer__main__menu__list__item
 								a.footer__main__menu__list__item__link(href="mailto:sac@midwaylabs.com.br", target="_blank") sac@midwaylabs.com.br
 							li.footer__main__menu__list__item
@@ -46,20 +46,21 @@ footer.footer
 							h3.footer__main__title.no-border Redes Sociais
 							ul.footer__main__menu__list--social__list.is-untoggleble.is-flex
 								li.footer__main__menu__list--social__list__item
-									a.footer__main__menu__list--social__list__item__link.social--facebook(href="")
+									a.footer__main__menu__list--social__list__item__link.social--facebook(href="https://www.facebook.com/MidwayLabs/", target="_blank", rel="nofollow")
 										include ../../svg/w-facebook.svg
 								li.footer__main__menu__list--social__list__item
-									a.footer__main__menu__list--social__list__item__link.social--instagram(href="")
+									a.footer__main__menu__list--social__list__item__link.social--instagram(href="", target="_blank", rel="nofollow")
 										include ../../svg/w-instagram.svg
 								li.footer__main__menu__list--social__list__item
-									a.footer__main__menu__list--social__list__item__link.social--twitter(href="")
+									a.footer__main__menu__list--social__list__item__link.social--twitter(href="", target="_blank", rel="nofollow")
 										include ../../svg/w-twitter.svg
 								li.footer__main__menu__list--social__list__item
-									a.footer__main__menu__list--social__list__item__link.social--youtube(href="")
+									a.footer__main__menu__list--social__list__item__link.social--youtube(href="", target="_blank", rel="nofollow")
 										include ../../svg/w-youtube.svg
-						.fb-page(data-href='https://www.facebook.com/MidwayLabs/', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='false')
-							blockquote.fb-xfbml-parse-ignore(cite='https://www.facebook.com/MidwayLabs/')
-								a(href='https://www.facebook.com/MidwayLabs/') Midway Labs USA
+						.footer__facebook
+							.fb-page(data-href='https://www.facebook.com/MidwayLabs/', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='false')
+								blockquote.fb-xfbml-parse-ignore(cite='https://www.facebook.com/MidwayLabs/')
+									a(href='https://www.facebook.com/MidwayLabs/') Midway Labs USA
 
 	.footer__area.footer__middle.collumns
 		.container.is-flex

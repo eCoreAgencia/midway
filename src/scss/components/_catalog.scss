@@ -39,6 +39,30 @@
 
     &__top {
         display: flex;
-        justify-content: space-between;
-    }
-}    
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.shelf {
+		ul {
+
+
+			@media (min-width: 320px) and (max-width: 475px) {
+				width: 100vw;
+				padding: 0 2px;
+			}
+		}
+	}
+
+	.bread-crumb {
+		@media (min-width: 320px) and (max-width: 475px) {
+			display: none;
+		}
+	}
+
+	&__content {
+		@media (min-width: 1024px) and (max-width: 1200px) {
+			width: calc(100vw - 300px);
+		}
+	}
+}

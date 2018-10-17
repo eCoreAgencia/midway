@@ -63,6 +63,13 @@
 			width: 100% !important;
 			&.is-red {
 				background: #f01914;
+				@media (min-width: 320px) and (max-width: 475px) {
+					.footer__main__menu {
+						height: auto;
+						opacity: 1;
+						width: 100%;
+					}
+				}
 			}
 			@include atMedium {
 				padding-left: 30px;
@@ -90,6 +97,13 @@
 		}
 
 		&__menu {
+			@media (min-width: 320px) and (max-width: 475px) {
+				display: none;
+				transition: all 0.3s linear;
+				.is-active  + & {
+					display: block;
+				}
+			}
 			&__list {
 				display: flex;
 				flex-direction: column;
@@ -120,6 +134,9 @@
 							text-decoration: underline;
 						}
 					}
+
+
+
 				}
 
 				&__txt {
@@ -276,6 +293,12 @@
 				fill: $c-white;
 				stroke: $c-white;
 			}
+		}
+	}
+
+	&__facebook {
+		@media (min-width: 320px) and (max-width: 475px) {
+			padding: 0 10px 10px;
 		}
 	}
 }

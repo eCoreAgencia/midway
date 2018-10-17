@@ -61,7 +61,10 @@
         width: 10px;
       }
       path {
-        fill: $c-white;
+		fill: $c-white;
+		@media (min-width: 320px) and (max-width: 475px) {
+			fill: $c-red;
+		}
       }
     }
     &--diff {
@@ -139,7 +142,7 @@
     color: $c-white;
     text-align: center;
     margin-right: 10px;
-    
+
     &-text {
       margin-right: 5px;
       font-size: 12px;
@@ -178,7 +181,7 @@
       color: #a3a3a3;
       letter-spacing: 0.9px;
       font-family: $f-secondary;
-      
+
     }
 
     &__remove {
@@ -203,7 +206,7 @@
         button {
             border: none;
         }
-        
+
     }
 
     &__price {

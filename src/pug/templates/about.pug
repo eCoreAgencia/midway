@@ -14,47 +14,64 @@ block content
 			span.pad Sobre A Midway Labs
 		a.about__links(href="#science")
 			span.pad Ciência
-	.grid-template--first
-		img(src="/arquivos/desde-banner.png", alt="")/
-		article.about__content.about__content--bg-gray
-			h2.about__title.about__title--allpd A Midway Labs
-			p.about__generic-txt.about__generic-txt--allpd
-				| chegou ao mercado em 1991 fundada pelo visionário <strong>Wilton Colle</strong> com o propósito de aliar tecnologia e ciência na indústria de suplementos dietéticos. Nesses <strong>25 anos de história</strong> a marca com presença internacional  e com todos os produtos fabricados nos Estados Unidos da América com supervisão de uma equipe de cientistas profissionais, médicos e nutricionista hoje é uma das maiores marcas de suplementos do mundo
-	.about__gmp.about__gmp--absolute
-		img(src="/arquivos/gmp-banner-n.png", alt="")/
-		p.about__generic-txt.about__generic-txt--only-txt
-			| Todos os produtos da <strong>Midway Labs</strong> são fabricados em instalações <strong>GMP (Boas Práticas de Fabricação)</strong> e registrados pela FDA. O resultado disso é o reconhecimento como uma das principais marcas de suplementos tecnológicos dietéticos em todo o mundo aliando na construção da melhor versão de si mesmo de forma eficiente e sem perder a qualidade no sabor.
-	section.about__linhas
+
+	section.about__grid
+		.about__midway-date
+			.about__midway-year
+				| Desde
+				br/
+				span 1991
+
+		.about__midway-labs
+			h3.about__midway-title A midway labs
+			.about__midway-text
+				p A Midway Labs chegou ao mercado em 1991, fundada pelo visionário <strong>Wilton Colle</strong> com o propósito de aliar tecnologia e ciência na indústria de nossa missão foi sempre proporcionar a construção da melhor versão de si mesmo de forma eficiente e com alta qualidade.
+	section.about__grid.about__grid--one
+		.about__midway-gmp
+			.about__midway-gmp-text
+				p Todos os produtos da <strong>Midway Labs</strong> são fabricados nos Estados Unidos em instalações <strong>GMP (Boas Práticas de Fabricação)</strong> e registrados pela FDA, sob a supervisão de uma equipe de cientistas profissionais, médicos e nutricionistas, que tornaram-a uma das maiores marcas de suplementos tecnológicos dietéticos do mundo
+	section.about__lines
 		h2.about__title-line Linhas Midway Labs
-		.grid-template
-			img.img(src="/arquivos/nbuild-yourself.png", alt="")/
-			article.about__content
-				h2.about__title.about__title--red Build Yourself
-				p.about__generic-txt
-					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
-		.grid-template.grid-template--reverse
-			article.about__content
-				h2.about__title.about__title--gold Military Trail
-				p.about__generic-txt
-					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
-			img.img(src="/arquivos/nmilitary-banner.png", alt="")/
-		.grid-template
-			img.img(src="/arquivos/nglamour-banner.png", alt="")/
-			article.about__content
-				h2.about__title.about__title--purple Glamour Nutrition
-				p.about__generic-txt
-					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
-		.grid-template.grid-template--reverse
-			article.about__content
-				h2.about__title.about__title--grape Diet Way
-				p.about__generic-txt
-					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget rutrum turpis. Praesent nunc felis, feugiat eget pulvinar at, varius et lorem. Proin elit risus, cursus euismod lorem vitae, aliquam fermentum lectus. Duis facilisis orci vel tellus dignissim tempus. Aliquam aliquam, ex eget semper volutpat, tellus turpis interdum nulla, ut ultrices.
-			img.img(src="/arquivos/ndiet-banner.png", alt="")/
+		.about__grid.about__grid--build-yourself
+			.about__lines-image
+				.about__lines-image-content
+					img(src="/arquivos/about-midway.png", alt="")
+			.about__lines-content
+				h3.about__lines-title Build Yourself
+				.about__lines-text
+					p Uma nova geração de suplementos alimentares premium produzidos nos Estados Unidos com as melhores matérias-primas do mercado internacional, resultando uma linha de produtos inovadores e de alta tecnologia para auxiliar você a alcançar a melhor versão de você mesmo.
+		.about__grid.about__grid--inverse.about__grid--military-trail
+			.about__lines-content
+				h3.about__lines-title Military trail
+				.about__lines-text
+					p Uma linha com suplementos para quem busca estar em sua melhor forma e preparado para todos os desafios do dia a dia. Inspirada nos heróis da vida real, traz a concentração máxima dos melhores ingredientes para potencializar o seu treino e multiplicar a sua força.
+			.about__lines-image
+				.about__lines-image-content
+					img(src="/arquivos/about-military.png", alt="")
+		.about__grid.about__grid--glamour-nutrition
+			.about__lines-image
+				.about__lines-image-content
+					img(src="/arquivos/about-glamour.png", alt="")
+			.about__lines-content
+				h3.about__lines-title Glamour nutrition
+				.about__lines-text
+					p Criada para proporcionar beleza, amor e confiança de dentro para fora, essa linha é voltada às mulheres que acreditam que um visual radiante é reflexo de sua beleza natural. São produtos produzidos a partir dos melhores ingredientes e da mais alta tecnologia para oferecer todo o cuidado que o seu corpo merece.
+		.about__grid.about__grid--inverse.about__grid--diet-way
+			.about__lines-content
+				h3.about__lines-title Diet way
+				.about__lines-text
+					p Há mais de 20 anos trazendo muito mais sabor e nutrientes para a sua dieta, Diet Way já tornou-se sinônimo de confiança e qualidade. São shakes e sopas redutores de peso que substituem até duas refeições por dia e já são recordistas em vendas no Brasil.
+			.about__lines-image
+				.about__lines-image-content
+					img(src="/arquivos/about-diet.png", alt="")
+
+
 	section.about__science.bg-static
 		h2.about__title-line#science Ciência
 		p.about__generic-txt.about__generic-txt--center
-			| Nossa equipe de consultores inclui vários cientistas, químicos, médicos e nutricionistas altamente talentosos e dedicados, todos dispostos a ajudar a Midway Labs USA a criar os melhores produtos possíveis. Cada especialista em nosso conselho está envolvido
-			| em todas as etapas do ciclo de produção, desde o desenvolvimento até a fabricação e teste. O conselho realiza uma extensa pesquisa para garantir que nossos produtos não apenas atinjam as afirmações feitas sobre cada mercadoria, mas também que os mesmos sejam seguros e feitos com a mais alta qualidade dos ingredientes disponíveis.
+			| Nossa equipe de consultores inclui vários cientistas, químicos, médicos e nutricionistas altamente talentosos e dedicados, todos dispostos a ajudar a Midway Labs USA a criar os melhores produtos possíveis.
+			br/
+			| Cada especialista em nosso conselho está envolvido em todas as etapas do ciclo de produção, desde o desenvolvimento até a fabricação e teste. O conselho realiza uma extensa pesquisa para garantir que nossos produtos não apenas atinjam as afirmações feitas sobre cada mercadoria, mas também que os mesmos sejam seguros e feitos com a mais alta qualidade dos ingredientes disponíveis.
 		h2.about__title-line.about__title-line--smaller Conselho Científico Midway
 		.about__each-doctor
 			.red-line

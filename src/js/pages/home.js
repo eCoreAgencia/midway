@@ -104,7 +104,7 @@ $(document).ready(function() {
         {
           breakpoint: 319,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1,
             dots: false
           }
@@ -112,8 +112,8 @@ $(document).ready(function() {
       ]
     });
 
-    
 
-    
+
+
   }
 });

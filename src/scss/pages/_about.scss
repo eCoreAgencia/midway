@@ -303,3 +303,266 @@
 		}
 	}
 }
+
+.about {
+	&__grid {
+		display: grid;
+		grid-template-columns: 4fr 8fr;
+		grid-column-gap: 10px;
+
+		@media (min-width: 320px) and (max-width: 475px) {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&--inverse {
+			grid-template-columns: 8fr 4fr;
+
+			@media (min-width: 320px) and (max-width: 475px) {
+				display: flex;
+				flex-direction: column-reverse;
+			}
+		}
+
+		&--one {
+			grid-template-columns: 10fr 2fr;
+			grid-template-rows: 290px;
+		}
+	}
+
+	&__midway {
+		&-gmp {
+			background-color: #202020;
+			height: 100%;
+			color: $c-white;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			background-image: url('/arquivos/about-gmp-bg.png');
+			background-repeat: no-repeat;
+			background-size: conver;
+			background-position: center top;
+			transform: skew(-15deg);
+			margin-left: -40px;
+
+			@media (min-width: 320px) and (max-width: 475px) {
+				transform: skew(0deg);
+				margin: 0;
+			}
+
+			&-text {
+				padding: 20px;
+				font-size: 18px;
+				font-family: $f-secondary;
+				strong {
+					color: $c-white;
+				}
+				width: 100%;
+				max-width: 745px;
+				transform: skew(15deg);
+
+				@media (min-width: 320px) and (max-width: 475px) {
+					transform: skew(0deg);
+					padding: 20px 10px;
+				}
+
+				@media (min-width: 320px) and (max-width: 475px) {
+					transform: skew(0deg);
+					padding: 20px 10px;
+				}
+
+
+				p {
+					@media (min-width: 320px) and (max-width: 475px) {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		&-labs {
+			@extend .category__details-text;
+			width: 100%;
+			margin-left: 40px;
+			height: 248px;
+			@media (min-width: 320px) and (max-width: 475px) {
+				margin: 0;
+			}
+		}
+
+		&-title {
+			@extend .category__details-title;
+			margin-bottom: 30px;
+		}
+
+		&-year {
+			@extend .category__details-call;
+			padding-left: 94px;
+			position: relative;
+			&::after {
+				content: '';
+				width: 224px;
+				height: 6px;
+				background-color: #f22100;
+				display: block;
+				position: absolute;
+				left: 0;
+			}
+			width: 275px;
+
+			@media (min-width: 320px) and (max-width: 475px) {
+				width: 100%;
+				padding: 0;
+			}
+		}
+
+		&-date {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+
+		}
+
+		&-text {
+			p {
+				@media (min-width: 320px) and (max-width: 475px) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	&__lines {
+		.about__grid {
+			margin-bottom: 33px;
+			grid-template-rows: 191px;
+		}
+
+		&-text {
+			font-size: 18px;
+			font-family: $f-secondary;
+			font-weight: 400;
+
+			@media (min-width: 320px) and (max-width: 475px) {
+				font-size: 14px;
+			}
+
+			@media (min-width: 476px) and (max-width: 1024px) {
+				font-size: 16px;
+			}
+
+		}
+
+		&-text, &-title {
+			width: 100%;
+			max-width: 780px;
+
+			.about__grid--inverse & {
+				margin-right: 0;
+				margin-left: auto;
+			}
+		}
+
+		&-title {
+			font-size: 33px;
+			font-style: italic;
+			font-weight: 700;
+			letter-spacing: 0.82px;
+			text-transform: uppercase;
+			margin-bottom: 22px;
+			@media (min-width: 320px) and (max-width: 475px) {
+				font-size: 20px;
+				margin-top: 20px;
+			}
+
+			@media (min-width: 476px) and (max-width: 1024px) {
+				font-size: 22px;
+				margin-bottom: 10px;
+			}
+
+
+			.about__grid--build-yourself & {
+				color: $c-red;
+			}
+
+			.about__grid--military-trail & {
+				color: #c2b76f;
+			}
+
+			.about__grid--glamour-nutrition & {
+				color: #3b165c;
+			}
+
+			.about__grid--diet-way & {
+				color: #2e3092;
+			}
+
+
+		}
+
+		&-content {
+			margin-left: 20px;
+			padding: 5px 20px;
+			@media (min-width: 320px) and (max-width: 475px) {
+				padding: 0 10px;
+			}
+		}
+
+		&-image {
+			.about__grid--build-yourself & {
+				background-color: $c-red;
+			}
+
+			.about__grid--military-trail & {
+				background-color: #2b2d14;
+				background-image: url('/arquivos/about-military-bg.png');
+				background-repeat: repeat-x;
+			}
+
+			.about__grid--glamour-nutrition & {
+				background-color: #3b165c;
+			}
+
+			.about__grid--diet-way & {
+				background-color: #aae3fa;
+				background-image: url('/arquivos/about-diet-way-bg.png');
+				background-repeat: no-repeat;
+				background-position: -33px;
+				background-size: cover;
+			}
+
+			transform: skew(-15deg);
+			margin-left: -25px;
+
+			.about__grid--inverse & {
+				margin-left: 0;
+				margin-right: -25px;
+			}
+
+			@media (min-width: 320px) and (max-width: 475px) {
+				transform: skew(0deg);
+				margin: 10px 0;
+				height: 191px;
+			}
+
+			&-content {
+				display: flex;
+				justify-content: center;
+				height: 100%;
+				align-items: center;
+				@media (min-width: 476px) {
+					transform: skew(15deg);
+					justify-content: flex-end;
+					padding-right: 40px;
+				}
+
+				.about__grid--inverse & {
+					justify-content: flex-start;
+					padding-left: 40px;
+				}
+
+
+			}
+		}
+	}
+}

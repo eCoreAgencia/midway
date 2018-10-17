@@ -1,7 +1,7 @@
 .section__breadcrumb {
     margin-top: 25px;
-    
-    
+
+
 }
 
 .bread-crumb {
@@ -9,27 +9,25 @@
 
     ul {
       display: flex;
-  
-      li {
-          margin: 0 5px;
 
+      li {
+          font-style: italic;
           a {
-              font-size: 14px;
-              color: #6a6157;
-              font-weight: 400;
-              line-height: 25px;
-              font-family: Roboto;
+			font-family: $f-secondary;
+			font-size: 16px;
+			color: #808080;
+
 
               &:hover {
                   color: #e75300;
               }
           }
           &::after {
-              content: '/';
-              margin-left: 5px;
+			  content: '|';
+			  padding: 0 10px;
               display: inline-block;
           }
-  
+
           &:last-child {
               &::after {
                   display: none;
@@ -38,7 +36,6 @@
 
           &.last {
               a {
-                  color: #000;
                   font-weight: 700;
               }
           }

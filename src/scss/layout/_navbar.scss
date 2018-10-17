@@ -158,6 +158,8 @@ header {
 
 				&__dropdown {
 					display: none;
+
+
 					&.is-visible {
 						display: block;
 					}
@@ -251,5 +253,12 @@ header {
 				}
 			}
 		}
+	}
+}
+
+
+@media (min-width: 320px) and (max-width: 475px) {
+	.is-active .navbar__list__item__dropdown {
+		display: block;
 	}
 }

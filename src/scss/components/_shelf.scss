@@ -17,6 +17,11 @@
 
 	}
 
+	ul {
+		width: 100%;
+	}
+
+
 
 
 	li {
@@ -28,6 +33,20 @@
 		box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
 		width: 262px;
 		overflow: hidden;
+
+		@media (min-width: 320px) and (max-width: 475px) {
+			width: calc(100vw - 10px);
+		}
+
+		@media (min-width: 476px) and (max-width: 1023px) {
+			width: calc((100vw - 20px) / 3);
+		}
+
+		@media (min-width: 1024px) and (max-width: 1200px) {
+			width: calc((100vw - 300px - 100px) / 2);
+		}
+
+
 
 		@include atMedium {
 			margin: 1.2rem;
@@ -75,7 +94,7 @@
 					@include atSmall {
 						line-height: 24px;
 						line-height: 22px;
-						font-size: 12px;
+						font-size: 18px;
 					}
 				}
 
@@ -91,7 +110,7 @@
 					}
 
 					@include atSmall {
-						font-size: 11px;
+						font-size: 14px;
 					}
 				}
 
@@ -104,7 +123,7 @@
 					}
 
 					@include atSmall {
-						font-size: 11px;
+						font-size: 16px;
 					}
 				}
 
@@ -135,7 +154,7 @@
 						}
 
 						@include atSmall {
-							font-size: 12px;
+							font-size: 18px;
 						}
 					}
 
@@ -159,7 +178,7 @@
 						}
 
 						@include atSmall {
-							font-size: 16px;
+							font-size: 18px;
 						}
 					}
 
@@ -185,7 +204,7 @@
 					}
 
 					&__btn {
-						height: 48px;
+						height: 45px;
 						color: #fff;
 						display: flex;
 						font-size: 14px;
@@ -250,6 +269,14 @@
 			button {
 				display: none;
 			}
+		}
+	}
+
+	.slick-list {
+		@media (min-width: 320px) and (max-width: 475px) {
+			width: calc(100vw - 50px);
+			margin: 0 auto;
+			overflow: hidden;
 		}
 	}
 

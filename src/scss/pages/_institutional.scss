@@ -74,6 +74,7 @@ body.ajuda {
 	  p {
 		@media (min-width: 320px) and (max-width: 1024px) {
 			font-size: 14px;
+			margin-bottom: 20px;
 		}
 	  }
 
@@ -183,6 +184,16 @@ body.team-midway {
 }
 
 body.fale-conosco {
+	.faleconosco__content__sidebar {
+		@media (min-width: 320px) and (max-width: 1024px) {
+			margin-right: 10px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 10px;
+		}
+	}
+
+
   .faleconosco__content {
     padding: 25px 40px;
     background-color: #f1f1f1;

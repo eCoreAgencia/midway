@@ -6,7 +6,8 @@ $(document).ready(function(){
 	if($('body').hasClass('fale-conosco')){
 		$('.faleconosco__content__form__field__title').sendForm('CT');
 
-		formatInput('#co_telefone', '00000-000');
+		//formatInput('#co_telefone', '00000-000');
+		$('#co_telefone').mask('(00) 0000-0000');
 	}
 
 })

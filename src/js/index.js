@@ -21,6 +21,7 @@ import './pages/sub-templates';
 import './pages/persona';
 import './pages/empty-search';
 import './pages/fale-conosco';
+import { equal } from 'assert';
 
 
 var isMobile = {
@@ -54,16 +55,12 @@ $(document).ready(function(){
 
 	  $('.default__form').sendForm('NL');
 
-    if($('.navbar__list__item__dropdown__item--banner-prod')[0]){
-        const banner = $('.navbar__list__item__dropdown__item--banner-prod .box-banner').length;
+	  const NumberOfBanners = $('.navbar__list__item__dropdown__item--banner-prod .box-banner').length;
 
+	  var rnd = Math.ceil(Math.random() * NumberOfBanners);
 
-        const bannerShow = Math.round(Math.random() * banner);
-
-        console.log(bannerShow);
-        $(`.navbar__list__item__dropdown__item--banner-prod .box-banner:eq(${bannerShow})`).show();
-    }
-
+	  console.log(rnd);
+	  $(`.navbar__list__item__dropdown__item--banner-prod .box-banner:eq(${rnd - 1})`).show();
 })
 
 
