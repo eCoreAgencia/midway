@@ -133,11 +133,11 @@
                       }
 					list.prepend(html)
                     $('.searchform-list').css('top', $('.pageHeader').height());
-                    
+
 				});
             })
-            
-            
+
+
 		}
 
 		self.searchformSelecHint = function () {

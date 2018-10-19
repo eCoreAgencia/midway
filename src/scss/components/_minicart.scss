@@ -21,7 +21,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 70vh;
     background-color: $c-white;
     width: 90vw;
     z-index: 60;
@@ -36,7 +36,8 @@
         top: 72px;
         max-height: 439px;
         position: absolute;
-        right: 12px;
+		right: 12px;
+
     }
   }
 

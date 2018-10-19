@@ -5,7 +5,7 @@ class MobileMenu {
       this.menuMobileContent = $(".header__menu");
 	  this.events();
 
-	  $('.navbar__list__item__voltar').on('click', this.toggleTheMenu.bind(this))
+	  $('.navbar__list__item__voltar, .header__overlay').on('click', this.toggleTheMenu.bind(this))
 
 	  $('.navbar__list__item__link').on('click', function(){
 		  $(this).parent().toggleClass('is-active');

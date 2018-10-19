@@ -12,13 +12,16 @@
 
 	ul, .slick-track  {
 		display: flex;
-		align-items: stretch;
 		flex-wrap: wrap;
 
 	}
 
 	ul {
 		width: 100%;
+	}
+
+	&__carousel--full {
+
 	}
 
 
@@ -250,6 +253,7 @@
 	.slick-dots {
 		margin: 0 auto;
 		text-align: center;
+		justify-content: center;
 
 		li {
 			padding: 0;

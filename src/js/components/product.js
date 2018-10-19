@@ -26,20 +26,6 @@ if ($('body').hasClass('product')) {
   $(fix_zoom)
 
 
-
-  const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.96 62.45"><path fill="#9e9e9e" d="M0 32.47l30.24 29.98 2.62-2.49L4.19 31.23 32.95 2.49 30.22 0 0 29.98v2.49z"/></svg></button>`
-  const shelf__next = `<button type='button' class='slick-next shelf__button'><svg data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.96 62.45"><path fill="#9e9e9e" d="M32.95 29.98L2.72 0 .1 2.49l28.66 28.74L0 59.96l2.73 2.49 30.22-29.98v-2.49z"/></svg></button>`
-
-  $('.shelf__carousel--full ul').slick({
-    arrows: true,
-    slideToShow: 4,
-    slidesToScroll: 1,
-    infinite: true,
-    variableWidth: true,
-    prevArrow: shelf__prev,
-    nextArrow:shelf__next
-  });
-
   class Product {
     constructor() {
       let self = this
@@ -47,7 +33,10 @@ if ($('body').hasClass('product')) {
       this.skuJson = skuJson ? skuJson : skuJson_1
       this.thumbsClickEvent()
       this.simulateShipping()
-      this.product = '';
+	  this.product = '';
+	  this.getIcons();
+
+
 
       $('.btn--plus').on('click', () =>{
         self.changeQuantity(1);
@@ -126,8 +115,8 @@ if ($('body').hasClass('product')) {
 	}
 
 	getProductData(productId) {
-		//const endpoint = `/api/catalog_system/pub/products/search/?fq=productId:${productId}`;
-		const endpoint = 'http://localhost:3000/searchProductId';
+		const endpoint = `/api/catalog_system/pub/products/search/?fq=productId:${productId}`;
+		//const endpoint = 'http://localhost:3000/searchProductId';
 		axios.get(endpoint).then(res => {
 			const product = res.data[0];
 			console.log(product)
@@ -135,6 +124,10 @@ if ($('body').hasClass('product')) {
 			if(product.Linhas){
 				$('.section__product-header .product__brand').addClass(slugify(product.Linhas));
 				$('.section__product-header .product__brand').html(product.Linhas);
+			}
+
+			if(product.Lista){
+				this.getBenefits(product.Lista);
 			}
 
 
@@ -232,7 +225,54 @@ if ($('body').hasClass('product')) {
 
 
         $('.product__price .price').html(price);
-    }
+	}
+
+	getIcons(benefits){
+		axios.get('http://api.vtexcrm.com.br/midwaylabs/dataentities/IB/search?_fields=iconName,iconFile,id')
+			.then(res => {
+				window.icons = res.data;
+
+				console.log(icons);
+			})
+	}
+
+	getBenefits(benefits){
+		let itemArray = [];
+		benefits.map((benefit, index) => {
+			benefit = encodeURI(benefit);
+			axios.get(`http://api.vtexcrm.com.br/midwaylabs/dataentities/FB/search?text=${benefit}&_fields=text,strong,icone`)
+				.then(res => {
+					if(res.data[0]){
+						let item = res.data[0];
+
+						//const highlight = ()
+
+
+						const icon = window.icons.filter(icon => icon.id == item.icone);
+						item.file = icon[0].iconFile;
+						var regex = new RegExp(item.strong, "gi");
+						const html = `<li class="benefits__item">
+							<span class="benefits__icon">
+								<i class="icb-${item.file.replace('.svg', '')}"></i>
+
+							</span>
+							<span class="benefits__text">
+								${item.text.replace(regex, '<strong>'+item.strong+'</strong>')}
+							</span>
+							</li>`;
+						if(index <= 3){
+							$('.product__benefits ul').append(html);
+							$('.why__bottom ul').append(html);
+						}
+
+						$('.category-benefits .benefits').append(html);
+
+					}
+				})
+		})
+
+
+	}
 
 
   }
@@ -242,3 +282,6 @@ if ($('body').hasClass('product')) {
   })
 }
 })()
+
+
+

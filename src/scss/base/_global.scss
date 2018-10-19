@@ -69,9 +69,15 @@ $family-sans-serif: $f-base;
 }
 
 * {
-  outline: none;
+  outline: none !important;
+  outline-color: transparent;
+
 }
 
 input {
     font-family: "Montserrat";
+}
+
+#ajaxBusy {
+	display: none !important;
 }

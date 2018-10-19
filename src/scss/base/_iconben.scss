@@ -1,0 +1,307 @@
+$iconben-font-family: "iconben" !default;
+$iconben-font-path: "/arquivos" !default;
+
+$icb-14g: "\e900";
+$icb-substancias-toxicas: "\e901";
+$icb-rugas: "\e902";
+$icb-rapido: "\e903";
+$icb-pele: "\e904";
+$icb-performance: "\e905";
+$icb-inflamacao: "\e906";
+$icb-BCAA: "\e907";
+$icb-radicais-livres: "\e908";
+$icb-sabores: "\e909";
+$icb-aerobico: "\e90a";
+$icb-maca: "\e90b";
+$icb-nutricao-completa: "\e90c";
+$icb-desempenho: "\e90d";
+$icb-economia: "\e90e";
+$icb-KCAL: "\e90f";
+$icb-pronto-beber: "\e910";
+$icb-colesterol: "\e911";
+$icb-carboidratos: "\e912";
+$icb-imunidade: "\e913";
+$icb-treino-intenso: "\e914";
+$icb-pressao-arterial: "\e915";
+$icb-vitaminas: "\e916";
+$icb-gorduras: "\e917";
+$icb-resistencia: "\e918";
+$icb-proteina: "\e919";
+$icb-articulacoes: "\e91a";
+$icb-pancakes: "\e91b";
+$icb-choclate: "\e91c";
+$icb-envelhecimento: "\e91d";
+$icb-intestino: "\e91e";
+$icb-saciedade: "\e91f";
+$icb-emagrecimento: "\e920";
+$icb-reducao-medidas: "\e921";
+$icb-forca: "\e922";
+$icb-apetite: "\e923";
+$icb-energia: "\e924";
+$icb-foco: "\e925";
+$icb-aumento-massa-muscular: "\e926";
+$icb-gluten-free: "\e927";
+$icb-aminograma: "\e928";
+$icb-acao-rapida: "\e929";
+$icb-22g: "\e92a";
+$icb-21g: "\e92b";
+$icb-12g: "\e92c";
+$icb-zero: "\e92d";
+
+@font-face {
+  font-family: '#{iconben-font-family}';
+  src:  url('#{$iconben-font-path}/#{$iconben-font-family}.eot.css?xfzhp');
+  src:  url('#{$iconben-font-path}/#{$iconben-font-family}.eot.css?xfzhp#iefix') format('embedded-opentype'),
+    url('#{$iconben-font-path}/#{$iconben-font-family}.ttf.css?xfzhp') format('truetype'),
+    url('#{$iconben-font-path}/#{$iconben-font-family}.woff.css?xfzhp') format('woff'),
+    url('#{$iconben-font-path}/#{$iconben-font-family}.svg.css?xfzhp##{$iconben-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icb-"], [class*=" icb-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{iconben-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icb-14g {
+  &:before {
+    content: $icb-14g;
+  }
+}
+.icb-substancias-toxicas {
+  &:before {
+    content: $icb-substancias-toxicas;
+  }
+}
+.icb-rugas {
+  &:before {
+    content: $icb-rugas;
+  }
+}
+.icb-rapido {
+  &:before {
+    content: $icb-rapido;
+  }
+}
+.icb-pele {
+  &:before {
+    content: $icb-pele;
+  }
+}
+.icb-performance {
+  &:before {
+    content: $icb-performance;
+  }
+}
+.icb-inflamacao {
+  &:before {
+    content: $icb-inflamacao;
+  }
+}
+.icb-BCAA {
+  &:before {
+    content: $icb-BCAA;
+  }
+}
+.icb-radicais-livres {
+  &:before {
+    content: $icb-radicais-livres;
+  }
+}
+.icb-sabores {
+  &:before {
+    content: $icb-sabores;
+  }
+}
+.icb-aerobico {
+  &:before {
+    content: $icb-aerobico;
+  }
+}
+.icb-maca {
+  &:before {
+    content: $icb-maca;
+  }
+}
+.icb-nutricao-completa {
+  &:before {
+    content: $icb-nutricao-completa;
+  }
+}
+.icb-desempenho {
+  &:before {
+    content: $icb-desempenho;
+  }
+}
+.icb-economia {
+  &:before {
+    content: $icb-economia;
+  }
+}
+.icb-KCAL {
+  &:before {
+    content: $icb-KCAL;
+  }
+}
+.icb-pronto-beber {
+  &:before {
+    content: $icb-pronto-beber;
+  }
+}
+.icb-colesterol {
+  &:before {
+    content: $icb-colesterol;
+  }
+}
+.icb-carboidratos {
+  &:before {
+    content: $icb-carboidratos;
+  }
+}
+.icb-imunidade {
+  &:before {
+    content: $icb-imunidade;
+  }
+}
+.icb-treino-intenso {
+  &:before {
+    content: $icb-treino-intenso;
+  }
+}
+.icb-pressao-arterial {
+  &:before {
+    content: $icb-pressao-arterial;
+  }
+}
+.icb-vitaminas {
+  &:before {
+    content: $icb-vitaminas;
+  }
+}
+.icb-gorduras {
+  &:before {
+    content: $icb-gorduras;
+  }
+}
+.icb-resistencia {
+  &:before {
+    content: $icb-resistencia;
+  }
+}
+.icb-proteina {
+  &:before {
+    content: $icb-proteina;
+  }
+}
+.icb-articulacoes {
+  &:before {
+    content: $icb-articulacoes;
+  }
+}
+.icb-pancakes {
+  &:before {
+    content: $icb-pancakes;
+  }
+}
+.icb-choclate {
+  &:before {
+    content: $icb-choclate;
+  }
+}
+.icb-envelhecimento {
+  &:before {
+    content: $icb-envelhecimento;
+  }
+}
+.icb-intestino {
+  &:before {
+    content: $icb-intestino;
+  }
+}
+.icb-saciedade {
+  &:before {
+    content: $icb-saciedade;
+  }
+}
+.icb-emagrecimento {
+  &:before {
+    content: $icb-emagrecimento;
+  }
+}
+.icb-reducao-medidas {
+  &:before {
+    content: $icb-reducao-medidas;
+  }
+}
+.icb-forca {
+  &:before {
+    content: $icb-forca;
+  }
+}
+.icb-apetite {
+  &:before {
+    content: $icb-apetite;
+  }
+}
+.icb-energia {
+  &:before {
+    content: $icb-energia;
+  }
+}
+.icb-foco {
+  &:before {
+    content: $icb-foco;
+  }
+}
+.icb-aumento-massa-muscular {
+  &:before {
+    content: $icb-aumento-massa-muscular;
+  }
+}
+.icb-gluten-free {
+  &:before {
+    content: $icb-gluten-free;
+  }
+}
+.icb-aminograma {
+  &:before {
+    content: $icb-aminograma;
+  }
+}
+.icb-acao-rapida {
+  &:before {
+    content: $icb-acao-rapida;
+  }
+}
+.icb-22g {
+  &:before {
+    content: $icb-22g;
+  }
+}
+.icb-21g {
+  &:before {
+    content: $icb-21g;
+  }
+}
+.icb-12g {
+  &:before {
+    content: $icb-12g;
+  }
+}
+.icb-zero {
+  &:before {
+    content: $icb-zero;
+  }
+}
+

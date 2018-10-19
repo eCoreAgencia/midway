@@ -11,13 +11,26 @@ block content
 				+vtex-controller('<vtex:contentPlaceHolder id="Banners Top" />')
 					.box-banner
 						a(href="")
-							img(src="/arquivos/banner-top-left.jpg")/
+							img(src="/arquivos/banner_top_01.jpg")/
 					.box-banner
 						a(href="")
-							img(src="/arquivos/banner-top-right-one.jpg")/
+							img(src="/arquivos/banner_top_02.jpg")/
 					.box-banner
 						a(href="")
-							img(src="/arquivos/banner-top-right-two.jpg")/
+							img(src="/arquivos/banner_top_03.jpg")/
+	section.section__page.section__hero.section__hero--mobile
+		.banner.banner--top
+			.banner__inner
+				+vtex-controller('<vtex:contentPlaceHolder id="Banners Top Mobile" />')
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner_top_01_mobile.jpg")/
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner_top_02_mobile.jpg")/
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner_top_03_mobile.jpg")/
 	section.section__page.section__why
 		.container
 			h2.section__page__title Meu Objetivo
@@ -79,7 +92,22 @@ block content
 								img(src="/arquivos/middle-banner-three.jpg")/
 						.box-banner
 							a(href="")
-								img(src="/arquivos/middle-banner-four.jpg")/
+								img(src="/arquivos/banner_linhas_glamour.jpg")/
+			.banner.banner--middle.banner--mobile
+				.banner__inner
+					+vtex-controller('<vtex:contentPlaceHolder id="Banners Middle Mobile" />')
+						.box-banner
+							a(href="")
+								img(src="/arquivos/banner_home_linhas_buildyourself_mobile.jpg")/
+						.box-banner
+							a(href="")
+								img(src="/arquivos/banner_home_linhas_military_mobile.jpg")/
+						.box-banner
+							a(href="")
+								img(src="/arquivos/banner_home_linhas_dietway_mobile.jpg")/
+						.box-banner
+							a(href="")
+								img(src="/arquivos/banner_home_linhas_glamour.jpg")/
 
 		section.section__page.section__shelf
 			.container
@@ -88,9 +116,10 @@ block content
 					+vtex-controller('<vtex:contentPlaceHolder id="Mais Vendidos" />')
 						.prateleira
 							ul
-								each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+								each val in [1, 2, 3]
 									li
 										include ../shelves/prateleira
+									li.helperComplement
 
 		section.section__page.section__bigbanner
 			.banner.banner--team

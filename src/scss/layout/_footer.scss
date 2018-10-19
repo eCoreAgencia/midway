@@ -132,6 +132,9 @@
 						&:hover {
 							color: #eaeaea;
 							text-decoration: underline;
+							@media (min-width: 320px) and (max-width: 475px) {
+								color: #f01914;
+							}
 						}
 					}
 

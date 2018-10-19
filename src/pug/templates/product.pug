@@ -25,25 +25,7 @@ block content
 				.product__benefits
 					+vtex-controller('')
 						ul.benefits
-							li.benefits__item
-								span.benefits__icon
-									i.icon-muscle
-								span.benefits__text
-									| Ganho de
-									strong massa muscular
-							li.benefits__item
-								span.benefits__icon
-									i.icon-table
-								span.benefits__text
-									| Auxilia no
-									strong emagrecimento
-							li.benefits__item
-								span.benefits__icon
-									i.icon-clock
-								span.benefits__text
-									| Ajuda na
-									strong recuperação
-									| de massa muscular
+
 				.product__media
 					+vtex-controller('<vtex.cmc:ProductImage zoom="on"/>')
 						include ../vtexParts/vtexProductImages.pug
@@ -173,7 +155,7 @@ block content
 				.category
 					.category__description
 						h3.category__description-title
-							span Uma porção de albumina é equivalente a 5 ovos.
+							span
 						.category__description-text
 							+vtex-controller('<vtex.cmc:ProductDescription/>')
 								p
@@ -183,11 +165,10 @@ block content
 						h3.category__details-call
 							| Saiba tudo sobre
 							br/
-							span Albumina!
+							span
 						.category__details-text
-							h3.category__details-title O que é albumina?
-
-							p No significado literal a albumina é toda a gordura do ovo que foi retirada por filtração. Esse filtro torna a albumina a proteína do ovo pasteurizada. Ela é tão procurada e faz tanto sucesso entre os praticantes de esportes por ser uma proteína de alto valor biológico, ajudando no crescimento de massa muscular e boa recuperação do músculo.
+							h3.category__details-title
+							p
 
 		.product__why
 			.why
@@ -200,91 +181,18 @@ block content
 								| Os objetivos que podem ser alcançados com o consumo de albumina são vários, sendo eles:
 				.why__bottom
 					.container
-						+vtex-controller('')
-							ul.benefits
-								li.benefits__item
-									span.benefits__icon
-										i.icon-muscle
-									span.benefits__text
-										| Ganho de
-										strong  massa muscular
-								li.benefits__item
-									span.benefits__icon
-										i.icon-table
-									span.benefits__text
-										| Auxilia no
-										strong  emagrecimento
-								li.benefits__item
-									span.benefits__icon
-										i.icon-clock
-									span.benefits__text
-										| Ajuda na
-										strong recuperação
-										|  de massa muscular
+						ul.benefits
+							+vtex-controller('')
+
 		.category-benefits
 			.container
 				h3.category-benefits__title
 					span
 				span.category-benefits__subtitle
 
-				+vtex-controller('')
-					span.category-benefits__count Listamos 8 benefícios da albumina para você entender como de fato essa suplementação irá te ajudar!
+				span.category-benefits__count
+				ul.benefits
 
-					ul.benefits
-						li.benefits__item
-							span.benefits__icon
-								i.icon-muscle
-							span.benefits__text
-								| Ganho de
-								strong massa muscular
-						li.benefits__item
-							span.benefits__icon
-								i.icon-table
-							span.benefits__text
-								| Auxilia no
-								strong emagrecimento
-						li.benefits__item
-							span.benefits__icon
-								i.icon-clock
-							span.benefits__text
-								| Ajuda na
-								strong recuperação
-								| de massa muscular
-						li.benefits__item
-							span.benefits__icon
-								i.icon-clock
-							span.benefits__text
-								| Ajuda na
-								strong recuperação
-								| de massa muscular
-						li.benefits__item
-							span.benefits__icon
-								i.icon-clock
-							span.benefits__text
-								| Ajuda na
-								strong recuperação
-								| de massa muscular
-						li.benefits__item
-							span.benefits__icon
-								i.icon-clock
-							span.benefits__text
-								| Ajuda na
-								strong recuperação
-								| de massa muscular
-						li.benefits__item
-							span.benefits__icon
-								i.icon-clock
-							span.benefits__text
-								| Ajuda na
-								strong recuperação
-								| de massa muscular
-						li.benefits__item
-							span.benefits__icon
-								i.icon-clock
-							span.benefits__text
-								| Ajuda na
-								strong recuperação
-								| de massa muscular
 	section.section__page.section__shelf
 		.container
 			h2.section__title

@@ -184,7 +184,9 @@ body.team-midway {
 }
 
 body.fale-conosco {
-	.faleconosco__content__sidebar {
+
+
+	.faleconosco__content__sidebar .footer__main__menu__list--social__list__item {
 		@media (min-width: 320px) and (max-width: 1024px) {
 			margin-right: 10px;
 			display: inline-block;

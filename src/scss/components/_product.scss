@@ -103,7 +103,11 @@
 
 
     &__price {
-        padding: 10px 0;
+		padding: 10px 0;
+
+		.price-list-price {
+			display: none !important;
+		}
     }
 
     &__skus {
@@ -167,7 +171,10 @@
 
         &-value {
             @extend %u-no-border, %u-text-align-center;
-            font-weight: 700;
+			font-weight: 700;
+			@media (min-width: 320px) and (max-width: 767px) {
+				width: 70%;
+			}
         }
 
         .btn {
@@ -315,7 +322,8 @@
     }
 
     &__icon {
-        @include font-size(20px);
+		@include font-size(20px);
+		color: $c-red;
     }
 
     &__text {

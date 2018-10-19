@@ -219,7 +219,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		position: absolute;
+		position: fixed;
 		width: 90%;
 		z-index: 9;
 		left: -100%;
@@ -230,16 +230,8 @@
 
 		&--is-visible {
 			left: 0;
-			&::before {
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				background: rgba(8, 7, 7, 0.83);
-				z-index: -1;
-				width: 100vw;
+			.header__overlay {
+				display: block;
 			}
 		}
 		@include atMedium {
@@ -322,5 +314,32 @@
 			background-color: white;
 			height: 1.5px;
 		}
+		position: fixed;
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(8, 7, 7, 0.83);
+		z-index: -1;
+		width: 100vw;
+		display: none;
+	}
+
+	&--fixed {
+		@media (min-width: 320px) and (max-width: 767px) {
+			position: fixed;
+			width: 100vw;
+			z-index: 999;
+
+			+ main {
+				padding-top: 51px;
+			}
+		}
+
+
 	}
 }

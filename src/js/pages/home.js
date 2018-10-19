@@ -74,43 +74,10 @@ $(document).ready(function() {
       arrows: false,
       fade: true,
       infinite: false
-    });
+	});
 
-    const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="27" viewBox="0 0 15 27"><defs><path id="idyha" d="M361 1386l-12-12.5 12-12.5"/><clipPath id="idyhb"><use fill="#fff" xlink:href="#idyha"/></clipPath></defs><g><g transform="translate(-347 -1360)"><use fill="#fff" fill-opacity="0" stroke="#f22100" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#idyhb&quot;)" xlink:href="#idyha"/></g></g></svg></button>`;
-    const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="27" viewBox="0 0 15 27"><defs><path id="pyzfa" d="M1545 1361l12 12.5-12 12.5"/><clipPath id="pyzfb"><use fill="#fff" xlink:href="#pyzfa"/></clipPath></defs><g><g transform="translate(-1544 -1360)"><use fill="#fff" fill-opacity="0" stroke="#f22100" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#pyzfb&quot;)" xlink:href="#pyzfa"/></g></g></svg></button>`;
 
-    $(".shelf__carousel--full ul").slick({
-      dots: true,
-      slideToShow: 2,
-      slidesToScroll: 1,
-      infinite: true,
-      prevArrow: shelf__prev,
-      nextArrow: shelf__next,
-      mobileFirst: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 800,
-          settings: {
-            slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 319,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: false
-          }
-        }
-      ]
-    });
+
 
 
 
