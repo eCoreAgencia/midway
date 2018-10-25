@@ -19,7 +19,7 @@ class teamMidway {
         $.ajax({
             "async": true,
             "crossDomain": true,
-            "url": "http://api.vtexcrm.com.br/midwaylabs/dataentities/TM/search?_fields=name,img,id,subTitle,idUser",
+            "url": "http://api.vtexcrm.com.br/midwaylabs/dataentities/MT/search?_fields=name,img,id,subTitle,idUser",
             "type": "GET",
             "contentType": "application/json",
         }).done(function (data) {
@@ -61,7 +61,7 @@ class persona {
         $.ajax({
             "async": true,
             "crossDomain": true,
-            "url": "http://api.vtexcrm.com.br/midwaylabs/dataentities/TM/search?_where=name=" + namePersona + "&_fields=name,biografia,id,img,description,idade,peso,altura,facebook,instagram,subTitle,youtube",
+            "url": "http://api.vtexcrm.com.br/midwaylabs/dataentities/MT/search?_where=name=" + namePersona + "&_fields=name,biografia,id,img,description,idade,peso,altura,facebook,instagram,subTitle,youtube",
             "type": "GET",
             "contentType": "application/json",
         }).done(function (data) {
