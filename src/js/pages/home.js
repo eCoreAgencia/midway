@@ -19,6 +19,19 @@ $(document).ready(function() {
       });
     }
 
+    $('.itensSelect .title .section__page__title span').on('click', function() {
+      let dataName = $(this).attr('data-name');
+      $('.itensSelect .title .section__page__title span').removeClass('active');
+      $(this).addClass('active');
+      $('.shelf__carousel--full .itemSlider').each(function() {
+        let dataNameSlider = $(this).attr('data-name');
+        if(dataNameSlider == dataName) {
+          $('.shelf__carousel--full .itemSlider').removeClass('active');
+          $(this).addClass('active');
+        }
+      })
+    });
+
     $(".product--shelf-flip .product__front").on("click", function() {
       $(this)
         .parents(".product--shelf-flip")

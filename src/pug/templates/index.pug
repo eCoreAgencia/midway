@@ -135,13 +135,26 @@ block content
 							a(href="/team-midway.html")
 								img(src="/arquivos/teammobile.png")/
 
-		section.section__page.section__shelf
+		section.section__page.section__shelf.itensSelect
 			.container
-				h2.section__page__title Kits/Combos
+				.title
+					h2.section__page__title 
+						span(data-name="kits") Kits/Combos
+						strong /
+						span(data-name="outlet") Outlet
+					h5 Roupas e acessórios
 				.shelf.shelf__carousel--full
-					+vtex-controller('<vtex:contentPlaceHolder id="Exemplo" />')
-						.prateleira
-							ul
-								each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-									li
-										include ../shelves/prateleira
+					.itemSlider.active(data-name="kits")
+						+vtex-controller('<vtex:contentPlaceHolder id="kids promo" />')
+							.prateleira
+								ul
+									each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+										li
+											include ../shelves/prateleira
+					.itemSlider(data-name="outlet")
+						+vtex-controller('<vtex:contentPlaceHolder id="outlet promo" />')
+							.prateleira
+								ul
+									each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+										li
+											include ../shelves/prateleira

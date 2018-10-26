@@ -1,287 +1,341 @@
 import axios from 'axios';
 import {
-	slugify
-  } from '../utils';
+    slugify
+} from '../utils';
 
-export default (function() {
+export default (function () {
 
-if ($('body').hasClass('product')) {
-  let thumbs = $('.thumbs')
-  let fix_zoom = function () {
-    window.LoadZoom = function (pi) {
-      let zoomImage = $(".image-zoom")
-      // zoomImage.jqzoom()
-      $('.zoomPup, .zoomWindow, .zoomPreload').remove()
-      if (!zoomImage.length) {
-        let img = $('#image-main')
-        let imgUrl = img.attr('src')
-        img.wrap(`<a href="${imgUrl}" class="image-zoom" />`)
-      }
-      let zoom = $('#image').addClass('easyzoom easyzoom--overlay').easyZoom()
-      window.zoomAPI = zoom.data('easyZoom')
-      window.ImageControl = () => null
-    }
-    LoadZoom(0)
-  }
-  $(fix_zoom)
-
-
-  class Product {
-    constructor() {
-      let self = this
-      window.ImageControl = () => null
-      this.skuJson = skuJson ? skuJson : skuJson_1
-      this.thumbsClickEvent()
-      this.simulateShipping()
-	  this.product = '';
-	  this.getIcons();
-
-
-
-      $('.btn--plus').on('click', () =>{
-        self.changeQuantity(1);
-      })
-
-      $('.btn--minus').on('click', () =>{
-        self.changeQuantity(-1);
-      })
-
-
-      if (!$('.product__why .why__subtitle').is(':empty')){
-        $('.product__why').addClass('is-not-empty');
-      }
-
-
-
-      vtexjs.catalog.getCurrentProductWithVariations().then(product => {
-          console.log(product);
-          self.product = product;
-          if(product.skus.length > 1) {
-              self.renderSkuSelect(product.skus);
-              self.renderPrice(product.skus[0]);
-              $('.product__buy').html(`<a class="buy-button buy-button-ref buy-sku-button" target="_top" href="javascript:alert('Por favor, selecione o modelo desejado.');" style="display:block">Comprar</a>`);
+    if ($('body').hasClass('product')) {
+        let thumbs = $('.thumbs')
+        let fix_zoom = function () {
+            window.LoadZoom = function (pi) {
+                let zoomImage = $(".image-zoom")
+                // zoomImage.jqzoom()
+                $('.zoomPup, .zoomWindow, .zoomPreload').remove()
+                if (!zoomImage.length) {
+                    let img = $('#image-main')
+                    let imgUrl = img.attr('src')
+                    img.wrap(`<a href="${imgUrl}" class="image-zoom" />`)
+                }
+                let zoom = $('#image').addClass('easyzoom easyzoom--overlay').easyZoom()
+                window.zoomAPI = zoom.data('easyZoom')
+                window.ImageControl = () => null
             }
-	  })
-
-
-	  const productID = $('#___rc-p-id').val();
-
-	  self.getProductData(productID);
-
-
-      $('.product__buy').on('click', '.buy-sku-button', function(e){
-        e.preventDefault();
-        let href = $(this).attr('href');
-        const text = "javascript:alert('Por favor, selecione o modelo desejado.');";
-        let qty = $('.product__qtd-value').val();
-        const sku = $('.product__skus-select select').val();
-
-        if(href === text){
-          swal({
-            text: 'Selecione o sabor',
-            icon: 'warning',
-          })
-          return false;
+            LoadZoom(0)
         }
+        $(fix_zoom)
 
 
-            var item = {
-                id: sku,
-                quantity: qty,
-                seller: '1'
-            };
-
-            vtexjs.checkout.addToCart([item], null)
-            .done(function(orderForm) {
-                console.log(orderForm);
-                window.location.href = '/checkout/#/cart';
-            });
-
+        class Product {
+            constructor() {
+                let self = this
+                window.ImageControl = () => null
+                this.skuJson = skuJson ? skuJson : skuJson_1
+                this.thumbsClickEvent()
+                this.simulateShipping()
+                this.product = '';
+				this.getIcons();
+				this.getInfoProductCamp();
 
 
+                $('.btn--plus').on('click', () => {
+                    self.changeQuantity(1);
+                })
+
+                $('.btn--minus').on('click', () => {
+                    self.changeQuantity(-1);
+                })
 
 
-      });
-
-      $('.product__skus-select').on('change', 'select', function(){
-          const sku = $(this).val();
-          const qty = $('.product__qtd-value').val();
-          const endpoint = `/checkout/cart/add?sku=${sku}&amp;qty=${qty}&amp;seller=1&amp;redirect=true&amp;sc=1`;
-          console.log(sku);
-          $('.buy-button').attr('href', endpoint);
-      });
+                if (!$('.product__why .why__subtitle').is(':empty')) {
+                    $('.product__why').addClass('is-not-empty');
+                }
 
 
-	}
+                vtexjs.catalog.getCurrentProductWithVariations().then(product => {
+                    console.log(product);
+                    self.product = product;
+                    if (product.skus.length > 1) {
+                        self.renderSkuSelect(product.skus);
+                        self.renderPrice(product.skus[0]);
+                        $('.product__buy').html(`<a class="buy-button buy-button-ref buy-sku-button" target="_top" href="javascript:alert('Por favor, selecione o modelo desejado.');" style="display:block">Comprar</a>`);
+                    }
+                })
 
-	getProductData(productId) {
-		const endpoint = `/api/catalog_system/pub/products/search/?fq=productId:${productId}`;
-		//const endpoint = 'http://localhost:3000/searchProductId';
-		axios.get(endpoint).then(res => {
-			const product = res.data[0];
-			console.log(product)
 
-			if(product.Linhas){
-				$('.section__product-header .product__brand').addClass(slugify(product.Linhas));
-				$('.section__product-header .product__brand').html(product.Linhas);
+                const productID = $('#___rc-p-id').val();
+
+                self.getProductData(productID);
+
+
+                $('.product__buy').on('click', '.buy-sku-button', function (e) {
+                    e.preventDefault();
+                    let href = $(this).attr('href');
+                    const text = "javascript:alert('Por favor, selecione o modelo desejado.');";
+                    let qty = $('.product__qtd-value').val();
+                    const sku = $('.product__skus-select select').val();
+
+                    if (href === text) {
+                        swal({
+                            text: 'Selecione o sabor',
+                            icon: 'warning',
+                        })
+                        return false;
+                    }
+
+
+                    var item = {
+                        id: sku,
+                        quantity: qty,
+                        seller: '1'
+                    };
+
+                    vtexjs.checkout.addToCart([item], null)
+                        .done(function (orderForm) {
+                            console.log(orderForm);
+                            window.location.href = '/checkout/#/cart';
+                        });
+
+
+                });
+
+                $('.product__skus-select').on('change', 'select', function () {
+                    const sku = $(this).val();
+                    const qty = $('.product__qtd-value').val();
+                    const endpoint = `/checkout/cart/add?sku=${sku}&qty=${qty}&seller=1&redirect=true&sc=1`;
+                    console.log(sku);
+                    $('.buy-button').attr('href', endpoint);
+                });
+			}
+			
+			getInfoProductCamp() {
+				$.ajax({
+					url: "/api/catalog_system/pub/products/search?fq=productId:100001",
+					type: "GET",
+					headers: {
+						Accept: "application/vnd.vtex.masterdata.v10+json",
+						"Content-Type": "application/vnd.vtex.masterdata.v10+json"
+					}
+				}).done(function (data) {
+					let infoProduct = data;
+					let Tipo1 		= infoProduct[0].Tipo1[0].split(';');
+					let Tipo2 		= infoProduct[0].Tipo2[0].split(';');
+					let Tipo3 		= infoProduct[0].Tipo3[0].split(';');
+					let Tipo4 		= infoProduct[0].Tipo4[0].split(';');
+					let Tipo5 		= infoProduct[0].Tipo5[0].split(';');
+					let imagem 		= infoProduct[0].imagem[0];
+
+					if(image != "vazio") {
+						$('.modalNutri img').attr('src', '/arquivos/'+imagem);
+					} else {
+						$('#btn-nutriProduct').remove();
+					}
+					
+					if(infoProduct[0].Tipo1[0] != "vazio" ) {
+						$('.product__nutricional .product__nutricional-list .tip1').html('<span class="product__nutricional-field">'+Tipo1[0]+'</span><span class="product__nutricional-value">'+Tipo1[1].replace('g','')+'<small>G</small></span>');
+					} else {
+						$('.product__nutricional .product__nutricional-list .tip1').remove();
+					}
+
+					if(infoProduct[0].Tipo2[0] != "vazio") {
+						$('.product__nutricional .product__nutricional-list .tip2').html('<span class="product__nutricional-field">'+Tipo2[0]+'</span><span class="product__nutricional-value">'+Tipo2[1].replace('g','')+'<small>G</small></span>');
+					} else {
+						$('.product__nutricional .product__nutricional-list .tip2').remove();
+					}
+
+					if(infoProduct[0].Tipo3[0] != "vazio") {
+						$('.product__nutricional .product__nutricional-list .tip3').html('<span class="product__nutricional-field">'+Tipo3[0]+'</span><span class="product__nutricional-value">'+Tipo3[1].replace('g','')+'<small>G</small></span>');
+					} else {
+						$('.product__nutricional .product__nutricional-list .tip3').remove();
+					}
+
+					if(infoProduct[0].Tipo4[0] != "vazio") {
+						$('.product__nutricional .product__nutricional-list .tip4').html('<span class="product__nutricional-field">'+Tipo4[0]+'</span><span class="product__nutricional-value">'+Tipo4[1].replace('Kcal','')+'<small></small></span>');
+					} else {
+						$('.product__nutricional .product__nutricional-list .tip4').remove();
+					}
+
+					if(infoProduct[0].Tipo5[0] != "vazio") {
+						$('.product__nutricional .product__nutricional-list .tip5').html('<span class="product__nutricional-field">'+Tipo5[0]+'</span><span class="product__nutricional-value">'+Tipo5[1].replace('g','')+'<small></small></span>');
+					} else {
+						$('.product__nutricional .product__nutricional-list .tip5').remove();
+					}
+				});
+
+				$('#btn-nutriProduct').on('click', function(e) {
+					e.preventDefault();
+					$('.modalNutri').fadeIn();
+				});
+
+				$('.modalNutri__content--clouse').on('click', function(e) {
+					e.preventDefault();
+					$('.modalNutri').fadeOut();
+				});
 			}
 
-			if(product.Lista){
-				this.getBenefits(product.Lista);
-			}
+            getProductData(productId) {
+                const endpoint = `/api/catalog_system/pub/products/search/?fq=productId:${productId}`;
+                //const endpoint = 'http://localhost:3000/searchProductId';
+                axios.get(endpoint).then(res => {
+                    const product = res.data[0];
+                    console.log(product)
+
+                    if (product.Linhas) {
+                        $('.section__product-header .product__brand').addClass(slugify(product.Linhas));
+                        $('.section__product-header .product__brand').html(product.Linhas);
+                    }
+
+                    if (product.Lista) {
+                        this.getBenefits(product.Lista);
+                    }
 
 
+                    if (product.TituloDescricaoProduto) {
+                        $('.category__description-title span').html(product.TituloDescricaoProduto)
+                    }
 
-			if(product.TituloDescricaoProduto){
-				$('.category__description-title span').html(product.TituloDescricaoProduto)
-			}
+                    if (product.TituloBeneficios) {
+                        $('.category-benefits').addClass('is-not-empty');
 
-			if(product.TituloBeneficios){
-				$('.category-benefits').addClass('is-not-empty');
+                        $('.category-benefits__title span').html(product.TituloBeneficios);
+                        $('.category-benefits__subtitle').html(product.DescricaoBeneficios)
+                    }
 
-				$('.category-benefits__title span').html(product.TituloBeneficios);
-				$('.category-benefits__subtitle').html(product.DescricaoBeneficios)
-			}
+                    if (product.TituloSaibaTudo) {
+                        $('.category__details').addClass('is-not-empty');
+                        $('.category__details-call span').html(product.productName);
+                        $('.category__details-title').html(product.TituloSaibaTudo);
+                        $('.category__details-text p').html(product.DescricaoSaibaTudo);
+                    }
+                })
+            }
 
-			if(product.TituloSaibaTudo){
-				$('.category__details').addClass('is-not-empty');
-				$('.category__details-call span').html(product.productName);
-				$('.category__details-title').html(product.TituloSaibaTudo);
-				$('.category__details-text p').html(product.DescricaoSaibaTudo);
-			}
-		})
-	}
+            changeQuantity(val) {
+                let currentVal = $('.product__qtd-value').val()
+                let newVal = +currentVal + +val
+                if (newVal) {
+                    $('.product__qtd-value').val(newVal)
+                }
+            }
 
-    changeQuantity(val) {
-      let currentVal = $('.product__qtd-value').val()
-      let newVal = +currentVal + +val
-      if (newVal) {
-        $('.product__qtd-value').val(newVal)
-      }
-    }
+            thumbsClickEvent() {
+                thumbs.on('click', 'a', function (e) {
+                    e.preventDefault()
+                    let imgUri = $(this).attr('rel')
+                    zoomAPI._init()
+                    zoomAPI.swap(imgUri, imgUri)
+                    if (!imgUri) {
+                        zoomAPI.teardown()
+                    }
+                    thumbs.find('a').removeClass('ON')
+                    $(this).addClass('ON')
+                })
+            }
 
-    thumbsClickEvent() {
-      thumbs.on('click', 'a', function (e) {
-        e.preventDefault()
-        let imgUri = $(this).attr('rel')
-        zoomAPI._init()
-        zoomAPI.swap(imgUri, imgUri)
-        if (!imgUri) {
-          zoomAPI.teardown()
-        }
-        thumbs.find('a').removeClass('ON')
-        $(this).addClass('ON')
-      })
-    }
+            simulateShipping() {
+                //window.OMSimulateShipping = new SimulateShipping()
+            }
 
-    simulateShipping() {
-      //window.OMSimulateShipping = new SimulateShipping()
-    }
-
-    renderSkuSelect(skus) {
-        const select =  `<div class="select">
+            renderSkuSelect(skus) {
+                const select = `<div class="select">
             <select>
                 ${ skus.map(sku => {
                     return `<option value="${sku.sku}">${sku.skuname}</option>`
                 }).join('')}
             </select>
         </div>`
-        $('.product__skus-select').append(select);
-    }
+                $('.product__skus-select').append(select);
+            }
 
-    renderPrice(sku) {
-        let price = '';
-        if (sku.listPrice == 0) {
-            price = `<div class="productPrice">
-                <p class="descricao-preco">
-                    <em class="valor-de price-list-price" style="display: block;">
-                        De: <strong class="skuListPrice">${sku.listPriceFormated}</strong>
-                    </em>
-                    <em class="valor-por price-best-price" style="display: block;">
-                        Por: <strong class="skuBestPrice">${sku.bestPriceFormated}</strong>
-                    </em>
-                    <em class="valor-dividido price-installments">
-                    <span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
-                    </em>
-                </p>
+            renderPrice(sku) {
+                let price = '';
+                if (sku.listPrice == 0) {
+                    price = `<div class="productPrice">
+								<p class="descricao-preco">
+									<em class="valor-de price-list-price" style="display: block;">
+										De: <strong class="skuListPrice">${sku.listPriceFormated}</strong>
+									</em>
+									<em class="valor-por price-best-price" style="display: block;">
+										Por: <strong class="skuBestPrice">${sku.bestPriceFormated}</strong>
+									</em>
+									<em class="valor-dividido price-installments">
+									<span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
+									</em>
+								</p>
 
-            </div>`;
-        }else {
-            price = `<div class="productPrice">
-            <p class="descricao-preco">
-                <em class="valor-de price-list-price" style="display: none;">
-                    De: <strong class="skuListPrice">${sku.listPriceFormated}</strong>
-                </em>
-                <em class="valor-por price-best-price" style="display: block;">
-                    Por: <strong class="skuBestPrice">${sku.bestPriceFormated}</strong>
-                </em>
-                <em class="valor-dividido price-installments">
-                <span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
-                </em>
-            </p>
+							</div>`;
+								} else {
+									price = `<div class="productPrice">
+							<p class="descricao-preco">
+								<em class="valor-de price-list-price" style="display: none;">
+									De: <strong class="skuListPrice">${sku.listPriceFormated}</strong>
+								</em>
+								<em class="valor-por price-best-price" style="display: block;">
+									Por: <strong class="skuBestPrice">${sku.bestPriceFormated}</strong>
+								</em>
+								<em class="valor-dividido price-installments">
+								<span><span>ou <label class="skuBestInstallmentNumber">${sku.installments }<span class="x">x</span></label> de </span><strong><label class="skuBestInstallmentValue">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(sku.installmentsValue/100)}</label></strong></span>
+								</em>
+							</p>
 
-        </div>`;
+						</div>`;
+                }
+
+
+                $('.product__price .price').html(price);
+            }
+
+            getIcons(benefits) {
+                axios.get('http://api.vtexcrm.com.br/midwaylabs/dataentities/IB/search?_fields=iconName,iconFile,id')
+                    .then(res => {
+                        window.icons = res.data;
+
+                        console.log(icons);
+                    })
+            }
+
+            getBenefits(benefits) {
+                let itemArray = [];
+                benefits.map((benefit, index) => {
+                    benefit = encodeURI(benefit);
+                    axios.get(`http://api.vtexcrm.com.br/midwaylabs/dataentities/FB/search?text=${benefit}&_fields=text,strong,icone`)
+                        .then(res => {
+                            if (res.data[0]) {
+                                let item = res.data[0];
+
+                                //const highlight = ()
+
+
+                                const icon = window.icons.filter(icon => icon.id == item.icone);
+                                item.file = icon[0].iconFile;
+                                var regex = new RegExp(item.strong, "gi");
+                                const html = `<li class="benefits__item">
+												<span class="benefits__icon">
+													<i class="icb-${item.file.replace('.svg', '')}"></i>
+												</span>
+												<span class="benefits__text">
+													${item.text.replace(regex, '<strong>'+item.strong+'</strong>')}
+												</span>
+											</li>`;
+                                if (index <= 3) {
+                                    $('.product__benefits ul').append(html);
+                                    $('.why__bottom ul').append(html);
+                                }
+
+                                $('.category-benefits .benefits').append(html);
+
+                            }
+                        })
+                })
+
+
+            }
+
+
         }
 
-
-        $('.product__price .price').html(price);
-	}
-
-	getIcons(benefits){
-		axios.get('http://api.vtexcrm.com.br/midwaylabs/dataentities/IB/search?_fields=iconName,iconFile,id')
-			.then(res => {
-				window.icons = res.data;
-
-				console.log(icons);
-			})
-	}
-
-	getBenefits(benefits){
-		let itemArray = [];
-		benefits.map((benefit, index) => {
-			benefit = encodeURI(benefit);
-			axios.get(`http://api.vtexcrm.com.br/midwaylabs/dataentities/FB/search?text=${benefit}&_fields=text,strong,icone`)
-				.then(res => {
-					if(res.data[0]){
-						let item = res.data[0];
-
-						//const highlight = ()
-
-
-						const icon = window.icons.filter(icon => icon.id == item.icone);
-						item.file = icon[0].iconFile;
-						var regex = new RegExp(item.strong, "gi");
-						const html = `<li class="benefits__item">
-							<span class="benefits__icon">
-								<i class="icb-${item.file.replace('.svg', '')}"></i>
-
-							</span>
-							<span class="benefits__text">
-								${item.text.replace(regex, '<strong>'+item.strong+'</strong>')}
-							</span>
-							</li>`;
-						if(index <= 3){
-							$('.product__benefits ul').append(html);
-							$('.why__bottom ul').append(html);
-						}
-
-						$('.category-benefits .benefits').append(html);
-
-					}
-				})
-		})
-
-
-	}
-
-
-  }
-
-  $(() => {
-    window.OMProduct = new Product()
-  })
-}
+        $(() => {
+            window.OMProduct = new Product()
+        })
+    }
 })()
-
-
-

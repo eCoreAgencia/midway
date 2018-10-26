@@ -140,6 +140,69 @@
 		}
 	}
 
+	.itensSelect {
+		.title {
+			display: flex;
+			justify-content: center;
+			padding-top: 50px;
+			h5 {
+				font-size: 0;
+				width: 300px;
+				height: 100px;
+				background: url(/arquivos/btn-sliderhome.png) no-repeat;
+				background-size: contain;
+				margin-left: 40px;
+			}
+			.section__page__title {
+				color: #ff0000;
+				width: initial;
+				@media (min-width: 960px) {
+					margin-top: 0;
+				}
+				&:before, &:after {
+					display: none;
+				}
+				span {
+					cursor: pointer;
+					color: #000;
+					transition: .2s ease;
+					&:hover, &.active {
+						color: #ff0000;
+					}
+					&:first-child {
+						padding-right: 30px;
+					}
+					&:last-child {
+						padding-left: 30px;
+					}
+				}
+			}
+		}
+
+		@media (min-width: 960px) {
+			.home .section__page__title {
+				margin: 60px 0 20px 0;
+				font-size: 30px;
+				font-size: 1.875rem;
+			}
+		}
+	}
+
+	.itensSelect {
+		.shelf__carousel--full {
+			position: relative;
+			height: 550px;
+			.itemSlider {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				visibility: hidden;
+				&.active {
+					visibility: visible;
+				}
+			}
+		}
+	}
 
 	.section__hero {
 		@media (min-width: 320px) and (max-width: 768px) {

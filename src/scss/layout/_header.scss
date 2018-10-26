@@ -131,6 +131,10 @@
 				}
 			}
 
+			.header__account-info__account-box__wrap-items__txt {
+				font-style: italic;
+			}
+
 			&:hover {
 				.header__account-info__account-box__wrap-items__txt {
 					color: $c-red;

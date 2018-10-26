@@ -145,7 +145,7 @@ block content
 								span.product__nutricional-value
 									| 100
 									small G
-						button.btn.btn--primary-inverse
+						button.btn.btn--primary-inverse(id="btn-nutriProduct")
 							small informação nutricional
 							| completa
 							i.icon-arrow-right
@@ -205,6 +205,11 @@ block content
 							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 								li
 									include ../shelves/prateleira
+	.modalNutri(style='display: none;')
+		.modalNutri__content
+			.modalNutri__content--clouse X
+			.modalNutri__content--all
+				img(src="https://midwaylabs.vtexcommercestable.com.br/arquivos/midwaylabs-albumina-500g-morango-ficha.jpg", alt='')
 
 block scripts
 	script(src='/arquivos/ec-easyzoom.js')

@@ -8,7 +8,8 @@
 		@include atMedium {
 			padding: 20px 0 20px;
 			padding: 45px 0 45px;
-			background-color: #f01914;
+			background: url(/arquivos/bg-footer.jpg) repeat;
+			//background-color: #ea2000;
 		}
 
 		&__inner {
@@ -124,7 +125,7 @@
 						color: #f01914;
 						font-family: "Open Sans";
 						@include font-size(12px);
-						font-weight: 400;
+						font-weight: 600;
 						@include atMedium {
 							color: #fff;
 						}
